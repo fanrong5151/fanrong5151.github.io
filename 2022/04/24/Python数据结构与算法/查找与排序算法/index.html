@@ -167,17 +167,6 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2022/04/24/%E5%88%97%E8%A1%A8/">
-                     
-										    列表
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
@@ -212,20 +201,9 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/04/23/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/">
+									<a href="/2022/04/24/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/">
                      
-										    文章标题
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2022/04/23/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-                     
-										    第一篇博客
+										    生成器和迭代器的区别
                      
 									</a>
 								</li>
@@ -282,15 +260,98 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#递归实现二分查找</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_binarySearch</span>(<span class="params">key,a,lo,hi</span>):</span><br><span class="line">    <span class="keyword">if</span> hi &lt;= lo:</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> a[mid] &gt; key:</span><br><span class="line">        <span class="keyword">return</span> _binarySearch(key,a,lo,mid-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> a[mid] &lt; key:</span><br><span class="line">        <span class="keyword">return</span> _binarySearch(key,a,mid+<span class="number">1</span>,hi)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> mid</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">binarySearch</span>(<span class="params">key,a</span>):</span><br><span class="line">    <span class="keyword">return</span> _binarySearch(key,a,<span class="number">0</span>,<span class="built_in">len</span>(a))</span><br></pre></td></tr></table></figure>
-<h2 id="1-2-非递归实现"><a href="#1-2-非递归实现" class="headerlink" title="1.2 非递归实现"></a>1.2 非递归实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binarySearch</span>(<span class="params">key,a</span>):</span><br><span class="line">    low = <span class="number">0</span></span><br><span class="line">    high = <span class="built_in">len</span>(a) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">        mid = (low+high)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> a[mid]&lt;key:</span><br><span class="line">            low = mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> a[mid]&gt;key:</span><br><span class="line">            high = mid-<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#冒泡排序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bubbleSort</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(a)-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">            <span class="keyword">if</span> a[j]&gt;a[j+<span class="number">1</span>]:<span class="comment">#升序</span></span><br><span class="line">                a[j],a[j+<span class="number">1</span>] = a[j+<span class="number">1</span>],a[j]</span><br></pre></td></tr></table></figure>
-<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#选择排序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">selectionSort</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(a)):</span><br><span class="line">        m = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,<span class="built_in">len</span>(a)):</span><br><span class="line">            <span class="keyword">if</span> a[j]&lt;a[m]:<span class="comment">#升序</span></span><br><span class="line">                m = j</span><br><span class="line">        a[i],a[m] = a[m],a[i]</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#插入排序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">insertSort</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(a)):</span><br><span class="line">        j = i</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span>) <span class="keyword">and</span> (a[j]&lt;a[j-<span class="number">1</span>]):</span><br><span class="line">            a[j],a[j-<span class="number">1</span>] = a[j-<span class="number">1</span>],a[j]</span><br><span class="line">            j = j-<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#归并排序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">left,right</span>):</span><br><span class="line">    merged = []</span><br><span class="line">    i,j = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">    left_len,right_len = <span class="built_in">len</span>(left),<span class="built_in">len</span>(right)</span><br><span class="line">    <span class="keyword">while</span> i&lt;left_len <span class="keyword">and</span> j&lt;right_len:</span><br><span class="line">        <span class="keyword">if</span> left[i] &lt;= right[j]:</span><br><span class="line">            merged.append(left[i])</span><br><span class="line">            i = i+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            merged.append(right[j])</span><br><span class="line">            j = j+<span class="number">1</span></span><br><span class="line">    merged.extend(left[i:])</span><br><span class="line">    merged.extend(right[j:])</span><br><span class="line">    <span class="keyword">return</span> merged</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mergeSort</span>(<span class="params">a</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(a) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    mid = <span class="built_in">len</span>(a)//<span class="number">2</span></span><br><span class="line">    left = mergeSort(a[:mid])</span><br><span class="line">    right = mergeSort(a[mid:])</span><br><span class="line">    <span class="keyword">return</span> merge(left,right)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#快速排序</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">quickSort</span>(<span class="params">a,low,high</span>):</span><br><span class="line">    i = low</span><br><span class="line">    j = high</span><br><span class="line">    <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    key = a[i]</span><br><span class="line">    <span class="keyword">while</span> i&lt;j:</span><br><span class="line">        <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> a[j]&gt;=key:</span><br><span class="line">            j = j-<span class="number">1</span></span><br><span class="line">        a[i] = a[j]</span><br><span class="line">        <span class="keyword">while</span> i&lt;j <span class="keyword">and</span> a[i]&lt;=key:</span><br><span class="line">            i = i+<span class="number">1</span></span><br><span class="line">        a[j] = a[i]</span><br><span class="line">    a[i] = key</span><br><span class="line">    quickSort(a,low,i-<span class="number">1</span>)</span><br><span class="line">    quickSort(a,j+<span class="number">1</span>,high)</span><br></pre></td></tr></table></figure>
-
+	<h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><pre><code class="python">#递归实现二分查找
+def _binarySearch(key,a,lo,hi):
+    if hi &lt;= lo:
+        return -1
+    mid = (lo+hi)//2
+    if a[mid] &gt; key:
+        return _binarySearch(key,a,lo,mid-1)
+    elif a[mid] &lt; key:
+        return _binarySearch(key,a,mid+1,hi)
+    else:
+        return mid
+def binarySearch(key,a):
+    return _binarySearch(key,a,0,len(a))
+</code></pre>
+<h2 id="1-2-非递归实现"><a href="#1-2-非递归实现" class="headerlink" title="1.2 非递归实现"></a>1.2 非递归实现</h2><pre><code class="python">def binarySearch(key,a):
+    low = 0
+    high = len(a) - 1
+    while low &lt;= high:
+        mid = (low+high)//2
+        if a[mid]&lt;key:
+            low = mid+1
+        elif a[mid]&gt;key:
+            high = mid-1
+        else:
+            return mid
+    return -1
+</code></pre>
+<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><pre><code class="python">#冒泡排序
+def bubbleSort(a):
+    for i in range(len(a)-1,-1,-1):
+        for j in range(i):
+            if a[j]&gt;a[j+1]:#升序
+                a[j],a[j+1] = a[j+1],a[j]
+</code></pre>
+<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><pre><code class="python">#选择排序
+def selectionSort(a):
+    for i in range(0,len(a)):
+        m = i
+        for j in range(i+1,len(a)):
+            if a[j]&lt;a[m]:#升序
+                m = j
+        a[i],a[m] = a[m],a[i]
+</code></pre>
+<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><pre><code class="python">#插入排序
+def insertSort(a):
+    for i in range(1,len(a)):
+        j = i
+        while(j&gt;0) and (a[j]&lt;a[j-1]):
+            a[j],a[j-1] = a[j-1],a[j]
+            j = j-1
+</code></pre>
+<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><pre><code class="python">#归并排序
+def merge(left,right):
+    merged = []
+    i,j = 0,0
+    left_len,right_len = len(left),len(right)
+    while i&lt;left_len and j&lt;right_len:
+        if left[i] &lt;= right[j]:
+            merged.append(left[i])
+            i = i+1
+        else:
+            merged.append(right[j])
+            j = j+1
+    merged.extend(left[i:])
+    merged.extend(right[j:])
+    return merged
+def mergeSort(a):
+    if len(a) &lt;= 1:
+        return a
+    mid = len(a)//2
+    left = mergeSort(a[:mid])
+    right = mergeSort(a[mid:])
+    return merge(left,right)
+</code></pre>
+<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><pre><code class="python">#快速排序
+def quickSort(a,low,high):
+    i = low
+    j = high
+    if i &gt;= j:
+        return a
+    key = a[i]
+    while i&lt;j:
+        while i&lt;j and a[j]&gt;=key:
+            j = j-1
+        a[i] = a[j]
+        while i&lt;j and a[i]&lt;=key:
+            i = i+1
+        a[j] = a[i]
+    a[i] = key
+    quickSort(a,low,i-1)
+    quickSort(a,j+1,high)
+</code></pre>
 
 </div>
 
