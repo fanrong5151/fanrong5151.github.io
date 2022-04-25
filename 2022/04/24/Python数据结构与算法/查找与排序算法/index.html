@@ -260,8 +260,8 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><pre><code class="python">#递归实现二分查找
-def _binarySearch(key,a,lo,hi):
+	<h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><p>二分查找用于有序数组，查找之前一定要排好序。</p>
+<pre><code class="python">def _binarySearch(key,a,lo,hi):
     if hi &lt;= lo:
         return -1
     mid = (lo+hi)//2
@@ -287,15 +287,15 @@ def binarySearch(key,a):
             return mid
     return -1
 </code></pre>
-<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><pre><code class="python">#冒泡排序
-def bubbleSort(a):
+<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><p>冒泡排序思想（升序），每一趟相邻两个数比较，直到最大的数排到数组最右侧。外层循环是数组从右往左的指标（每一趟），从len(a)-1到0，内层循环（两两相邻比较），边界是外层循环的指标。</p>
+<pre><code class="python">def bubbleSort(a):
     for i in range(len(a)-1,-1,-1):
         for j in range(i):
             if a[j]&gt;a[j+1]:#升序
                 a[j],a[j+1] = a[j+1],a[j]
 </code></pre>
-<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><pre><code class="python">#选择排序
-def selectionSort(a):
+<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><p>选择排序思想（升序）：每一趟找出最小的数，依次排在数组最左侧。外层循环从0到len（a）,依次存放最小数，内层循环找出最小数的下标。</p>
+<pre><code class="python">def selectionSort(a):
     for i in range(0,len(a)):
         m = i
         for j in range(i+1,len(a)):
@@ -303,55 +303,57 @@ def selectionSort(a):
                 m = j
         a[i],a[m] = a[m],a[i]
 </code></pre>
-<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><pre><code class="python">#插入排序
-def insertSort(a):
+<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><p>直接插入排序思想：每一趟将一个元素按照其关键字大小插入到前面已经排好序的子序列中，依次重复直到插入全部元素。</p>
+<pre><code class="python">def insertSort(a):
     for i in range(1,len(a)):
         j = i
         while(j&gt;0) and (a[j]&lt;a[j-1]):
             a[j],a[j-1] = a[j-1],a[j]
             j = j-1
 </code></pre>
-<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><pre><code class="python">#归并排序
-def merge(left,right):
+<p>上述代码中，假设第一趟a[0]是已排好序的子序列，while循环中a[1]与a[0]进行大小比较然后确定是否交换位置，直到指针j移到最左端0。以此类推，然后是a[2]在（a[0],a[1])形成的子序列中依次比较找到合适位置，再次形成排好序的子序列。</p>
+<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><p>归并排序思想：归并排序首先将这个数组分成一半，然后先把左边，右边的数组分别排序，再归并起来。对左右两边数组进行排序的时候，再分成一半，按上面同样的方法，直到只剩一个数。</p>
+<pre><code class="python">def merge(left,right):
     merged = []
     i,j = 0,0
     left_len,right_len = len(left),len(right)
-    while i&lt;left_len and j&lt;right_len:
+    while i&lt;left_len and j&lt;right_len:#按大小顺序合并两个列表
         if left[i] &lt;= right[j]:
             merged.append(left[i])
             i = i+1
         else:
             merged.append(right[j])
             j = j+1
-    merged.extend(left[i:])
+    merged.extend(left[i:])#补齐剩余的尾部
     merged.extend(right[j:])
     return merged
 def mergeSort(a):
-    if len(a) &lt;= 1:
+    if len(a) &lt;= 1:#只剩一个数时，返回这个数
         return a
     mid = len(a)//2
     left = mergeSort(a[:mid])
     right = mergeSort(a[mid:])
     return merge(left,right)
 </code></pre>
-<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><pre><code class="python">#快速排序
-def quickSort(a,low,high):
+<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><p> 快速排序思想：先从数列中取出一个数作为基准数（下面以最左边数作为基准数），分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边，再对左右区间重复第二步，直到各区间只有一个数。</p>
+<pre><code class="python">def quickSort(a,low,high):
     i = low
     j = high
     if i &gt;= j:
         return a
-    key = a[i]
-    while i&lt;j:
-        while i&lt;j and a[j]&gt;=key:
+    key = a[i]#基准
+    while i&lt;j:#直到i大于或等于j跳出循环
+        while i&lt;j and a[j]&gt;=key:#从右往左扫描，直到有比基准小的，放在i位置
             j = j-1
         a[i] = a[j]
-        while i&lt;j and a[i]&lt;=key:
+        while i&lt;j and a[i]&lt;=key:#从左往右扫描，直到有比基准大的，放在j位置
             i = i+1
         a[j] = a[i]
     a[i] = key
     quickSort(a,low,i-1)
     quickSort(a,j+1,high)
 </code></pre>
+<p>总结：1）i=low; j=high; 将基准数挖出形成第一个坑a[i]。<br>2）j–由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中<br>3)i++由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。<br>4)再重复执行2，3二步，直到i==j，将基准数填入a[i]中。</p>
 
 </div>
 
