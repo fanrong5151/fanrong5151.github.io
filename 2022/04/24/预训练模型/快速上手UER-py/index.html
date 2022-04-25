@@ -153,9 +153,9 @@ var _hmt = _hmt || [];
 									
 							<ul>
 								<li class="file">
-									<a href="/2022/04/24/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/">
+									<a href="/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/">
                      
-										    生成器和迭代器的区别
+										    生成器和迭代器
                      
 									</a>
 								</li>
@@ -164,6 +164,17 @@ var _hmt = _hmt || [];
 			
 								</li>
 								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/04/25/kk/">
+                     
+										    kk
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 							<ul>
@@ -197,17 +208,6 @@ var _hmt = _hmt || [];
 			
 								</li>
 								
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2022/04/24/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/">
-                     
-										    生成器和迭代器的区别
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
 							<ul>
@@ -260,8 +260,8 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个<a target="_blank" rel="noopener" href="https://github.com/dbiir/UER-py">模型仓库</a>，其中包含基于不同语料，编码器和目标任务的预训练模型。用户可以根据具体任务的要求，从中选择合适的预训练模型使用。</p>
-<h1 id="2-书评分类-BERT模型"><a href="#2-书评分类-BERT模型" class="headerlink" title="2.书评分类(BERT模型)"></a>2.书评分类(BERT模型)</h1><p>在书评语料上对模型进行预训练，首先对书评语料进行预处理，我们在UER-py-master目录下运行以下命令：</p>
+	<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个<a target="_blank" rel="noopener" href="https://github.com/dbiir/UER-py">模型仓库</a>，其中包含基于不同语料，编码器和目标任务的预训练模型。用户可以根据具体任务的要求，从中选择合适的预训练模型使用。</p>
+<h1 id="书评分类-BERT模型"><a href="#书评分类-BERT模型" class="headerlink" title="书评分类(BERT模型)"></a>书评分类(BERT模型)</h1><p>在书评语料上对模型进行预训练，首先对书评语料进行预处理，我们在UER-py-master目录下运行以下命令：</p>
 <pre><code>python3 preprocess.py --corpus_path corpora/book_review_bert.txt --vocab_path models/google_zh_vocab.txt --dataset_path dataset.pt \
                   --processes_num 8 --target bert
 </code></pre>
@@ -294,8 +294,7 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
                                       --prediction_path datasets/douban_book_review/prediction.tsv \
                                       --labels_num 2 --embedding word --encoder lstm --pooling mean
 </code></pre>
-<p> 我们也可以去掉参数–pretrained_model_path models/reviews_lstm_lm_model.bin，不加载预训练模型，只能得到约81的准确率。<br><img src="https://img-blog.csdnimg.cn/20210413155758378.png" alt="在这里插入图片描述"></p>
-<p>UER-py还支持更多的预训练模型。<br>在Chnsenticorp数据集上使用ELMo进行预训练和微调的示例。</p>
+<p> 我们也可以去掉参数–pretrained_model_path models/reviews_lstm_lm_model.bin，不加载预训练模型，只能得到约81的准确率。<br><img src="https://img-blog.csdnimg.cn/20210413155758378.png" alt="在这里插入图片描述"><br>UER-py还支持更多的预训练模型。<br>在Chnsenticorp数据集上使用ELMo进行预训练和微调的示例。</p>
 
 </div>
 
