@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		查找与排序算法 | 
 	 
 	FanRong&#39;s Blog
 	</title>
@@ -130,7 +128,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/04/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
                      
 										    查找与排序算法
@@ -304,168 +302,60 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-	查找与排序算法
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-	<span>John Doe</span>
-	<span>2022-04-24 22:24:10</span>
-		<div id="article-categories">
-    
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
+		<div class="index-li">
+			<a href="/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AF%87/">
+				<h2 class="index-title">
+					第二篇
+				</h2>
+				<div class="index-brief">
+					
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2022-04-23</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/数据结构/">数据结构</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/hello-world/">
+				<h2 class="index-title">
+					Hello World
+				</h2>
+				<div class="index-brief">
+					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2022-04-23</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+			<a class="extend prev" rel="prev" href="/archives/">&lt;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><p>二分查找用于有序数组，查找之前一定要排好序。</p>
-<pre><code class="python">def _binarySearch(key,a,lo,hi):
-    if hi &lt;= lo:
-        return -1
-    mid = (lo+hi)//2
-    if a[mid] &gt; key:
-        return _binarySearch(key,a,lo,mid-1)
-    elif a[mid] &lt; key:
-        return _binarySearch(key,a,mid+1,hi)
-    else:
-        return mid
-def binarySearch(key,a):
-    return _binarySearch(key,a,0,len(a))
-</code></pre>
-<h2 id="1-2-非递归实现"><a href="#1-2-非递归实现" class="headerlink" title="1.2 非递归实现"></a>1.2 非递归实现</h2><pre><code class="python">def binarySearch(key,a):
-    low = 0
-    high = len(a) - 1
-    while low &lt;= high:
-        mid = (low+high)//2
-        if a[mid]&lt;key:
-            low = mid+1
-        elif a[mid]&gt;key:
-            high = mid-1
-        else:
-            return mid
-    return -1
-</code></pre>
-<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><p>冒泡排序思想（升序），每一趟相邻两个数比较，直到最大的数排到数组最右侧。外层循环是数组从右往左的指标（每一趟），从len(a)-1到0，内层循环（两两相邻比较），边界是外层循环的指标。</p>
-<pre><code class="python">def bubbleSort(a):
-    for i in range(len(a)-1,-1,-1):
-        for j in range(i):
-            if a[j]&gt;a[j+1]:#升序
-                a[j],a[j+1] = a[j+1],a[j]
-</code></pre>
-<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><p>选择排序思想（升序）：每一趟找出最小的数，依次排在数组最左侧。外层循环从0到len（a）,依次存放最小数，内层循环找出最小数的下标。</p>
-<pre><code class="python">def selectionSort(a):
-    for i in range(0,len(a)):
-        m = i
-        for j in range(i+1,len(a)):
-            if a[j]&lt;a[m]:#升序
-                m = j
-        a[i],a[m] = a[m],a[i]
-</code></pre>
-<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><p>直接插入排序思想：每一趟将一个元素按照其关键字大小插入到前面已经排好序的子序列中，依次重复直到插入全部元素。</p>
-<pre><code class="python">def insertSort(a):
-    for i in range(1,len(a)):
-        j = i
-        while(j&gt;0) and (a[j]&lt;a[j-1]):
-            a[j],a[j-1] = a[j-1],a[j]
-            j = j-1
-</code></pre>
-<p>上述代码中，假设第一趟a[0]是已排好序的子序列，while循环中a[1]与a[0]进行大小比较然后确定是否交换位置，直到指针j移到最左端0。以此类推，然后是a[2]在（a[0],a[1])形成的子序列中依次比较找到合适位置，再次形成排好序的子序列。</p>
-<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><p>归并排序思想：归并排序首先将这个数组分成一半，然后先把左边，右边的数组分别排序，再归并起来。对左右两边数组进行排序的时候，再分成一半，按上面同样的方法，直到只剩一个数。</p>
-<pre><code class="python">def merge(left,right):
-    merged = []
-    i,j = 0,0
-    left_len,right_len = len(left),len(right)
-    while i&lt;left_len and j&lt;right_len:#按大小顺序合并两个列表
-        if left[i] &lt;= right[j]:
-            merged.append(left[i])
-            i = i+1
-        else:
-            merged.append(right[j])
-            j = j+1
-    merged.extend(left[i:])#补齐剩余的尾部
-    merged.extend(right[j:])
-    return merged
-def mergeSort(a):
-    if len(a) &lt;= 1:#只剩一个数时，返回这个数
-        return a
-    mid = len(a)//2
-    left = mergeSort(a[:mid])
-    right = mergeSort(a[mid:])
-    return merge(left,right)
-</code></pre>
-<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><p> 快速排序思想：先从数列中取出一个数作为基准数（下面以最左边数作为基准数），分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边，再对左右区间重复第二步，直到各区间只有一个数。</p>
-<pre><code class="python">def quickSort(a,low,high):
-    i = low
-    j = high
-    if i &gt;= j:
-        return a
-    key = a[i]#基准
-    while i&lt;j:#直到i大于或等于j跳出循环
-        while i&lt;j and a[j]&gt;=key:#从右往左扫描，直到有比基准小的，放在i位置
-            j = j-1
-        a[i] = a[j]
-        while i&lt;j and a[i]&lt;=key:#从左往右扫描，直到有比基准大的，放在j位置
-            i = i+1
-        a[j] = a[i]
-    a[i] = key
-    quickSort(a,low,i-1)
-    quickSort(a,j+1,high)
-</code></pre>
-<p>总结：1）i=low; j=high; 将基准数挖出形成第一个坑a[i]。<br>2）j–由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中<br>3)i++由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。<br>4)再重复执行2，3二步，直到i==j，将基准数填入a[i]中。</p>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  生成器和迭代器
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2022/04/24/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/">
-                快速上手UER-py
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-	<div id="vcomments"></div>
-
-
-<script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
-</script>
 	</div>
 	<div id="footer">
 	<p>
