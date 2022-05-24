@@ -8,22 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个模型仓">
+  <meta name="description" content="1.二分查找1.1 递归实现二分查找用于有序数组，查找之前一定要排好序。 def _binarySearch(key,a,lo,hi):     if hi &lt;&#x3D; lo:         return -1     mid &#x3D; (lo+hi)&#x2F;&#x2F;2     if a[mid] &gt; key:         return _binarySearch(key,a,lo,mid-1)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/2022/04/24/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/index.html">
+<meta property="og:url" content="http://example.com/2022/04/24/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
-<meta property="og:description" content="前言预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个模型仓">
+<meta property="og:description" content="1.二分查找1.1 递归实现二分查找用于有序数组，查找之前一定要排好序。 def _binarySearch(key,a,lo,hi):     if hi &lt;&#x3D; lo:         return -1     mid &#x3D; (lo+hi)&#x2F;&#x2F;2     if a[mid] &gt; key:         return _binarySearch(key,a,lo,mid-1)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/202104092220495.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210409223011638.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210413155758378.png">
-<meta property="article:published_time" content="2022-04-24T07:19:25.530Z">
-<meta property="article:modified_time" content="2022-04-25T03:00:48.094Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2022-04-24T14:24:10.169Z">
+<meta property="article:modified_time" content="2022-04-25T08:02:39.344Z">
+<meta property="article:author" content="FanRong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -52,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -65,6 +60,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -86,13 +83,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -110,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -122,29 +117,31 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -159,46 +156,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-预训练模型/快速上手UER-py" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-查找与排序算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个<a target="_blank" rel="noopener" href="https://github.com/dbiir/UER-py">模型仓库</a>，其中包含基于不同语料，编码器和目标任务的预训练模型。用户可以根据具体任务的要求，从中选择合适的预训练模型使用。</p>
-<h1 id="书评分类-BERT模型"><a href="#书评分类-BERT模型" class="headerlink" title="书评分类(BERT模型)"></a>书评分类(BERT模型)</h1><p>在书评语料上对模型进行预训练，首先对书评语料进行预处理，我们在UER-py-master目录下运行以下命令：</p>
-<pre><code>python3 preprocess.py --corpus_path corpora/book_review_bert.txt --vocab_path models/google_zh_vocab.txt --dataset_path dataset.pt \
-                  --processes_num 8 --target bert
+        <h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><p>二分查找用于有序数组，查找之前一定要排好序。</p>
+<pre><code class="python">def _binarySearch(key,a,lo,hi):
+    if hi &lt;= lo:
+        return -1
+    mid = (lo+hi)//2
+    if a[mid] &gt; key:
+        return _binarySearch(key,a,lo,mid-1)
+    elif a[mid] &lt; key:
+        return _binarySearch(key,a,mid+1,hi)
+    else:
+        return mid
+def binarySearch(key,a):
+    return _binarySearch(key,a,0,len(a))
 </code></pre>
-<p>然后下载Google中文预训练模型google_zh_model.bin，并将其放在 models 文件夹中。接着加载Google中文预训练模型，在书评语料上对其进行增量预训练，假设我们有1个GPU的机器，world size 表示一共有几块GPU，gpu_ranks是gpu序号；</p>
-<pre><code>python3 pretrain.py --dataset_path dataset.pt --vocab_path models/google_zh_vocab.txt --pretrained_model_path models/google_zh_model.bin \
-                --output_model_path models/book_review_model.bin  --world_size 1 --gpu_ranks 0  \     --batch_size 8
-                --total_steps 5000 --save_checkpoint_steps 1000 --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
+<h2 id="1-2-非递归实现"><a href="#1-2-非递归实现" class="headerlink" title="1.2 非递归实现"></a>1.2 非递归实现</h2><pre><code class="python">def binarySearch(key,a):
+    low = 0
+    high = len(a) - 1
+    while low &lt;= high:
+        mid = (low+high)//2
+        if a[mid]&lt;key:
+            low = mid+1
+        elif a[mid]&gt;key:
+            high = mid-1
+        else:
+            return mid
+    return -1
 </code></pre>
-<p>pretrain.py输出的模型会带有记录训练步数的后缀，这里我们可以删除后缀以方便使用；</p>
-<pre><code>mv models/book_review_model.bin-5000 models/book_review_model.bin
+<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><p>冒泡排序思想（升序），每一趟相邻两个数比较，直到最大的数排到数组最右侧。外层循环是数组从右往左的指标（每一趟），从len(a)-1到0，内层循环（两两相邻比较），边界是外层循环的指标。</p>
+<pre><code class="python">def bubbleSort(a):
+    for i in range(len(a)-1,-1,-1):
+        for j in range(i):
+            if a[j]&gt;a[j+1]:#升序
+                a[j],a[j+1] = a[j+1],a[j]
 </code></pre>
-<p>然后，我们在下游分类数据集上微调预训练模型，我们可以用 google_zh_model.bin；</p>
-<pre><code>python3 run_classifier.py --pretrained_model_path models/google_zh_model.bin --vocab_path models/google_zh_vocab.txt \
-                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
-                      --epochs_num 3 --batch_size 8 --embedding word_pos_seg --encoder transformer --mask fully_visible
+<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><p>选择排序思想（升序）：每一趟找出最小的数，依次排在数组最左侧。外层循环从0到len（a）,依次存放最小数，内层循环找出最小数的下标。</p>
+<pre><code class="python">def selectionSort(a):
+    for i in range(0,len(a)):
+        m = i
+        for j in range(i+1,len(a)):
+            if a[j]&lt;a[m]:#升序
+                m = j
+        a[i],a[m] = a[m],a[i]
 </code></pre>
-<p>实验结果表明，谷歌BERT模型在书评分类任务测试集上的准确率为87.3；<br><img src="https://img-blog.csdnimg.cn/2021040922180871.png" alt="在这里插入图片描述"><br>另外我们也可以使用 pretrain.py 的输出book_review_model.bin；<br>在models文件夹中生成<em>finetuned_model.bin</em>；<br><img src="https://img-blog.csdnimg.cn/202104092220495.png" alt="在这里插入图片描述"><br>然后我们用它进行预测；</p>
-<pre><code>python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
-                                      --test_path datasets/douban_book_review/test_nolabel.tsv \
-                                      --prediction_path datasets/douban_book_review/prediction.tsv --labels_num 2 \
-                                      --embedding word_pos_seg --encoder transformer --mask fully_visible
+<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><p>直接插入排序思想：每一趟将一个元素按照其关键字大小插入到前面已经排好序的子序列中，依次重复直到插入全部元素。</p>
+<pre><code class="python">def insertSort(a):
+    for i in range(1,len(a)):
+        j = i
+        while(j&gt;0) and (a[j]&lt;a[j-1]):
+            a[j],a[j-1] = a[j-1],a[j]
+            j = j-1
 </code></pre>
-<p>在UER-py-master/datasets/douban_book_review文件夹中生成prediction.csv，–test_path 指定需要预测的文件；<br>–prediction_path 指定预测结果的文件；<br><img src="https://img-blog.csdnimg.cn/20210409223011638.png" alt="在这里插入图片描述"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>选择使用遮罩语言模型（MLM）作为目标任务，BERT参数量大，计算较慢。我们希望加速模型运算的同时让模型仍然在下游任务上有好的表现。这里我们选择2层LSTM编码器来替代12层Transformer编码器。 我们首先下载2层LSTM编码器的预训练模型reviews_lstm_lm_model.bin。 然后在下游分类数据集上对其进行微调：</p>
-<pre><code>python3 run_classifier.py --pretrained_model_path models/reviews_lstm_lm_model.bin --vocab_path models/google_zh_vocab.txt --config_path models/rnn_config.json \
-                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
-                      --epochs_num 5  --batch_size 8 --learning_rate 1e-3 --embedding word --encoder lstm --pooling mean
-python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
-                                      --config_path models/rnn_config.json --test_path datasets/douban_book_review/test_nolabel.tsv \
-                                      --prediction_path datasets/douban_book_review/prediction.tsv \
-                                      --labels_num 2 --embedding word --encoder lstm --pooling mean
+<p>上述代码中，假设第一趟a[0]是已排好序的子序列，while循环中a[1]与a[0]进行大小比较然后确定是否交换位置，直到指针j移到最左端0。以此类推，然后是a[2]在（a[0],a[1])形成的子序列中依次比较找到合适位置，再次形成排好序的子序列。</p>
+<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><p>归并排序思想：归并排序首先将这个数组分成一半，然后先把左边，右边的数组分别排序，再归并起来。对左右两边数组进行排序的时候，再分成一半，按上面同样的方法，直到只剩一个数。</p>
+<pre><code class="python">def merge(left,right):
+    merged = []
+    i,j = 0,0
+    left_len,right_len = len(left),len(right)
+    while i&lt;left_len and j&lt;right_len:#按大小顺序合并两个列表
+        if left[i] &lt;= right[j]:
+            merged.append(left[i])
+            i = i+1
+        else:
+            merged.append(right[j])
+            j = j+1
+    merged.extend(left[i:])#补齐剩余的尾部
+    merged.extend(right[j:])
+    return merged
+def mergeSort(a):
+    if len(a) &lt;= 1:#只剩一个数时，返回这个数
+        return a
+    mid = len(a)//2
+    left = mergeSort(a[:mid])
+    right = mergeSort(a[mid:])
+    return merge(left,right)
 </code></pre>
-<p> 我们也可以去掉参数–pretrained_model_path models/reviews_lstm_lm_model.bin，不加载预训练模型，只能得到约81的准确率。<br><img src="https://img-blog.csdnimg.cn/20210413155758378.png" alt="在这里插入图片描述"><br>UER-py还支持更多的预训练模型。<br>在Chnsenticorp数据集上使用ELMo进行预训练和微调的示例。</p>
+<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><p> 快速排序思想：先从数列中取出一个数作为基准数（下面以最左边数作为基准数），分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边，再对左右区间重复第二步，直到各区间只有一个数。</p>
+<pre><code class="python">def quickSort(a,low,high):
+    i = low
+    j = high
+    if i &gt;= j:
+        return a
+    key = a[i]#基准
+    while i&lt;j:#直到i大于或等于j跳出循环
+        while i&lt;j and a[j]&gt;=key:#从右往左扫描，直到有比基准小的，放在i位置
+            j = j-1
+        a[i] = a[j]
+        while i&lt;j and a[i]&lt;=key:#从左往右扫描，直到有比基准大的，放在j位置
+            i = i+1
+        a[j] = a[i]
+    a[i] = key
+    quickSort(a,low,i-1)
+    quickSort(a,j+1,high)
+</code></pre>
+<p>总结：1）i=low; j=high; 将基准数挖出形成第一个坑a[i]。<br>2）j–由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中<br>3)i++由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。<br>4)再重复执行2，3二步，直到i==j，将基准数填入a[i]中。</p>
 
       
 
@@ -278,7 +334,7 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/24/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/24/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +348,18 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
   
 <nav id="article-nav">
   
-    <a href="/2022/04/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          数据库原理
         
       </div>
     </a>
   
   
-    <a href="/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第二篇</div>
+    <a href="/2022/04/24/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +402,7 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 John Doe
+    		&copy; 2022 FanRong
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -427,6 +483,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

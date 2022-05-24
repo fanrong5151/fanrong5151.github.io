@@ -6,19 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>生成器和迭代器 | FanRong&#39;s Blog</title>
+  <title>电信客户流失数据分析（一） | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="可迭代对象它主要包括如下三类： 迭代器 序列 字典  迭代器（iterator） 可迭代对象需要实现__iter__方法 迭代器不仅要实现__iter__方法，还需要实现__next__方法 列表、元组、集合、字符串这些可迭代对象可以很简单的转化成迭代器，通过Python内置的iter函数能够轻松把可迭代对象转化为迭代器 可以自己通过实现__iter__和__next__方法来定义迭代器  生成器">
+  <meta name="description" content="不管是互联网还是传统行业，大都存在用户流失问题。本文主要对某电信服务商的用户基础数据进行分析，探索对用户流失有深刻影响的相关指标，帮助服务商制定有针对性的用户挽留计划，提高用户留存率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生成器和迭代器">
-<meta property="og:url" content="http://example.com/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/index.html">
+<meta property="og:title" content="电信客户流失数据分析（一）">
+<meta property="og:url" content="http://example.com/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
-<meta property="og:description" content="可迭代对象它主要包括如下三类： 迭代器 序列 字典  迭代器（iterator） 可迭代对象需要实现__iter__方法 迭代器不仅要实现__iter__方法，还需要实现__next__方法 列表、元组、集合、字符串这些可迭代对象可以很简单的转化成迭代器，通过Python内置的iter函数能够轻松把可迭代对象转化为迭代器 可以自己通过实现__iter__和__next__方法来定义迭代器  生成器">
+<meta property="og:description" content="不管是互联网还是传统行业，大都存在用户流失问题。本文主要对某电信服务商的用户基础数据进行分析，探索对用户流失有深刻影响的相关指标，帮助服务商制定有针对性的用户挽留计划，提高用户留存率。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-25T02:53:15.000Z">
-<meta property="article:modified_time" content="2022-04-25T02:57:48.712Z">
-<meta property="article:author" content="John Doe">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/330b6ff26ef045058bcc8dcdd2d0792f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cf64b8191de1490b9d3c7fcdc5db762f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a1c303371f894616bbb2182cd8736da0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4dd9bf9d3d814285a869b1a3f62cb7ea.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1faa1a4db62a46439ee19ac264d8fc46.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3112e3e9ed874e4e83698fc65c8fd70f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8517e46b2ed84a1a8592f230af0a3e51.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e8f84a1586084439843d2cc7171006e1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d2ce656ae7204db592d4a5a30a92f570.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1d2b1a6e712c4e7b9f80c485d271cc29.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f384e70d6b454e25b00076783741a52c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e2f1c4ce38ae4eb5b6546c35d1b53441.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3423e645fcf54a089b0e507185447c3a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9873d838e1e24fe6b0041e16667d2ab4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b26144fecbd14da99f95102783a59ffd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/281f7193a9604027aa077fae3a8397ca.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/77a54b91b1004204bf032a30b195a8f8.png">
+<meta property="article:published_time" content="2022-05-23T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-05-24T10:13:23.116Z">
+<meta property="article:author" content="FanRong">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/330b6ff26ef045058bcc8dcdd2d0792f.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -47,7 +65,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -60,6 +78,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -81,13 +101,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -105,7 +123,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -117,29 +135,31 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -154,46 +174,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python面试题/生成器和迭代器" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-电信客户流失数据分析（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      生成器和迭代器
+      电信客户流失数据分析（一）
     </h1>
   
 
         
-        <a href="/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2022-04-25T02:53:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
+        <a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="可迭代对象它主要包括如下三类："><a href="#可迭代对象它主要包括如下三类：" class="headerlink" title="可迭代对象它主要包括如下三类："></a>可迭代对象它主要包括如下三类：</h3><ul>
-<li>迭代器</li>
-<li>序列</li>
-<li>字典</li>
-</ul>
-<h3 id="迭代器（iterator）"><a href="#迭代器（iterator）" class="headerlink" title="迭代器（iterator）"></a>迭代器（iterator）</h3><ul>
-<li>可迭代对象需要实现__iter__方法</li>
-<li>迭代器不仅要实现__iter__方法，还需要实现__next__方法</li>
-<li>列表、元组、集合、字符串这些可迭代对象可以很简单的转化成迭代器，通过Python内置的iter函数能够轻松把可迭代对象转化为迭代器</li>
-<li>可以自己通过实现__iter__和__next__方法来定义迭代器</li>
-</ul>
-<h3 id="生成器（generator）"><a href="#生成器（generator）" class="headerlink" title="生成器（generator）"></a>生成器（generator）</h3><ul>
-<li>生成器是迭代器的子集</li>
-<li>在Python中一个函数可以用yiled替代return返回值，这样的话这个函数就变成了一个生成器对象</li>
-<li><strong>yield from</strong>获取生成器，允许一个生成器将其部分操作委派给另一个生成器，使得生成器的用法变得更加简洁，yield from后面需要加上可迭代对象，这样可以把可迭代对象变成生成器（<em><strong>生成器嵌套</strong></em>）</li>
-</ul>
-<h3 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式"></a>生成器表达式</h3><pre><code class="python">it = [i for i in X]#列表表达式
-gen = (i for i in X)#生成器表达式
+        <p>不管是互联网还是传统行业，大都存在用户流失问题。本文主要对某电信服务商的用户基础数据进行分析，探索对用户流失有深刻影响的相关指标，帮助服务商制定有针对性的用户挽留计划，提高用户留存率。</p>
+<span id="more"></span>
+<h1 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h1><p>kaggle网站（<a target="_blank" rel="noopener" href="https://www.kaggle.com/blastchar/telco-customer-churn">https://www.kaggle.com/blastchar/telco-customer-churn</a>）上的一个电信客户流失数据集，共7043条记录，21个字段。字段包括20个输入特征以及1个目标特征。目标特征为是否为流失顾客，输入特征包括：顾客Id，性别，是否老年人，是否有伴侣，是否有小孩，已使用年限，是否使用电话服务，是否使用网络服务，服务合同期限，支付方式、账单类型、月消费、总消费等一系列描述。</p>
+<h1 id="2-数据集探索"><a href="#2-数据集探索" class="headerlink" title="2.数据集探索"></a>2.数据集探索</h1><h2 id="2-1-查看数据集"><a href="#2-1-查看数据集" class="headerlink" title="2.1 查看数据集"></a>2.1 查看数据集</h2><pre><code class="python">import pandas as pd
+Telco_data=pd.read_csv(&#39;WA_Fn-UseC_-Telco-Customer-Churn.csv&#39;)
+Telco_data.head(10)
 </code></pre>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>①生成器是<em><strong>生成元素</strong></em>的，迭代器是访问集合元素的一中方式<br>②迭代<em><strong>输出</strong></em>生成器的内容<br>③迭代器是一种支持next()操作的对象<br>④迭代器（iterator）：其中iterator对象表示的是一个数据流，可以把它看做一个有序序列，但我们不能提前知道序列的长度，只有通过next()函数实现需要计算的下一个数据。可以看做生成器的一个子集。</p>
+<p><img src="https://img-blog.csdnimg.cn/330b6ff26ef045058bcc8dcdd2d0792f.png" alt="在这里插入图片描述"><br>查看是否有缺失值：</p>
+<pre><code class="python">Telco_data.isnull().sum()
+</code></pre>
+<p>检查数据类型：发现TotalCharges字段的数据类型应该是float，而非object，产生这个错误的原因在于：在使用pandas进行读取csv文件的过程中，pandas会将缺失值读取为空字符串。</p>
+<pre><code class="python">Telco_data.dtypes
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/cf64b8191de1490b9d3c7fcdc5db762f.png" alt="在这里插入图片描述"></p>
+<p>检查空值个数：（如下图有11条缺失值）</p>
+<pre><code class="python">Telco_data[Telco_data[&#39;TotalCharges&#39;].isin([&#39; &#39;])]
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/a1c303371f894616bbb2182cd8736da0.png" alt="在这里插入图片描述"></p>
+<h2 id="2-2-修复数据集"><a href="#2-2-修复数据集" class="headerlink" title="2.2 修复数据集"></a>2.2 修复数据集</h2><p>重新输入数据集，将空字符串转化为缺失值表示符号“NaN”，并删除带有缺失值的字段，最后将TotalCharges字段的数据类型转化为数值型，得到正确输入的数据集（后续所有操作的基础是下面的代码）：</p>
+<pre><code class="python">import seaborn as sns
+import pandas as pd
+import numpy as np
+Te_data = pd.read_csv(&#39;D:\浏览器下载文件\WA_Fn-UseC_-Telco-Customer-Churn.csv&#39;)
+Te_data.replace(to_replace=r&#39;^\s*$&#39;,value=np.nan,regex=True,inplace=True)#将空字符串用nan代替
+Te_data.dropna(axis=0, how=&#39;any&#39;, inplace=True)#删除缺失值
+Te_data[&#39;TotalCharges&#39;] = pd.to_numeric(Te_data[&#39;TotalCharges&#39;])#转换数据类型
+</code></pre>
+<p>字段统计：</p>
+<pre><code class="python">Te_data.describe(include=&#39;all&#39;)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/4dd9bf9d3d814285a869b1a3f62cb7ea.png" alt="在这里插入图片描述"></p>
+<h2 id="2-3-分析与思考"><a href="#2-3-分析与思考" class="headerlink" title="2.3 分析与思考"></a>2.3 分析与思考</h2><h3 id="2-3-1哪些输入特征与顾客流失具有关联性？"><a href="#2-3-1哪些输入特征与顾客流失具有关联性？" class="headerlink" title="2.3.1哪些输入特征与顾客流失具有关联性？"></a>2.3.1哪些输入特征与顾客流失具有关联性？</h3><p>首先必须回答的一个问题就是，<em>顾客为什么会流失？</em>（因果性）从公司产品的维度给出回答，就是“电信公司所提供的服务让我无法满意”。从个人属性变化的角度给出回答，顾客因为个人情况，比如年纪大需求发生变化，从而流失。<br>第二个要回答的问题是，<em>什么样的行为表现说明了顾客有流失的倾向？</em>（相关性）行为表现的背后往往代表顾客对于公司，对于产品的态度，从而体现顾客的一些标签属性，比如忠诚用户、活跃用户等等。<br>因此，将所有输入特征分成了三个维度：产品、个人属性、用户行为。</p>
+<p><img src="https://img-blog.csdnimg.cn/1faa1a4db62a46439ee19ac264d8fc46.png" alt="在这里插入图片描述"></p>
+<h3 id="2-3-2-从产品维度分析"><a href="#2-3-2-从产品维度分析" class="headerlink" title="2.3.2 从产品维度分析"></a>2.3.2 从产品维度分析</h3><p>对于本例的电信公司而言，其主要的产品是电话服务、网络服务以及这两个服务基础上的一些附加服务。在样本量没有明显失衡的情况下，下面进行两种假设：<br><strong>假设1</strong>：由于该电信公司的电话服务(PhoneService)问题，造成客户流失。</p>
+<pre><code class="python">ps_c = pd.crosstab(index=Te_data[&quot;PhoneService&quot;],columns=Te_data[&quot;Churn&quot;])
+ps_c_x = ps_c.index.tolist()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/3112e3e9ed874e4e83698fc65c8fd70f.png" alt="在这里插入图片描述"><br>绘图代码：</p>
+<pre><code class="python">from pyecharts import options as opts
+from pyecharts.charts import Bar
+from pyecharts.commons.utils import JsCode
+from pyecharts.globals import ThemeType
+list_y1 = [
+    &#123;&quot;value&quot;:float(ps_c.iloc[0][0]), &quot;percent&quot;: ps_c.iloc[0][0] / (ps_c.iloc[0][1] + ps_c.iloc[0][0])&#125;,
+    &#123;&quot;value&quot;:float(ps_c.iloc[1][0]), &quot;percent&quot;: ps_c.iloc[1][0] / (ps_c.iloc[1][0] + ps_c.iloc[1][1])&#125;,
+]
+list_y2 = [
+    &#123;&quot;value&quot;:float(ps_c.iloc[0][1]), &quot;percent&quot;: ps_c.iloc[0][1] / (ps_c.iloc[0][1] + ps_c.iloc[0][0])&#125;,
+    &#123;&quot;value&quot;:float(ps_c.iloc[1][1]), &quot;percent&quot;: ps_c.iloc[1][1] / (ps_c.iloc[1][0] + ps_c.iloc[1][1])&#125;,
+]
+c = (
+    Bar(init_opts=opts.InitOpts(theme=ThemeType.LIGHT))
+    .add_xaxis(ps_c_x)
+    .add_yaxis(&quot;No&quot;, list_y1, stack=&quot;stack1&quot;, category_gap=&quot;70%&quot;)
+    .add_yaxis(&quot;Yes&quot;, list_y2, stack=&quot;stack1&quot;, category_gap=&quot;70%&quot;)
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title=&#39;电话服务与流失&#39;),
+        yaxis_opts=opts.AxisOpts(name=&#39;Churn&#39;),
+        xaxis_opts=opts.AxisOpts(name=&#39;PhoneService&#39;),
+    )
+    .set_series_opts(
+        label_opts=opts.LabelOpts(
+            position=&quot;right&quot;,
+            formatter=JsCode(
+                &quot;function(x)&#123;return Number(x.data.percent * 100).toFixed() + &#39;%&#39;;&#125;&quot;
+            ),
+        )
+    )
+)
+c.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/8517e46b2ed84a1a8592f230af0a3e51.png" alt="在这里插入图片描述"><br>可以由图看出，有电话服务与没有电话服务的客户流失率分别为27%，25%，相差不大，因此假设1不成立。</p>
+<p><strong>假设2</strong>：由于该电信公司的网络服务问题，造成客户流失。</p>
+<p>与上面一样绘图如下：<br><img src="https://img-blog.csdnimg.cn/e8f84a1586084439843d2cc7171006e1.png" alt="在这里插入图片描述"><br>由上图分析得知，接受网络服务的用户的流失率明显高于没有接受服务的顾客，尤其是采用光纤网络技术（Fiber optic）的用户，流失率为42%。推断这项服务存在一定的问题，是急需改进的一项服务。同时也证明了假设2的推断是成立的：是否为网络服务用户与是否发生流失有较为密切的关联性。</p>
+<p>因此针对网络服务，我们可以进一步探讨拥有其他的附加服务(OnlineSecurity,OnlineBackup,DeviceProtection)是否会影响了用户的流失情况。于是使用page组合图的方式绘制了四个图，同样是采用计数图的方式：</p>
+<pre><code class="python">page=Page()
+page.add(os_c_bar)
+page.add(ob_c_bar)
+page.add(dp_c_bar)
+page.add(ts_c_bar)
+page.render(&quot;t.html&quot;)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/d2ce656ae7204db592d4a5a30a92f570.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/1d2b1a6e712c4e7b9f80c485d271cc29.png" alt="在这里插入图片描述"><br>由上四张图分析可知，该电信公司的基础常规网络服务（x轴No项）客户流失率均接近40%，使用附加的网络服务（Yes项）流失率明显较少，说明附加服务可以有效降低因网络服务问题所带来的流失。</p>
+<p><strong>产品维度总结</strong>：是否使用网络服务，以及在使用了网络服务的情况下是否采用采用网络安全、网络备份、设备保护、技术支持等附加性服务，与顾客流失具有较大的关联性。</p>
+<h3 id="2-3-3-从个人维度分析"><a href="#2-3-3-从个人维度分析" class="headerlink" title="2.3.3 从个人维度分析"></a>2.3.3 从个人维度分析</h3><p>个人属性包括性别、是否为老年人、是否有伴侣、是否有家眷。根据经验判断，除了是否为老年人这一因素，其他指标并不是造成流失的主要原因。而老年人流失的原因我个人认为是由于年龄变化，对于通话或网络服务的需求发生了改变，而产生的流失，也不排除死亡等因素造成的影响。因此做出假设：<br><strong>假设3</strong>：老年群体相对于非老年人的群体而言更倾向于流失。<br><img src="https://img-blog.csdnimg.cn/f384e70d6b454e25b00076783741a52c.png" alt="在这里插入图片描述"><br>0代表不是老年人，1代表是老年人，由上图可知，老年人群体的流失率为42%，大于非老年人群体流失率（24%），因此假设三成立。</p>
+<h3 id="2-3-4-从用户行为维度分析"><a href="#2-3-4-从用户行为维度分析" class="headerlink" title="2.3.4 从用户行为维度分析"></a>2.3.4 从用户行为维度分析</h3><p>从用户行为的角度进行分析，各特征不再与流失指标具有因果性，而是相关性。即该维度的特征不是导致流失的原因，但是其能预示顾客发生流失行为的可能性。<br>按这个思路进行分析，我同样先给出我认为与顾客流失有所关联的指标：合同期限、已使用年限、支付方式、月消费、总消费。其中，合同期限、已使用年限、总消费能较好的体现一个顾客对于该公司的忠诚度，而是否忠诚与流失具有密切的关系。而用户的支付方式、月消费情况，可以显示用户的消费观念，而消费观念也会对是否流失具有一定影响。<br>另外，总消费与使用年限往往具有较为密切的联系，使用时间越长，在电信平台的累积消费也会越多。总消费≈使用时间*月消费。<br>因此，对总消费与使用年限进行一个回归分析：</p>
+<pre><code class="python">tenure_list = Te_data[&quot;tenure&quot;].values.tolist()
+TotalCharges_list = Te_data[&quot;TotalCharges&quot;].values.tolist()
+s = (
+    Scatter()
+    .add_xaxis(tenure_list)
+    .add_yaxis(&#39;TotalCharhes&#39;,TotalCharges_list)
+    .set_global_opts(xaxis_opts=opts.AxisOpts(type_=&#39;value&#39;))
+)
+s.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/e2f1c4ce38ae4eb5b6546c35d1b53441.png" alt="在这里插入图片描述"><br>可以看出他们具有一定的线性关系。计算这两个特征的相关系数。</p>
+<pre><code class="python">corr=Te_data[[&#39;tenure&#39;,&#39;TotalCharges&#39;]].corr()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/3423e645fcf54a089b0e507185447c3a.png" alt="在这里插入图片描述"><br>结果显示，他们相关系数高于0.8，具有高度的线性相关性。因此，后面分析，将忽略总消费这一特征，通过分析使用年限就可以较好的体现使用年限和总消费这两个指标与流失的关联性。<br>根据上述分析，下面开始进行对各指标进行假设验证：<br><strong>假设4</strong>：合同期限与流失情况具有密切相关性。<br><img src="https://img-blog.csdnimg.cn/9873d838e1e24fe6b0041e16667d2ab4.png" alt="在这里插入图片描述">明显可以看出，签订的合同期限越长，流失率越低，假设4成立。<br><strong>假设5</strong>：已使用年限与流失情况具有密切相关性。</p>
+<pre><code class="python">
+from pyecharts import options as opts
+from pyecharts.charts import Boxplot
+tenure_yes_list = Te_data[Te_data[&quot;Churn&quot;]==&quot;Yes&quot;][&quot;tenure&quot;]
+tenure_no_list = Te_data[Te_data[&quot;Churn&quot;]==&quot;No&quot;][&quot;tenure&quot;]
+c = Boxplot()
+c.add_xaxis([&quot;Yes&quot;, &quot;No&quot;])
+c.add_yaxis(&quot;Yes&quot;, c.prepare_data([tenure_yes_list.tolist()]))
+c.add_yaxis(&quot;No&quot;, c.prepare_data([tenure_no_list.tolist()]))
+c.set_global_opts(title_opts=opts.TitleOpts(title=&quot;使用年限分布与流失&quot;))
+c.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/b26144fecbd14da99f95102783a59ffd.png" alt="在这里插入图片描述"><br>由箱型图分析可知，非流失客户群体使用年限的中位数、第一四分位数、第三四分位数都分别高于流失客户群体的对应指标。用户使用年限低于15个月，更有可能为流失客户，另一方面，若使用年限大于30个月，则更有可能不会流失。相对而言，使用年限越长的客户，流失的可能性就越小，假设5成立。</p>
+<p><strong>假设6</strong>：支付方式与流失情况具有密切相关性。<br><img src="https://img-blog.csdnimg.cn/281f7193a9604027aa077fae3a8397ca.png" alt="在这里插入图片描述"><br>在支付方式方面，采用电子支票支付的顾客的流失率明显高于其他支付方式的顾客。支付方式与流失率具有关联性，假设6成立。<br><strong>假设7</strong>：月消费与流失情况具有密切相关性。<br><img src="https://img-blog.csdnimg.cn/77a54b91b1004204bf032a30b195a8f8.png" alt="在这里插入图片描述"><br> 在月消费方面，流失用户的月消费整体水平要高于非流失用户群体，而其变异性则小于非流失用户群体，假设7成立。<br>用户行为维度分析总结：合同期限、已使用年限、支付方式、月消费、总消费与顾客流失具有关联性。</p>
+<p>总结，经过分析筛选，20个输入特征中，目前认为与顾客流失关联性较大的指标包括：是否使用网络服务，以及在使用了网络服务的情况下是否采用采用网络安全、网络备份、设备保护、技术支持，是否为老年人，合同期限，已使用年限，支付方式，月消费。</p>
 
       
 
@@ -273,7 +388,7 @@ gen = (i for i in X)#生成器表达式
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +402,9 @@ gen = (i for i in X)#生成器表达式
   
 <nav id="article-nav">
   
-    <a href="/2022/04/25/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常用数据结构
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -341,7 +447,7 @@ gen = (i for i in X)#生成器表达式
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 John Doe
+    		&copy; 2022 FanRong
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -422,6 +528,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

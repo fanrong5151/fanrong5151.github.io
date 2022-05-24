@@ -6,17 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>第二篇 | FanRong&#39;s Blog</title>
+  <title>Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="第二篇">
-<meta property="og:url" content="http://example.com/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AF%87/index.html">
+  <meta name="description" content="用pandas进行数据处理，pyecharts对处理后的数据进行可视化分析市面上二手房各项基本特征及房源分布情况，探索二手房大数据背后的规律。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化">
+<meta property="og:url" content="http://example.com/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="用pandas进行数据处理，pyecharts对处理后的数据进行可视化分析市面上二手房各项基本特征及房源分布情况，探索二手房大数据背后的规律。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-23T14:29:50.000Z">
-<meta property="article:modified_time" content="2022-04-24T06:52:58.805Z">
-<meta property="article:author" content="John Doe">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e0beb5579bc5459bbc300491cb56fc17.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c6d577daedb44abbae157e53f05d3beb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/64f3c6550e554cb6b4ee4b768a931e86.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9b8aaf6dc7154227b7c858220df7b5f6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7e7a995d5acf422898afc8818b71f616.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4bb7b26d829244d8b41d05f84135e0c6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cc6fa01503be41c28ac8e36169685af5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/80616e72b58740ff82443eb0c103aa8d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/062aad7620d14dd5a59ed8a83debc728.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fb7d8ec586464b3280e4a37e19fad1ea.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f646612b132047548b8bac826aca885e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020d9ba4d5e44ad93f83e7baabfd1b4.png">
+<meta property="article:published_time" content="2022-05-23T13:45:56.000Z">
+<meta property="article:modified_time" content="2022-05-24T09:59:18.657Z">
+<meta property="article:author" content="FanRong">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/e0beb5579bc5459bbc300491cb56fc17.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -45,7 +60,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -58,6 +73,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -79,13 +96,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -103,7 +118,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -115,29 +130,31 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -152,27 +169,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-操作系统/第二篇" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      第二篇
+      Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化
     </h1>
   
 
         
-        <a href="/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2022-04-23T14:29:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-23</time>
+        <a href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2022-05-23T13:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>用pandas进行数据处理，pyecharts对处理后的数据进行可视化分析市面上二手房各项基本特征及房源分布情况，探索二手房大数据背后的规律。</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://pyecharts.org/#/zh-cn/intro">Pyecharts的使用参考文档</a><br><a target="_blank" rel="noopener" href="http://www.icodebang.com/article/204193.html">Pyecharts实例大全</a></p>
+<h2 id="1-升级-pyecharts-包"><a href="#1-升级-pyecharts-包" class="headerlink" title="1. 升级 pyecharts 包"></a>1. 升级 pyecharts 包</h2><p>地图显示部分需要用到 pyecharts==1.9.0</p>
+<pre><code class="python">!pip install --upgrade pyecharts
+</code></pre>
+<h2 id="2-导入模块"><a href="#2-导入模块" class="headerlink" title="2. 导入模块"></a>2. 导入模块</h2><pre><code class="python">import pandas as pd
+from pyecharts.charts import Map
+from pyecharts.charts import Bar
+from pyecharts.charts import Line
+from pyecharts.charts import Grid
+from pyecharts.charts import Pie
+from pyecharts.charts import Scatter
+from pyecharts import options as opts
+</code></pre>
+<h2 id="3-Pandas数据处理"><a href="#3-Pandas数据处理" class="headerlink" title="3. Pandas数据处理"></a>3. Pandas数据处理</h2><h3 id="3-1-读取数据"><a href="#3-1-读取数据" class="headerlink" title="3.1 读取数据"></a>3.1 读取数据</h3><pre><code class="python">df = pd.read_csv(&quot;D:\浏览器下载文件\二手房数据.csv&quot;, encoding = &#39;gb18030&#39;)
+df.head()
+</code></pre>
+<p>输出如下：<br><img src="https://img-blog.csdnimg.cn/e0beb5579bc5459bbc300491cb56fc17.png" alt="在这里插入图片描述"></p>
+<pre><code class="python">df.describe()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/c6d577daedb44abbae157e53f05d3beb.png" alt="在这里插入图片描述"></p>
+<h3 id="3-2数据查看缺失以及填充"><a href="#3-2数据查看缺失以及填充" class="headerlink" title="3.2数据查看缺失以及填充"></a>3.2数据查看缺失以及填充</h3><p>查看是否有缺失值：</p>
+<pre><code class="python">df.isnull().sum()
+</code></pre>
+<p>用“未知”填充：</p>
+<pre><code class="python">df[&#39;电梯&#39;].unique()
+#output：array([&#39;有电梯&#39;, &#39;无电梯&#39;, nan], dtype=object)
+df[&#39;电梯&#39;].fillna(&#39;未知&#39;, inplace=True)
+</code></pre>
+<p>重复值处理：</p>
+<pre><code class="python">df[&#39;朝向&#39;].unique()
+#output:array([&#39;西&#39;, &#39;南北&#39;, &#39;东西&#39;, &#39;南西&#39;, &#39;西南&#39;, &#39;东南&#39;, &#39;南&#39;, &#39;东北&#39;, &#39;东&#39;, &#39;西北&#39;, &#39;北&#39;],dtype=object)
+df[&#39;朝向&#39;] = df[&#39;朝向&#39;].str.replace(&#39;南西&#39;,&#39;西南&#39;)
+</code></pre>
+<h3 id="3-3-统计各城区二手房数量"><a href="#3-3-统计各城区二手房数量" class="headerlink" title="3.3 统计各城区二手房数量"></a>3.3 统计各城区二手房数量</h3><p>以市区分组统计：</p>
+<pre><code class="python">g = df.groupby(&#39;市区&#39;)
+df_region = g.count()[&#39;小区&#39;]
+region = df_region.index.tolist()
+#output:region:[&#39;东城&#39;,&#39;丰台&#39;,&#39;大兴&#39;,&#39;密云&#39;,&#39;平谷&#39;,&#39;延庆&#39;,&#39;怀柔&#39;,&#39;房山&#39;,&#39;昌平&#39;,&#39;朝阳&#39;,&#39;海淀&#39;,&#39;石景山&#39;,&#39;西城&#39;,&#39;通州&#39;,&#39;门头沟&#39;,&#39;顺义&#39;]
+count = df_region.values.tolist()
+</code></pre>
+<p>输出df_region<br><img src="https://img-blog.csdnimg.cn/64f3c6550e554cb6b4ee4b768a931e86.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>统计结论：丰台、朝阳、海淀、昌平在售的房源数量最多，高达12000多套，占了总量的1/2</p>
+</blockquote>
+<h2 id="4-Pyecharts可视化"><a href="#4-Pyecharts可视化" class="headerlink" title="4.Pyecharts可视化"></a>4.Pyecharts可视化</h2><h3 id="4-1-北京市二手房各区分布-地图"><a href="#4-1-北京市二手房各区分布-地图" class="headerlink" title="4.1 北京市二手房各区分布(地图)"></a>4.1 北京市二手房各区分布(地图)</h3><p>渲染代码如下：</p>
+<pre><code class="python">new = [x + &#39;区&#39; for x in region]
+m = (
+    Map()
+    .add(&#39;&#39;, [list(z) for z in zip(new, count)], &#39;北京&#39;)
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title=&#39;北京市二手房各区分布&#39;),
+        visualmap_opts=opts.VisualMapOpts(max_=3000),
+    )
+)
+m.render_notebook()
+</code></pre>
+<p>输出如下图，其中根据opts.VisualMapOpts(max_=3000)中设置的最大值，滑动按钮，可以控制颜色显示，根据数值范围在地图上显示不同颜色。下图可以看出丰台、朝阳、海淀、昌平颜色为红，在售的房源数量最多。<br><img src="https://img-blog.csdnimg.cn/9b8aaf6dc7154227b7c858220df7b5f6.png" alt="在这里插入图片描述"></p>
+<h3 id="4-2-各城区二手房数量-平均价格柱状图"><a href="#4-2-各城区二手房数量-平均价格柱状图" class="headerlink" title="4.2 各城区二手房数量-平均价格柱状图"></a>4.2 各城区二手房数量-平均价格柱状图</h3><p>获取每个市区房子平均价格：</p>
+<pre><code class="python">df_price = g.mean()[&#39;价格(万元)&#39;]
+</code></pre>
+<p>如下，然后将其可视化<br><img src="https://img-blog.csdnimg.cn/7e7a995d5acf422898afc8818b71f616.png" alt="在这里插入图片描述"><br>可视化代码如下，首先在bar中设置x轴（region），y主轴（count），y副轴（价格），全局设置触发效果。然后构建折线图line（price），设置z为10，使其浮在其他图上面，bar使用overlap方法叠加line，最后使用gird调整布局并渲染：</p>
+<pre><code class="python">df_price.values.tolist()
+price = [round(x,2) for x in df_price.values.tolist()]#四舍五入保留两位小数
+bar = (
+    Bar()
+    .add_xaxis(region)
+    .add_yaxis(&#39;数量&#39;, count,
+              label_opts=opts.LabelOpts(is_show=True))
+    .extend_axis(
+        yaxis=opts.AxisOpts(
+            name=&quot;价格（万元）&quot;,
+            type_=&quot;value&quot;,
+            min_=200,
+            max_=900,
+            interval=100,
+            axislabel_opts=opts.LabelOpts(formatter=&quot;&#123;value&#125;&quot;),
+        )
+    )
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title=&#39;各城区二手房数量-平均价格柱状图&#39;),
+        tooltip_opts=opts.TooltipOpts(
+            is_show=True, trigger=&quot;axis&quot;, axis_pointer_type=&quot;cross&quot;
+        ),#十字校准器触发
+        xaxis_opts=opts.AxisOpts(
+            type_=&quot;category&quot;,
+            axispointer_opts=opts.AxisPointerOpts(is_show=True, type_=&quot;shadow&quot;),#x轴触发阴影
+        ),
+        yaxis_opts=opts.AxisOpts(name=&#39;数量&#39;,
+            axistick_opts=opts.AxisTickOpts(is_show=True),
+            splitline_opts=opts.SplitLineOpts(is_show=False),)
+    )
+)
+line2 = (
+    Line()
+    .add_xaxis(xaxis_data=region)
+    .add_yaxis(
         
+        series_name=&quot;价格&quot;,
+        yaxis_index=1,#存在多个y轴时
+        y_axis=price,
+        label_opts=opts.LabelOpts(is_show=True),
+        z=10
+        )
+)
+bar.overlap(line2)#叠加
+grid = Grid()
+grid.add(bar, opts.GridOpts(pos_left=&quot;5%&quot;, pos_right=&quot;20%&quot;), is_control_axis_index=True)
+grid.render_notebook()
+</code></pre>
+<p>如图所示：<br><img src="https://img-blog.csdnimg.cn/4bb7b26d829244d8b41d05f84135e0c6.png" alt="在这里插入图片描述"><br>可以看出，东城区、西城区和海淀区二手房平均售价最高，均在800万元以上。</p>
+<h3 id="4-3-二手最高价格top15"><a href="#4-3-二手最高价格top15" class="headerlink" title="4.3 二手最高价格top15"></a>4.3 二手最高价格top15</h3><p>获得前15条房价最高数据：</p>
+<pre><code class="python">top_price = df.sort_values(by=&quot;价格(万元)&quot;,ascending=False)[:15]
+</code></pre>
+<p>渲染代码如下：</p>
+<pre><code class="python">area0 = top_price[&#39;小区&#39;].values.tolist()
+count = top_price[&#39;价格(万元)&#39;].values.tolist()
+
+bar = (
+    Bar()
+    .add_xaxis(area0)
+    .add_yaxis(&#39;数量&#39;, count,category_gap = &#39;50%&#39;)
+    .set_global_opts(
+        yaxis_opts=opts.AxisOpts(name=&#39;价格(万元)&#39;),
+        xaxis_opts=opts.AxisOpts(name=&#39;数量&#39;),
+    )
+)
+bar.render_notebook()
+</code></pre>
+<p>如图：<br><img src="https://img-blog.csdnimg.cn/cc6fa01503be41c28ac8e36169685af5.png" alt="在这里插入图片描述"></p>
+<h3 id="4-4-二手房总价与面积散点图"><a href="#4-4-二手房总价与面积散点图" class="headerlink" title="4.4 二手房总价与面积散点图"></a>4.4 二手房总价与面积散点图</h3><p>直接使用df数据渲染</p>
+<pre><code class="python">s = (
+    Scatter()
+    .add_xaxis(df[&#39;面积(㎡)&#39;].values.tolist())
+    .add_yaxis(&#39;&#39;,df[&#39;价格(万元)&#39;].values.tolist())
+    .set_global_opts(xaxis_opts=opts.AxisOpts(type_=&#39;value&#39;))
+)
+s.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/80616e72b58740ff82443eb0c103aa8d.png" alt="在这里插入图片描述"></p>
+<h3 id="4-5-房屋朝向饼图"><a href="#4-5-房屋朝向饼图" class="headerlink" title="4.5 房屋朝向饼图"></a>4.5 房屋朝向饼图</h3><p>根据房屋朝向分组：</p>
+<pre><code class="python">g = df.groupby(&#39;朝向&#39;)
+df_direction =  g.count()[&#39;小区&#39;]
+</code></pre>
+<p>输出df_direction如下：<br><img src="https://img-blog.csdnimg.cn/062aad7620d14dd5a59ed8a83debc728.png" alt="在这里插入图片描述"></p>
+<pre><code class="python">directions = df_direction.index.tolist()
+count = df_direction.values.tolist()
+
+c1 = (
+    Pie(init_opts=opts.InitOpts(
+            width=&#39;800px&#39;, height=&#39;600px&#39;,
+            )
+       )
+        .add(
+        &#39;&#39;,
+        [list(z) for z in zip(directions, count)],
+        radius=[&#39;20%&#39;, &#39;60%&#39;],
+        center=[&#39;50%&#39;, &#39;50%&#39;],
+#         rosetype=&quot;radius&quot;,
+        label_opts=opts.LabelOpts(is_show=True),
+        )    
+        .set_global_opts(title_opts=opts.TitleOpts(title=&#39;房屋朝向占比&#39;,pos_left=&#39;33%&#39;,pos_top=&quot;5%&quot;),
+                        legend_opts=opts.LegendOpts(type_=&quot;scroll&quot;, pos_left=&quot;90%&quot;,pos_top=&quot;25%&quot;,orient=&quot;vertical&quot;)
+                        )
+        .set_series_opts(label_opts=opts.LabelOpts(formatter=&#39;&#123;b&#125;:&#123;c&#125; (&#123;d&#125;%)&#39;),position=&quot;outside&quot;)
+    )
+c1.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/fb7d8ec586464b3280e4a37e19fad1ea.png" alt="在这里插入图片描述"><br>结论：房屋朝向约50%是坐北朝南的</p>
+<h3 id="4-6-二手房楼层分布柱状图"><a href="#4-6-二手房楼层分布柱状图" class="headerlink" title="4.6 二手房楼层分布柱状图"></a>4.6 二手房楼层分布柱状图</h3><p>按楼层分组：</p>
+<pre><code class="python">g = df.groupby(&#39;楼层&#39;)
+df_floor = g.count()[&#39;小区&#39;]
+</code></pre>
+<p>条形图渲染代码，其中增加了可滑动条：</p>
+<pre><code class="python">floor = df_floor.index.tolist()
+count = df_floor.values.tolist()
+bar = (
+    Bar()
+    .add_xaxis(floor)
+    .add_yaxis(&#39;数量&#39;, count)
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title=&#39;二手房楼层分布柱状缩放图&#39;),
+        yaxis_opts=opts.AxisOpts(name=&#39;数量&#39;),
+        xaxis_opts=opts.AxisOpts(name=&#39;楼层&#39;),
+        datazoom_opts=opts.DataZoomOpts(type_=&#39;slider&#39;)
+    )
+)
+bar.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/f646612b132047548b8bac826aca885e.png" alt="在这里插入图片描述"><br>结论：二手楼房在六层分布最多</p>
+<h3 id="4-7-房屋面积分布柱状图"><a href="#4-7-房屋面积分布柱状图" class="headerlink" title="4.7 房屋面积分布柱状图"></a>4.7 房屋面积分布柱状图</h3><p>根据area_level切分，坐标轴转置：</p>
+<pre><code class="python">area_level = [0, 50, 100, 150, 200, 250, 300, 350, 400, 1500]    
+label_level = [&#39;小于50&#39;, &#39;50-100&#39;, &#39;100-150&#39;, &#39;150-200&#39;, &#39;200-250&#39;, &#39;250-300&#39;, &#39;300-350&#39;, &#39;350-400&#39;, &#39;大于400&#39;]    
+jzmj_cut = pd.cut(df[&#39;面积(㎡)&#39;], area_level, labels=label_level)        
+df_area = jzmj_cut.value_counts()
+</code></pre>
+<pre><code class="python">area = df_area.index.tolist()
+count = df_area.values.tolist()
+
+bar = (
+    Bar()
+    .add_xaxis(area)
+    .add_yaxis(&#39;数量&#39;, count)
+    .reversal_axis()
+    .set_series_opts(label_opts=opts.LabelOpts(position=&quot;right&quot;))
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title=&#39;房屋面积分布纵向柱状图&#39;),
+        yaxis_opts=opts.AxisOpts(name=&#39;面积(㎡)&#39;),
+        xaxis_opts=opts.AxisOpts(name=&#39;数量&#39;),
+    )
+)
+bar.render_notebook()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/2020d9ba4d5e44ad93f83e7baabfd1b4.png" alt="在这里插入图片描述"><br>结论：二手房面积多集中于0-400平米，50-100平米的居多。</p>
+
       
 
       
@@ -202,17 +434,6 @@
       
       
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -262,7 +483,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AF%87/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +497,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/04/24/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          电信客户流失数据分析（一）
         
       </div>
     </a>
   
   
-    <a href="/2022/04/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2022/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据分析</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +551,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 John Doe
+    		&copy; 2022 FanRong
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -411,6 +632,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

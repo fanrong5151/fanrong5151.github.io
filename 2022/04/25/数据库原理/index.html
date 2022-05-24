@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>FanRong&#39;s Blog</title>
+  <title>数据库原理 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.二分查找1.1 递归实现二分查找用于有序数组，查找之前一定要排好序。 def _binarySearch(key,a,lo,hi):     if hi &lt;&#x3D; lo:         return -1     mid &#x3D; (lo+hi)&#x2F;&#x2F;2     if a[mid] &gt; key:         return _binarySearch(key,a,lo,mid-1)">
+  <meta name="description" content="1.数据库系统概述1.1 数据与信息 数据的定义，数据用来记录信息的可识别的符号组合，是信息的具体表现形式 信息的定义，信息是人脑对现实世界事物的存在方式，运动状态以及事物之间联系的抽象反映 信息 &#x3D; 数据 + 语义  1.2 数据处理与数据管理 数据（原料）→ 数据处理 → 信息（输出结果） 数据管理：主要包括对数据的分类，组织，编码，存储，维护，检索等操作  1.3 数据库系统的组成 主要由数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/2022/04/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="数据库原理">
+<meta property="og:url" content="http://example.com/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
-<meta property="og:description" content="1.二分查找1.1 递归实现二分查找用于有序数组，查找之前一定要排好序。 def _binarySearch(key,a,lo,hi):     if hi &lt;&#x3D; lo:         return -1     mid &#x3D; (lo+hi)&#x2F;&#x2F;2     if a[mid] &gt; key:         return _binarySearch(key,a,lo,mid-1)">
+<meta property="og:description" content="1.数据库系统概述1.1 数据与信息 数据的定义，数据用来记录信息的可识别的符号组合，是信息的具体表现形式 信息的定义，信息是人脑对现实世界事物的存在方式，运动状态以及事物之间联系的抽象反映 信息 &#x3D; 数据 + 语义  1.2 数据处理与数据管理 数据（原料）→ 数据处理 → 信息（输出结果） 数据管理：主要包括对数据的分类，组织，编码，存储，维护，检索等操作  1.3 数据库系统的组成 主要由数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-24T14:24:10.169Z">
-<meta property="article:modified_time" content="2022-04-25T08:02:39.344Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2022-04-25T09:21:25.000Z">
+<meta property="article:modified_time" content="2022-04-25T14:34:14.935Z">
+<meta property="article:author" content="FanRong">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -60,6 +60,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+	        
+				<li><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 	        
 			</ul>
 		</nav>
@@ -81,13 +83,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -105,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -117,29 +117,31 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/fanrong5151" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="/img/qq.png" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="/img/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
 		        
 				</ul>
 			</nav>
@@ -154,105 +156,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python数据结构与算法/查找与排序算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据库原理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库原理
+    </h1>
+  
+
+        
+        <a href="/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" class="archive-article-date">
+  	<time datetime="2022-04-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-二分查找"><a href="#1-二分查找" class="headerlink" title="1.二分查找"></a>1.二分查找</h1><h2 id="1-1-递归实现"><a href="#1-1-递归实现" class="headerlink" title="1.1 递归实现"></a>1.1 递归实现</h2><p>二分查找用于有序数组，查找之前一定要排好序。</p>
-<pre><code class="python">def _binarySearch(key,a,lo,hi):
-    if hi &lt;= lo:
-        return -1
-    mid = (lo+hi)//2
-    if a[mid] &gt; key:
-        return _binarySearch(key,a,lo,mid-1)
-    elif a[mid] &lt; key:
-        return _binarySearch(key,a,mid+1,hi)
-    else:
-        return mid
-def binarySearch(key,a):
-    return _binarySearch(key,a,0,len(a))
-</code></pre>
-<h2 id="1-2-非递归实现"><a href="#1-2-非递归实现" class="headerlink" title="1.2 非递归实现"></a>1.2 非递归实现</h2><pre><code class="python">def binarySearch(key,a):
-    low = 0
-    high = len(a) - 1
-    while low &lt;= high:
-        mid = (low+high)//2
-        if a[mid]&lt;key:
-            low = mid+1
-        elif a[mid]&gt;key:
-            high = mid-1
-        else:
-            return mid
-    return -1
-</code></pre>
-<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="2-1-冒泡排序"><a href="#2-1-冒泡排序" class="headerlink" title="2.1 冒泡排序"></a>2.1 冒泡排序</h2><p>冒泡排序思想（升序），每一趟相邻两个数比较，直到最大的数排到数组最右侧。外层循环是数组从右往左的指标（每一趟），从len(a)-1到0，内层循环（两两相邻比较），边界是外层循环的指标。</p>
-<pre><code class="python">def bubbleSort(a):
-    for i in range(len(a)-1,-1,-1):
-        for j in range(i):
-            if a[j]&gt;a[j+1]:#升序
-                a[j],a[j+1] = a[j+1],a[j]
-</code></pre>
-<h2 id="2-2-选择排序"><a href="#2-2-选择排序" class="headerlink" title="2.2 选择排序"></a>2.2 选择排序</h2><p>选择排序思想（升序）：每一趟找出最小的数，依次排在数组最左侧。外层循环从0到len（a）,依次存放最小数，内层循环找出最小数的下标。</p>
-<pre><code class="python">def selectionSort(a):
-    for i in range(0,len(a)):
-        m = i
-        for j in range(i+1,len(a)):
-            if a[j]&lt;a[m]:#升序
-                m = j
-        a[i],a[m] = a[m],a[i]
-</code></pre>
-<h2 id="2-3-插入排序"><a href="#2-3-插入排序" class="headerlink" title="2.3 插入排序"></a>2.3 插入排序</h2><p>直接插入排序思想：每一趟将一个元素按照其关键字大小插入到前面已经排好序的子序列中，依次重复直到插入全部元素。</p>
-<pre><code class="python">def insertSort(a):
-    for i in range(1,len(a)):
-        j = i
-        while(j&gt;0) and (a[j]&lt;a[j-1]):
-            a[j],a[j-1] = a[j-1],a[j]
-            j = j-1
-</code></pre>
-<p>上述代码中，假设第一趟a[0]是已排好序的子序列，while循环中a[1]与a[0]进行大小比较然后确定是否交换位置，直到指针j移到最左端0。以此类推，然后是a[2]在（a[0],a[1])形成的子序列中依次比较找到合适位置，再次形成排好序的子序列。</p>
-<h2 id="2-4-归并排序"><a href="#2-4-归并排序" class="headerlink" title="2.4 归并排序"></a>2.4 归并排序</h2><p>归并排序思想：归并排序首先将这个数组分成一半，然后先把左边，右边的数组分别排序，再归并起来。对左右两边数组进行排序的时候，再分成一半，按上面同样的方法，直到只剩一个数。</p>
-<pre><code class="python">def merge(left,right):
-    merged = []
-    i,j = 0,0
-    left_len,right_len = len(left),len(right)
-    while i&lt;left_len and j&lt;right_len:#按大小顺序合并两个列表
-        if left[i] &lt;= right[j]:
-            merged.append(left[i])
-            i = i+1
-        else:
-            merged.append(right[j])
-            j = j+1
-    merged.extend(left[i:])#补齐剩余的尾部
-    merged.extend(right[j:])
-    return merged
-def mergeSort(a):
-    if len(a) &lt;= 1:#只剩一个数时，返回这个数
-        return a
-    mid = len(a)//2
-    left = mergeSort(a[:mid])
-    right = mergeSort(a[mid:])
-    return merge(left,right)
-</code></pre>
-<h2 id="2-5-快速排序"><a href="#2-5-快速排序" class="headerlink" title="2.5 快速排序"></a>2.5 快速排序</h2><p> 快速排序思想：先从数列中取出一个数作为基准数（下面以最左边数作为基准数），分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边，再对左右区间重复第二步，直到各区间只有一个数。</p>
-<pre><code class="python">def quickSort(a,low,high):
-    i = low
-    j = high
-    if i &gt;= j:
-        return a
-    key = a[i]#基准
-    while i&lt;j:#直到i大于或等于j跳出循环
-        while i&lt;j and a[j]&gt;=key:#从右往左扫描，直到有比基准小的，放在i位置
-            j = j-1
-        a[i] = a[j]
-        while i&lt;j and a[i]&lt;=key:#从左往右扫描，直到有比基准大的，放在j位置
-            i = i+1
-        a[j] = a[i]
-    a[i] = key
-    quickSort(a,low,i-1)
-    quickSort(a,j+1,high)
-</code></pre>
-<p>总结：1）i=low; j=high; 将基准数挖出形成第一个坑a[i]。<br>2）j–由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中<br>3)i++由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。<br>4)再重复执行2，3二步，直到i==j，将基准数填入a[i]中。</p>
+        <h1 id="1-数据库系统概述"><a href="#1-数据库系统概述" class="headerlink" title="1.数据库系统概述"></a>1.数据库系统概述</h1><h2 id="1-1-数据与信息"><a href="#1-1-数据与信息" class="headerlink" title="1.1 数据与信息"></a>1.1 数据与信息</h2><ul>
+<li>数据的定义，数据用来记录信息的可识别的符号组合，是信息的具体表现形式</li>
+<li>信息的定义，信息是人脑对现实世界事物的存在方式，运动状态以及事物之间联系的抽象反映</li>
+<li>信息 = 数据 + 语义</li>
+</ul>
+<h2 id="1-2-数据处理与数据管理"><a href="#1-2-数据处理与数据管理" class="headerlink" title="1.2 数据处理与数据管理"></a>1.2 数据处理与数据管理</h2><ul>
+<li>数据（原料）→ 数据处理 → 信息（输出结果）</li>
+<li>数据管理：主要包括对数据的分类，组织，编码，存储，维护，检索等操作</li>
+</ul>
+<h2 id="1-3-数据库系统的组成"><a href="#1-3-数据库系统的组成" class="headerlink" title="1.3 数据库系统的组成"></a>1.3 数据库系统的组成</h2><ul>
+<li>主要由数据库，数据库用户，计算机硬件系统和计算机软件系统等几部分组成。</li>
+<li>数据库（DB）是存储在计算机内，有组织的，可共享的数据和数据对象（如表，视图，存储过程和触发器）的集合，这种集合按一定的数据模型组织，描述长期存储，同时能以安全可靠的方法进行数据的检索和存储。</li>
+<li>数据库的两个特点，集成性和共享性</li>
+<li>用户，对数据库进行存储，维护和检索等操作的人员。主要分为三类，最终用户，应用程序员和数据库管理员</li>
+<li>硬件系统，存储运行数据库的硬件设备</li>
+</ul>
+<h2 id="1-4-数据库系统内部体系结构"><a href="#1-4-数据库系统内部体系结构" class="headerlink" title="1.4 数据库系统内部体系结构"></a>1.4 数据库系统内部体系结构</h2><h3 id="1-4-1-三级模式结构"><a href="#1-4-1-三级模式结构" class="headerlink" title="1.4.1 三级模式结构"></a>1.4.1 三级模式结构</h3><ul>
+<li>模式（Schema）是数据库中<strong>全体数据</strong>的逻辑结构和特征的描述，反映数据的结构，一个数据库只有一个模式，是数据在逻辑上的视图。</li>
+<li>外模式，又称为子模式，三级结构最外层，是数据库用户能看到并允许使用的那<strong>部分数据</strong>的逻辑和特征的描述，使用户的数据视图，用户视图。</li>
+<li>内模式，又称存储模式或物理模式，是三级结构中的最内层，是对数据库<strong>存储结构</strong>的描述，数据在数据库内部的表达方式，记录以什么方式存储。</li>
+<li>外模式可由多个，而内模式，模式只能各有一个。</li>
+</ul>
+<h3 id="1-4-2-二级映像与数据独立性"><a href="#1-4-2-二级映像与数据独立性" class="headerlink" title="1.4.2 二级映像与数据独立性"></a>1.4.2 二级映像与数据独立性</h3><ul>
+<li>为了能实现三个模式之间的联系和转换，提供了二级映像功能，分别是外模式/模式映像，模式/内模式映像。</li>
+<li>外模式/模式映像，模式描述全局逻辑结构，外模式描述数据局部逻辑结构。该映像确定了数据局部逻辑结构与全体结构之间的对应关系，保证数据与程序间的逻辑独立性。</li>
+<li>模式/内模式映像，是唯一的，他确定了数据的全局逻辑结构与存储结构之间的对应关系。保证数据物理独立性。</li>
+<li>优点，保证数据独立性，简化用户接口，有利于数据共享，数据安全。</li>
+</ul>
+<h2 id="1-5-数据库外部体系结构"><a href="#1-5-数据库外部体系结构" class="headerlink" title="1.5 数据库外部体系结构"></a>1.5 数据库外部体系结构</h2><ul>
+<li>单用户结构，桌面数据库系统，单用户使用，不能共享</li>
+<li>主从式结构，大型主机带多终端的多用户结构系统，缺点是所有任务由主机完成，对主机性能要求较高。</li>
+<li>分布式结构，数据在逻辑上是整体，在物理上是分布的，不集中存储在一台服务器上。</li>
+<li>客户机/服务器结构，DBMS和数据库存放于数据库服务器上，应用程序和相关开发工具存放于客户机。</li>
+<li>浏览器/服务器结构，又称B/S结构，客户机和数据库服务器之间有一个中介应用服务器，将应用程序转移到应用服务器上。</li>
+</ul>
+<h2 id="1-6-数据库管理系统（DBMS）"><a href="#1-6-数据库管理系统（DBMS）" class="headerlink" title="1.6 数据库管理系统（DBMS）"></a>1.6 数据库管理系统（DBMS）</h2><h3 id="1-6-1-DBMS-的主要功能"><a href="#1-6-1-DBMS-的主要功能" class="headerlink" title="1.6.1 DBMS 的主要功能"></a>1.6.1 DBMS 的主要功能</h3><ul>
+<li>数据定义功能，数据定义语言（Data Define Language，DDL），定义三级模式和二级映像，定义有关约束条件。</li>
+<li>数据操作功能，数据操纵语言（Data Manipulation Language，DML）实现对数据库的基本操作，检索，更新，修改，删除等。</li>
+<li>数据库运行管理功能，保证数据正确有效和数据库系统的正常运行。</li>
+<li>数据库建立和维护功能</li>
+<li>数据通信接口</li>
+</ul>
+<h3 id="1-6-2-DBMS组成"><a href="#1-6-2-DBMS组成" class="headerlink" title="1.6.2 DBMS组成"></a>1.6.2 DBMS组成</h3><ul>
+<li>语言编译程序，1）DDL编译程序，把各级源模式编译成各级目标模式。2）DML编译程序，将应用程序中的DML语句转换成可执行程序，实现对数据库的增删改查。</li>
+<li>系统运行控制程序，1）系统总程序，控制和协调个程序的活动，是核心程序；2）安全性控制程序；3）完整性控制程序，检查完整性约束条件，确保进入数据库中的数据正确性，有效性和相容性。</li>
+<li>并发控制程序，协调多用户，多任务环境下各应用程序对数据库的并发操作，保证数据一致性。</li>
+<li>数据存取和更新程序：实现对数据的增删改查。</li>
+<li>通信控制程序：实现用户程序与DBMS间的通信。</li>
+<li>还有文件读写，维护程序，缓冲区管理程序，存取路径管理程序，事务管理程序，运行日志管理程序等。</li>
+<li>数据字典（Data Ditionary，DD）用来描述数据库中有关信息的数据目录，包括数据库的三模式，数据类型，用户名和用户权限等有关数据库系统的信息，骑着系统状态目录表的作用，帮助用户，系统本身使用和管理数据库。</li>
+</ul>
+<h3 id="1-6-3-DBMS数据存取过程"><a href="#1-6-3-DBMS数据存取过程" class="headerlink" title="1.6.3 DBMS数据存取过程"></a>1.6.3 DBMS数据存取过程</h3><ol>
+<li>用户使用特定数据操纵语言DML向DBMS发出请求</li>
+<li>DBMS接收请求并将该请求解释转换成机器代码指令</li>
+<li>DBMS依次检查外模式，外模式/模式映像，模式，模式/内模式映像及存储结构定义</li>
+<li>DBMS对存储数据库执行必要的存取操作</li>
+<li>接受结果</li>
+<li>对结果进行处理，如格式转换</li>
+<li>将处理结果返回给用户<br>上述过程包括安全性控制，完整性控制，以确保数据正确性，有效性和一致性。</li>
+</ol>
+<h2 id="1-7数据模型"><a href="#1-7数据模型" class="headerlink" title="1.7数据模型"></a>1.7数据模型</h2><h3 id="1-7-1-分类"><a href="#1-7-1-分类" class="headerlink" title="1.7.1 分类"></a>1.7.1 分类</h3><ul>
+<li>概念模型，也称信息模型，对现实世界事物及其联系的第一级抽象。</li>
+<li>逻辑模型，也称数据模型，主要用于DBMS的实现。成熟地应用在数据库系统中的逻辑模型主要包括层次模型，网状模型，关系模型和面向对象模型。</li>
+<li>物理模型，是对数据最底层的抽象，描述数据在磁盘或磁带上的存储方式。</li>
+</ul>
+<h3 id="1-7-2-数据模型组成要素"><a href="#1-7-2-数据模型组成要素" class="headerlink" title="1.7.2 数据模型组成要素"></a>1.7.2 数据模型组成要素</h3><p>数据模型通常由数据结构、数据操作和数据的完整性约束三个要素组成</p>
+<h2 id="1-8-其他概念"><a href="#1-8-其他概念" class="headerlink" title="1.8 其他概念"></a>1.8 其他概念</h2><ul>
+<li>实体，客观存在的事物</li>
+<li>属性，实体的某一特性</li>
+<li>实体型，用实体名及其属性名集合来抽象和描述共同类实体</li>
+<li>实体集，同型实体的集合成为实体集</li>
+<li>码，在实体型中能唯一标志一个实体店属性或属性集，称为实体的码</li>
+<li>域，某一属性的取值范围</li>
+<li>联系，属性之间的联系，实体型之间的联系</li>
+</ul>
+<h2 id="1-9-四种数据模型"><a href="#1-9-四种数据模型" class="headerlink" title="1.9 四种数据模型"></a>1.9 四种数据模型</h2><ul>
+<li>层次模型，树形数据结构来表示各类实体间的联系，层次模型的数据操纵主要有查询、插入、删除和修改，进行插入、删除和修改操作时要满足层次模型的完整性约束条件，进行删除操作时，如果删除双亲结点值，则相应的子女结点值也被同时删除</li>
+<li>网状模型，网状模型是采用有向图结构表示记录型与记录型之间联系的数据模型，网状模型的数据操纵主要包括查询、插入、删除和修改数据。进行插入、删除和修改操作时要满足网状模型的完整性约束条件。插入数据时，允许插入尚未确定双亲结点值的子女结点值，删除数据时，允许只删除双亲结点值。</li>
+<li>关系模型，关系模型的数据结构是一张规范化的二维表，它由表名、表头和表体三部分构成。</li>
+<li>面向对象模型</li>
+</ul>
+<h2 id="1-10-数据库新技术"><a href="#1-10-数据库新技术" class="headerlink" title="1.10 数据库新技术"></a>1.10 数据库新技术</h2><ul>
+<li>分布式数据库</li>
+<li>数据仓库与数据挖掘技术</li>
+<li>多媒体数据库</li>
+<li>大数据技术</li>
+</ul>
 
       
 
@@ -332,7 +342,7 @@ def mergeSort(a):
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/24/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,17 +356,17 @@ def mergeSort(a):
   
 <nav id="article-nav">
   
-    <a href="/2022/04/25/Python%E9%9D%A2%E8%AF%95%E9%A2%98/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/26/%E7%88%AC%E8%99%AB/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          生成器和迭代器
+          爬虫相关知识
         
       </div>
     </a>
   
   
-    <a href="/2022/04/24/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/24/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
@@ -400,7 +410,7 @@ def mergeSort(a):
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 John Doe
+    		&copy; 2022 FanRong
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -481,6 +491,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
