@@ -6,24 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>FanRong&#39;s Blog</title>
+  <title>电信客户流失数据分析（二） | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个模型仓">
+  <meta name="description" content="用机器学习中决策树的方法预测客户是否为潜在流失对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/2022/04/24/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/index.html">
+<meta property="og:title" content="电信客户流失数据分析（二）">
+<meta property="og:url" content="http://example.com/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E9%A2%84%E6%B5%8B%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
-<meta property="og:description" content="前言预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个模型仓">
+<meta property="og:description" content="用机器学习中决策树的方法预测客户是否为潜在流失对象">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/202104092220495.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210409223011638.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20210413155758378.png">
-<meta property="article:published_time" content="2022-04-24T07:19:25.530Z">
-<meta property="article:modified_time" content="2022-04-25T03:00:48.094Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/82b055f841d84744be9b2db43eb171e1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/989297d160364bd8b63223663a6e3276.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ece0409795ca4f05827f88cd909f722c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/981aaebdb2d5474c93853b1f6e22658d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/de8bdbd1c16646da90e47e97916fa459.png">
+<meta property="article:published_time" content="2022-05-23T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-05-24T15:20:32.676Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/82b055f841d84744be9b2db43eb171e1.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -64,9 +66,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></li>
 	        
-				<li><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
+				<li><a href="/tags/%E9%9A%8F%E6%83%B3/">随想</a></li>
 	        
 			</ul>
 		</nav>
@@ -144,9 +146,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E7%9B%AE%E5%BD%95">目录</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E6%83%B3/">随想</a></li>
 		        
 				</ul>
 			</nav>
@@ -161,46 +163,157 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-快速上手UER-py" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-电信客户流失预测（二）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      电信客户流失数据分析（二）
+    </h1>
+  
+
+        
+        <a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E9%A2%84%E6%B5%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。 UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。通过UER-py，我们建立了一个<a target="_blank" rel="noopener" href="https://github.com/dbiir/UER-py">模型仓库</a>，其中包含基于不同语料，编码器和目标任务的预训练模型。用户可以根据具体任务的要求，从中选择合适的预训练模型使用。</p>
-<h1 id="书评分类-BERT模型"><a href="#书评分类-BERT模型" class="headerlink" title="书评分类(BERT模型)"></a>书评分类(BERT模型)</h1><p>在书评语料上对模型进行预训练，首先对书评语料进行预处理，我们在UER-py-master目录下运行以下命令：</p>
-<pre><code>python3 preprocess.py --corpus_path corpora/book_review_bert.txt --vocab_path models/google_zh_vocab.txt --dataset_path dataset.pt \
-                  --processes_num 8 --target bert
+        <p>用机器学习中决策树的方法预测客户是否为潜在流失对象</p>
+<span id="more"></span>
+<h1 id="1-如何判别客户是否为潜在流失对象？"><a href="#1-如何判别客户是否为潜在流失对象？" class="headerlink" title="1. 如何判别客户是否为潜在流失对象？"></a>1. 如何判别客户是否为潜在流失对象？</h1><p>在有7000多个样本的情况下，我们可以利用这些样本数据，来训练一个有监督的机器学习模型，使模型能够根据输入特征预测客户是否为潜在的流失对象。对于潜在的流失对象，及时采取措施进行挽留或许能有效减少将来发生流失情况的可能性。<br>在（见博文：电信客户流失数据分析（一））中，通过分析，得到10个与流失有着密切关联性的输入特征，下面就利用这些输入特征展开建模工作。这10个输入特征包括：是否为老年人、合同期限、已使用年限、支付方式、月消费、是否使用网络服务，以及在使用了网络服务的情况下是否采用采用网络安全、网络备份、设备保护、技术支持。</p>
+<h1 id="2-特征工程"><a href="#2-特征工程" class="headerlink" title="2.特征工程"></a>2.特征工程</h1><p>特征工程的目的在于找到正确的方式去表示数据。根据输入特征、输出特征的数据内容和数据类型，我将目前这个10个输入特征分成了四类：<br>（1）第一类特征的数据内容为：‘yes’ or ‘no‘。目前属于这类特征的变量有：是否为老年人、是否流失。可以直接采用0-1变量进行编码。其中’1‘代表’yes‘，’0‘代表’no‘。</p>
+<pre><code class="python">SeniorCitizen=list(Te_data[&#39;SeniorCitizen&#39;])
+Churn=list(Te_data[&#39;Churn&#39;])
+#将Churn转化为0-1变量
+for i in range(Te_data.shape[0]):
+    if Churn[i]==&#39;Yes&#39;:
+        Churn[i] = 1
+    else :
+        Churn[i] = 0
 </code></pre>
-<p>然后下载Google中文预训练模型google_zh_model.bin，并将其放在 models 文件夹中。接着加载Google中文预训练模型，在书评语料上对其进行增量预训练，假设我们有1个GPU的机器，world size 表示一共有几块GPU，gpu_ranks是gpu序号；</p>
-<pre><code>python3 pretrain.py --dataset_path dataset.pt --vocab_path models/google_zh_vocab.txt --pretrained_model_path models/google_zh_model.bin \
-                --output_model_path models/book_review_model.bin  --world_size 1 --gpu_ranks 0  \     --batch_size 8
-                --total_steps 5000 --save_checkpoint_steps 1000 --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
+<p>（2）第二类特征的数据类型是离散型，并且其数据内容为标称属性，标称属性的意思是数据值只提供了足够信息区分对象，而本身不具有任何顺序或数值计算的意义。目前属于这类特征的变量有：合同期限、是否使用网络服务。这类变量采用One-Hot的方式进行编码，构造虚拟变量。</p>
+<pre><code class="python">Contract=Te_data[&#39;Contract&#39;]
+Contract_dummies=pd.get_dummies(Contract)
+InternetService=Te_data[&#39;InternetService&#39;]
+InternetService_dummies=pd.get_dummies(InternetService)
 </code></pre>
-<p>pretrain.py输出的模型会带有记录训练步数的后缀，这里我们可以删除后缀以方便使用；</p>
-<pre><code>mv models/book_review_model.bin-5000 models/book_review_model.bin
+<p>（3）第三类特征的数据类型和数据内容属性与第二类特征相同。但是采用0-1变量进行编码足以表达其包含的信息内容，因此不必将其每一个类别都采用虚拟变量表示出来，造成特征的冗余。这类特征包括：支付方式、在使用了网络服务的情况下是否采用采用网络安全、网络备份、设备保护、技术支持。支付方式特征采用0-1变量的原因是只有采用电子支票支付的情况下，流失率才会出现明显的差异。因此支付方式这一特征只需区分是电子支票用户还是非电子支票用户即可。而在用户拥有网络服务的基础上，网络安全、网络备份、设备保护、技术支持等附加服务特征只需区分是否其拥有该项附加服务即可，而无需再表达其为网络服务用户这一信息，因此也采用0-1变量进行编码。</p>
+<pre><code class="python">PaymentMethod=list(Te_data[&#39;PaymentMethod&#39;])
+OnlineSecurity=list(Te_data[&#39;OnlineSecurity&#39;])
+OnlineBackup=list(Te_data[&#39;OnlineBackup&#39;])
+DeviceProtection=list(Te_data[&#39;DeviceProtection&#39;])
+TechSupport=list(Te_data[&#39;TechSupport&#39;])
+for i in range(Te_data.shape[0]):
+    if PaymentMethod[i]==&#39;Electronic check&#39;:
+        PaymentMethod[i] = 1
+    else :
+        PaymentMethod[i] = 0
+        
+    if OnlineSecurity[i]==&#39;Yes&#39;:
+        OnlineSecurity[i] = 1
+    else :
+        OnlineSecurity[i] = 0
+
+    if OnlineBackup[i]==&#39;Yes&#39;:
+        OnlineBackup[i] = 1
+    else :
+        OnlineBackup[i] = 0
+
+    if DeviceProtection[i]==&#39;Yes&#39;:
+        DeviceProtection[i] = 1
+    else :
+        DeviceProtection[i] = 0
+
+    if TechSupport[i]==&#39;Yes&#39;:
+        TechSupport[i] = 1
+    else :
+        TechSupport[i] = 0
 </code></pre>
-<p>然后，我们在下游分类数据集上微调预训练模型，我们可以用 google_zh_model.bin；</p>
-<pre><code>python3 run_classifier.py --pretrained_model_path models/google_zh_model.bin --vocab_path models/google_zh_vocab.txt \
-                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
-                      --epochs_num 3 --batch_size 8 --embedding word_pos_seg --encoder transformer --mask fully_visible
+<p>（4）第四类特征的数据类型是数值型，其数据内容具备顺序以及加减运算的数值意义。<br>目前属于这类特征的变量有：已使用年限，月消费。采用连续特征离散化的处理方式。原因是离散化后的特征对异常数据有更强的鲁棒性，降低过拟合的风险，模型会更稳定，预测的效果也会更好。<br>数据离散化也称为分箱操作，其方法分为有监督分箱（卡方分箱、最小熵法分箱）和无监督分箱（等频分箱、等距分箱）。本次为采用无监督分箱中的等频分箱进行操作。</p>
+<pre><code class="python">tenure=list(Te_data[&#39;tenure&#39;])
+tenure_cats=pd.qcut(tenure,6)#分箱
+tenure_dummies=pd.get_dummies(tenure_cats)
+
+MonthlyCharges=list(Te_data[&#39;MonthlyCharges&#39;])
+MonthlyCharges_cats=pd.qcut(MonthlyCharges,5)
+MonthlyCharges_dummies=pd.get_dummies(MonthlyCharges_cats)
 </code></pre>
-<p>实验结果表明，谷歌BERT模型在书评分类任务测试集上的准确率为87.3；<br><img src="https://img-blog.csdnimg.cn/2021040922180871.png" alt="在这里插入图片描述"><br>另外我们也可以使用 pretrain.py 的输出book_review_model.bin；<br>在models文件夹中生成<em>finetuned_model.bin</em>；<br><img src="https://img-blog.csdnimg.cn/202104092220495.png" alt="在这里插入图片描述"><br>然后我们用它进行预测；</p>
-<pre><code>python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
-                                      --test_path datasets/douban_book_review/test_nolabel.tsv \
-                                      --prediction_path datasets/douban_book_review/prediction.tsv --labels_num 2 \
-                                      --embedding word_pos_seg --encoder transformer --mask fully_visible
+<p>最终得到模型的23个输入特征以及1个输出特征。</p>
+<pre><code class="python">#模型输出y
+y=np.array(Churn).reshape(-1,1)
+#模型输入x
+SeniorCitizen_x=np.array(SeniorCitizen).reshape(-1,1)#(7032,1)
+Contract_x=Contract_dummies.values#(7032,3)
+InternetService_x=InternetService_dummies.values
+PaymentMethod_x=np.array(PaymentMethod).reshape(-1,1)
+OnlineSecurity_x=np.array(OnlineSecurity).reshape(-1,1)
+OnlineBackup_x=np.array(OnlineBackup).reshape(-1,1)
+DeviceProtection_x=np.array(DeviceProtection).reshape(-1,1)
+TechSupport_x=np.array(TechSupport).reshape(-1,1)
+tenure_x=tenure_dummies.values
+MonthlyCharges_x=MonthlyCharges_dummies.values
+X=np.concatenate([SeniorCitizen_x,Contract_x,InternetService_x,PaymentMethod_x,OnlineSecurity_x,OnlineBackup_x,DeviceProtection_x,TechSupport_x,tenure_x,MonthlyCharges_x],axis=1)
+#pd.DataFrame(X).to_csv(&quot;input23X.csv&quot;)
 </code></pre>
-<p>在UER-py-master/datasets/douban_book_review文件夹中生成prediction.csv，–test_path 指定需要预测的文件；<br>–prediction_path 指定预测结果的文件；<br><img src="https://img-blog.csdnimg.cn/20210409223011638.png" alt="在这里插入图片描述"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>选择使用遮罩语言模型（MLM）作为目标任务，BERT参数量大，计算较慢。我们希望加速模型运算的同时让模型仍然在下游任务上有好的表现。这里我们选择2层LSTM编码器来替代12层Transformer编码器。 我们首先下载2层LSTM编码器的预训练模型reviews_lstm_lm_model.bin。 然后在下游分类数据集上对其进行微调：</p>
-<pre><code>python3 run_classifier.py --pretrained_model_path models/reviews_lstm_lm_model.bin --vocab_path models/google_zh_vocab.txt --config_path models/rnn_config.json \
-                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
-                      --epochs_num 5  --batch_size 8 --learning_rate 1e-3 --embedding word --encoder lstm --pooling mean
-python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
-                                      --config_path models/rnn_config.json --test_path datasets/douban_book_review/test_nolabel.tsv \
-                                      --prediction_path datasets/douban_book_review/prediction.tsv \
-                                      --labels_num 2 --embedding word --encoder lstm --pooling mean
+<h1 id="3-模型构建"><a href="#3-模型构建" class="headerlink" title="3.模型构建"></a>3.模型构建</h1><p>尝试采用决策树这种经典的二分类模型作为咱们的机器学习模型。决策树的优点在于模型容易理解以及能够可视化，更能了解哪些特征对输出结果影响较大。但是缺点也十分明显，就是容易过拟合，泛化性能差。</p>
+<pre><code class="python">from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+data_frame=pd.read_csv(&quot;input23X.csv&quot;)
+X=np.array(data_frame.values[:,1:])
+
+x_train, x_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=42)
+tree = DecisionTreeClassifier(max_depth=6,random_state=0)
+tree.fit(x_train,y_train)
+print(&quot;training set score:&#123;:.3f&#125;&quot;.format(tree.score(x_train, y_train)))
+print(&quot;test set score:&#123;:.3f&#125;&quot;.format(tree.score(x_test, y_test)))
+print(&quot;Feature importances : \n&#123;&#125;&quot;.format(tree.feature_importances_))
+X_23 = data_frame.columns.tolist()
 </code></pre>
-<p> 我们也可以去掉参数–pretrained_model_path models/reviews_lstm_lm_model.bin，不加载预训练模型，只能得到约81的准确率。<br><img src="https://img-blog.csdnimg.cn/20210413155758378.png" alt="在这里插入图片描述"><br>UER-py还支持更多的预训练模型。<br>在Chnsenticorp数据集上使用ELMo进行预训练和微调的示例。</p>
+<p>将处理过的特征存储到excel表中，建模的时候重新读取进来。利用sklearn库的DecisionTreeClassifier模型进行建模以及训练，树的深度设置为6，得到训练集的拟合优度为0.805，测试集的拟合优度为0.798，说明当前输入特征对模型目标的解释性较强，预测效果较好。<br><img src="https://img-blog.csdnimg.cn/82b055f841d84744be9b2db43eb171e1.png" alt="在这里插入图片描述"></p>
+<h1 id="4-结果可视化以及结论"><a href="#4-结果可视化以及结论" class="headerlink" title="4.结果可视化以及结论"></a>4.结果可视化以及结论</h1><p>进一步获取各输入特征在预测模型中的重要性指数，进行可视化展示如下图所示：（其中遇到了x轴标签过长无法显示的问题，于是使用了grid布局）</p>
+<pre><code class="python">bar = (
+    Bar()
+    .add_xaxis(X_23)
+    .add_yaxis(&#39;&#39;, tree.feature_importances_.tolist(), category_gap = &#39;50%&#39;)
+    .reversal_axis()
+    .set_series_opts(label_opts=opts.LabelOpts(position=&#39;right&#39;))    
+    .set_global_opts(
+        xaxis_opts=opts.AxisOpts(name=&#39;特征&#39;),
+        legend_opts=opts.LegendOpts(type_=&quot;scroll&quot;, pos_left=&quot;90%&quot;,pos_top=&quot;58%&quot;,orient=&quot;vertical&quot;)
+    )
+)
+grid=Grid()
+grid.add(bar, grid_opts=opts.GridOpts(pos_left=&quot;25%&quot;))
+grid.render_notebook()
+</code></pre>
+<p>对于模型决策影响较大的指标包括：合同期限是否为‘month to month’，顾客是否为光纤网络的使用者，顾客已使用的年限是否小于4个月，顾客是否使用电子支票作为支付方式等。它们都能较好的反映流失客户与非流失客户的区别，从而使模型做出正确的分类。<br><img src="https://img-blog.csdnimg.cn/989297d160364bd8b63223663a6e3276.png" alt="在这里插入图片描述"><br>我们也可以将决策树可视化，进一步了解模型的决策过程，构建决策树代码如下：</p>
+<pre><code class="python">import numpy as np
+import pandas as pd
+from pandas import DataFrame as df
+from sklearn.datasets import load_boston
+from sklearn.datasets import load_breast_cancer
+from matplotlib import pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+
+# 决策树可视化
+from sklearn import tree
+import graphviz
+import pydotplus  
+dot_data = tree.export_graphviz(Tree, out_file=None, 
+                         feature_names=data_frame.columns[1:],  #data_frame.columns[1:]
+                         class_names=[&#39;churn_no&#39;,&#39;churn_yes&#39;],  
+                         filled=True, rounded=True,  
+                         special_characters=True)  
+graph = pydotplus.graph_from_dot_data(dot_data)  
+graph.write_pdf(&quot;DTtree.pdf&quot;)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/ece0409795ca4f05827f88cd909f722c.png" alt="在这里插入图片描述"><br>第一颗子树从是否为网络服务使用者这一分类特征的用户群体发展而来。其中红色系格子和白色格子代表非流失客户，蓝色系格子代表流失客户。可以明显发现，网络服务的使用者更有可能成为流失客户，除非其不是老年人且申请了网络安全这一附加服务；而非网络服务的使用者则不太可能成为流失客户，除非其是老年人且支付方式为电子支票的用户。基于上述分析，给出一个运营建议：<br>1）当年轻用户为网络服务的使用者时，可以给他推荐网络安全方面的附加服务，防止其因基础网络问题而成为流失客户。<br><img src="https://img-blog.csdnimg.cn/981aaebdb2d5474c93853b1f6e22658d.png" alt="在这里插入图片描述"><br>第二颗子树从使用年限是否为4个月到14个月这一分类特征的用户群体发展而来。同样的红色系格子和白色格子代表非流失客户，蓝色系格子代表流失客户。当使用年限在4个月到14个月这段期间的客户，更有可能成为流失客户，除非月消费达到58.92元到79.15元这个区间；另外，使用年限是在14个月到29个月之间的客户同样容易流失。基于上述分析，给出一个运营建议：<br>2）对于使用年限小于29个月的客户，他们更可能发生流失的事件，需要对他们持续投入挽留的运营策略。<br><img src="https://img-blog.csdnimg.cn/de8bdbd1c16646da90e47e97916fa459.png" alt="在这里插入图片描述"><br>第三颗子树从是否为网络安全服务用户这一分类特征的用户群体发展而来。若一个顾客申请了网络安全服务，其更可能不会发生流失行为，除非他是一个老年人；而没有申请网络安全服务的顾客，则更有可能成为流失客户，除非其申请了技术支持的服务。基于上述分析，给出一条运营建议是：<br>3）老年客户群体始终是容易发生流失行为的客户，需要对其服务需求作及时的关注和了解。<br>最后，从整颗树的角度进行分析，还可以得到一些结论：<br>4）合同期限越短的用户越容易发生流失行为。因此，在电信公司开展推广工作时，应尽可能与新用户签订一个长期的合同。<br>5）采用光纤网络技术的用户相较于采用其他服务的用户而言，更容易发生流失行为。需关注目前该项服务存在的问题，及时给予改进。<br>另外，若想进一步提高模型的预测准确率，可以使用提升树等一些列的改进模型。</p>
 
       
 
@@ -214,9 +327,19 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -230,6 +353,17 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -280,7 +414,7 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/24/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E9%A2%84%E6%B5%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,15 +428,20 @@ python3 inference/run_classifier_infer.py --load_model_path models/finetuned_mod
   
 <nav id="article-nav">
   
-    <a href="/2022/04/24/%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          电信客户流失数据分析（一）
         
       </div>
     </a>
   
+  
+    <a href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -426,7 +565,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Pyecharts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
@@ -509,7 +660,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">我绝不罕有&lt;br&gt;往街里绕过一周&lt;br&gt;我便化乌有</div>
   	  	
     	</section>
     

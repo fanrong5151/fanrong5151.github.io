@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>About | FanRong&#39;s Blog</title>
+  <title>快速上手UER-py | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://example.com/about/index.html">
+  <meta name="description" content="预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速上手UER-py">
+<meta property="og:url" content="http://example.com/2022/05/23/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-24T06:32:34.000Z">
-<meta property="article:modified_time" content="2022-04-24T06:32:34.347Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202104092220495.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210409223011638.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210413155758378.png">
+<meta property="article:published_time" content="2022-05-23T13:45:56.000Z">
+<meta property="article:modified_time" content="2022-05-24T12:01:34.905Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2021040922180871.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -154,27 +162,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-快速上手UER-py" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      About
+      快速上手UER-py
     </h1>
   
 
         
-        <a href="/about/index.html" class="archive-article-date">
-  	<time datetime="2022-04-24T06:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
+        <a href="/2022/05/23/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" class="archive-article-date">
+  	<time datetime="2022-05-23T13:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>预训练已经成为自然语言处理任务的重要组成部分，为大量自然语言处理任务带来了显著提升。UER-py遵循模块化的设计原则。通过模块的组合，用户能迅速精准复现已有的预训练模型，并利用已有的接口进一步开发更多的预训练模型。</p>
+<span id="more"></span>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p> UER-py（Universal Encoder Representations）是一个用于对通用语料进行预训练并对下游任务进行微调的工具包。通过UER-py，我们建立了一个<a target="_blank" rel="noopener" href="https://github.com/dbiir/UER-py">模型仓库</a>，其中包含基于不同语料，编码器和目标任务的预训练模型。用户可以根据具体任务的要求，从中选择合适的预训练模型使用。</p>
+<h1 id="2-书评分类-BERT模型"><a href="#2-书评分类-BERT模型" class="headerlink" title="2.书评分类(BERT模型)"></a>2.书评分类(BERT模型)</h1><p>在书评语料上对模型进行预训练，首先对书评语料进行预处理，我们在UER-py-master目录下运行以下命令：</p>
+<pre><code>python3 preprocess.py --corpus_path corpora/book_review_bert.txt --vocab_path models/google_zh_vocab.txt --dataset_path dataset.pt \
+                  --processes_num 8 --target bert
+</code></pre>
+<p>然后下载Google中文预训练模型google_zh_model.bin，并将其放在 models 文件夹中。接着加载Google中文预训练模型，在书评语料上对其进行增量预训练，假设我们有1个GPU的机器，world size 表示一共有几块GPU，gpu_ranks是gpu序号；</p>
+<pre><code>python3 pretrain.py --dataset_path dataset.pt --vocab_path models/google_zh_vocab.txt --pretrained_model_path models/google_zh_model.bin \
+                --output_model_path models/book_review_model.bin  --world_size 1 --gpu_ranks 0  \     --batch_size 8
+                --total_steps 5000 --save_checkpoint_steps 1000 --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
+</code></pre>
+<p>pretrain.py输出的模型会带有记录训练步数的后缀，这里我们可以删除后缀以方便使用；</p>
+<pre><code>mv models/book_review_model.bin-5000 models/book_review_model.bin
+</code></pre>
+<p>然后，我们在下游分类数据集上微调预训练模型，我们可以用 google_zh_model.bin；</p>
+<pre><code>python3 run_classifier.py --pretrained_model_path models/google_zh_model.bin --vocab_path models/google_zh_vocab.txt \
+                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
+                      --epochs_num 3 --batch_size 8 --embedding word_pos_seg --encoder transformer --mask fully_visible
+</code></pre>
+<p>实验结果表明，谷歌BERT模型在书评分类任务测试集上的准确率为87.3；<br><img src="https://img-blog.csdnimg.cn/2021040922180871.png" alt="在这里插入图片描述"><br>另外我们也可以使用 pretrain.py 的输出book_review_model.bin；<br>在models文件夹中生成<em>finetuned_model.bin</em>；<br><img src="https://img-blog.csdnimg.cn/202104092220495.png" alt="在这里插入图片描述"><br>然后我们用它进行预测；</p>
+<pre><code>python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
+                                      --test_path datasets/douban_book_review/test_nolabel.tsv \
+                                      --prediction_path datasets/douban_book_review/prediction.tsv --labels_num 2 \
+                                      --embedding word_pos_seg --encoder transformer --mask fully_visible
+</code></pre>
+<p>在UER-py-master/datasets/douban_book_review文件夹中生成prediction.csv，–test_path 指定需要预测的文件；<br>–prediction_path 指定预测结果的文件；<br><img src="https://img-blog.csdnimg.cn/20210409223011638.png" alt="在这里插入图片描述"></p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>选择使用遮罩语言模型（MLM）作为目标任务，BERT参数量大，计算较慢。我们希望加速模型运算的同时让模型仍然在下游任务上有好的表现。这里我们选择2层LSTM编码器来替代12层Transformer编码器。 我们首先下载2层LSTM编码器的预训练模型reviews_lstm_lm_model.bin。 然后在下游分类数据集上对其进行微调：</p>
+<pre><code>python3 run_classifier.py --pretrained_model_path models/reviews_lstm_lm_model.bin --vocab_path models/google_zh_vocab.txt --config_path models/rnn_config.json \
+                      --train_path datasets/douban_book_review/train.tsv --dev_path datasets/douban_book_review/dev.tsv --test_path datasets/douban_book_review/test.tsv \
+                      --epochs_num 5  --batch_size 8 --learning_rate 1e-3 --embedding word --encoder lstm --pooling mean
+python3 inference/run_classifier_infer.py --load_model_path models/finetuned_model.bin --vocab_path models/google_zh_vocab.txt \
+                                      --config_path models/rnn_config.json --test_path datasets/douban_book_review/test_nolabel.tsv \
+                                      --prediction_path datasets/douban_book_review/prediction.tsv \
+                                      --labels_num 2 --embedding word --encoder lstm --pooling mean
+</code></pre>
+<p> 我们也可以去掉参数–pretrained_model_path models/reviews_lstm_lm_model.bin，不加载预训练模型，只能得到约81的准确率。<br><img src="https://img-blog.csdnimg.cn/20210413155758378.png" alt="在这里插入图片描述"><br>UER-py还支持更多的预训练模型。<br>在Chnsenticorp数据集上使用ELMo进行预训练和微调的示例。</p>
+
       
 
       
@@ -213,6 +258,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -263,7 +319,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/about/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/23/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,6 +331,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据分析相关知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -325,7 +400,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
