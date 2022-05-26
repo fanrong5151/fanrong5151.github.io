@@ -6,27 +6,48 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>决策树 | FanRong&#39;s Blog</title>
+  <title>牛客网SQL练习题入门篇（一） | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="介绍了决策树基本原理，代码使用，以及决策树的可视化。">
+  <meta name="description" content="牛客网SQL入门练习题一共30多道，使用语言MySQL，原题链接如下：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;profile&#x2F;723804747&#x2F;codeBooks">
 <meta property="og:type" content="article">
-<meta property="og:title" content="决策树">
-<meta property="og:url" content="http://example.com/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
+<meta property="og:title" content="牛客网SQL练习题入门篇（一）">
+<meta property="og:url" content="http://example.com/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
-<meta property="og:description" content="介绍了决策树基本原理，代码使用，以及决策树的可视化。">
+<meta property="og:description" content="牛客网SQL入门练习题一共30多道，使用语言MySQL，原题链接如下：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;profile&#x2F;723804747&#x2F;codeBooks">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/c5fbc2afeaca4ff6bfb29e75fde5dd21.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/aa46343f9d37498bac45b27395a571c6.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/e111b018d49e4583ae753057dd2a6af6.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2530403a41724a00a4801511a1cc9a0d.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/e3d94b97d823447b936808a5dd70bdbc.png">
-<meta property="article:published_time" content="2022-05-23T14:45:56.000Z">
-<meta property="article:modified_time" content="2022-05-24T15:36:06.546Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8bce9cc7d40941f7b45446a064000249.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/358601ffb37040d795b9deaca37c6d4f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1d872817503743e6980541c4035d393b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1cee8d2057d6459c95a0b0d675e21470.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/337d470db6c74808976457759c20cb4f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/efc45cc0b98349eaa70324cb1f1a1b15.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/91ea9d89a0b34de981d082fdc23fbf95.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f2a93beaeb6d4dafb2afbdf39cb2ab0f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a03217055f784dd0b1ad2b7d6834120a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b15d49b89ab940e9b1218c4b7574648f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/03d7dfb30c824c0d9434830ac4dc995e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/83ae9a66909242bfb189048192e58fca.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7c05ba0e43564db4b5b0d96575d661b5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d72f5b6e6484435d8fbad26dc8a8afe7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a99870c743674d36801f88621170a6a7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3d67b7e47ff64176a01895225a5da189.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/536a3d4966864c1e86b457b4bef4e155.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6c015c9bbc40456a8010ef11f62cd826.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/affe0780262c4ae4bc4e687397970ade.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/692a56e992294424a91fe62f6b59c5ef.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1d0dbffbbbd24a599e2ccc029582641e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2e9d9bd0968c4f1b97cf3106cfa847e0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/475e37efe3cb462f80d8e0f7e004b01b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d9dfe33bcdac4399b435c0d0bd1636b9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/51f07747637144468d938306e226a317.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/89c8892e72714e7197fac7ba5fd7e100.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20ee9e269e81491e8dd5ea06778fcbaf.png">
+<meta property="article:published_time" content="2022-05-25T09:21:25.000Z">
+<meta property="article:modified_time" content="2022-05-25T12:45:30.871Z">
 <meta property="article:author" content="FanRong">
 <meta property="article:tag" content="笔记">
-<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/c5fbc2afeaca4ff6bfb29e75fde5dd21.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/8bce9cc7d40941f7b45446a064000249.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -164,70 +185,258 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-决策树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-牛客网SQL练习题入门篇（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      决策树
+      牛客网SQL练习题入门篇（一）
     </h1>
   
 
         
-        <a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
+        <a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>介绍了决策树基本原理，代码使用，以及决策树的可视化。</p>
+        <p>牛客网SQL入门练习题一共30多道，使用语言MySQL，原题链接如下：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/profile/723804747/codeBooks">https://www.nowcoder.com/profile/723804747/codeBooks</a></p>
 <span id="more"></span>
-
-<h1 id="1-决策树基本原理"><a href="#1-决策树基本原理" class="headerlink" title="1.决策树基本原理"></a>1.决策树基本原理</h1><h2 id="1-1决策树模型的几个重要概念"><a href="#1-1决策树模型的几个重要概念" class="headerlink" title="1.1决策树模型的几个重要概念"></a>1.1决策树模型的几个重要概念</h2><p><strong>父节点和子节点、根节点和叶子节点</strong>。父节点和子节点是相对的，子节点由父节点根据某一规则分裂而来，然后子节点作为新的父节点继续分裂，直至不能分裂为止。根节点则和叶子节点是相对的，根节点是没有父节点的节点，即初始节点，叶子节点则是没有子节点的节点，即最终节点。决策树模型的关键就是如何选择合适的节点进行分裂。</p>
-<h2 id="1-2-决策树模型的建树依据"><a href="#1-2-决策树模型的建树依据" class="headerlink" title="1.2 决策树模型的建树依据"></a>1.2 决策树模型的建树依据</h2><p>决策树模型的建树依据主要用到的是基尼系数的概念。基尼系数（gini）用于计算一个系统中的失序现象，即系统的混乱程度。基尼系数越高，系统的混乱程度就越高，建立决策树模型的目的就是降低系统的混乱程度，从而得到合适的数据分类效果。基尼系数的计算公式如下。<br><img src="https://img-blog.csdnimg.cn/c5fbc2afeaca4ff6bfb29e75fde5dd21.png" alt="在这里插入图片描述"><br>其中pi为类别i在样本T中出现的频率，即类别为i的样本占总样本个数的比率；Σ为求和符号，即对所有的pi的平方进行求和。<br>当引入某个用于分类的变量（如“满意度＜5”）时，分类后的基尼系数公式如下。<br><img src="https://img-blog.csdnimg.cn/aa46343f9d37498bac45b27395a571c6.png" alt="在这里插入图片描述"><br>其中S1、S2为划分后的两类各自的样本量，gini（T1）、gini（T2）为两类各自的基尼系数。<br><strong>补充知识点：信息熵</strong><br>除了基尼系数，还有另一种衡量系统混乱程度的经典手段——信息熵。<br>基尼系数涉及平方运算，而信息熵涉及相对复杂的对数函数运算，因此，目前决策树模型默认使用基尼系数作为建树依据，运算速度会较快。</p>
-<h1 id="2-决策树模型的代码实现"><a href="#2-决策树模型的代码实现" class="headerlink" title="2.决策树模型的代码实现"></a>2.决策树模型的代码实现</h1><p>决策树模型既可以做分类分析（即预测分类变量值），也可以做回归分析（即预测连续变量值），分别对应的模型为分类决策树模型（DecisionTreeClassifier）及回归决策树模型（DecisionTreeRegressor）。</p>
-<h2 id="2-1-分类决策树模型"><a href="#2-1-分类决策树模型" class="headerlink" title="2.1 分类决策树模型"></a>2.1 分类决策树模型</h2><pre><code class="python">from sklearn.tree import DecisionTreeClassifier
-X = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
-y = [1, 0, 0, 1, 1]
-model = DecisionTreeClassifier(random_state=0)
-model.fit(X, y)
-print(model.predict([[5, 5]]))
+<p>1.查询所有列：现在运营想要查看用户信息表中所有的数据，请你取出相应结果。</p>
+<pre><code class="sql">select * from user_profile
 </code></pre>
-<h2 id="2-2-决策树可视化"><a href="#2-2-决策树可视化" class="headerlink" title="2.2 决策树可视化"></a>2.2 决策树可视化</h2><blockquote>
-<p>通过graphviz插件进行决策树可视化，graphviz插件的使用教程可以查看该文档:<a target="_blank" rel="noopener" href="https://shimo.im/docs/Dcgw8H6WxgWrc8hq/">https://shimo.im/docs/Dcgw8H6WxgWrc8hq/</a></p>
-</blockquote>
-<p>对于同一个模型，不同的划分方式可能会导致最后的预测结果会有所不同，设置random_state参数（可以设置成0，也可以设置成1或123等任意数字）则能保证每次的划分方式都是一致的，使得每次运行的结果相同。</p>
-<pre><code class="python">from sklearn.tree import DecisionTreeClassifier
-X = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
-y = [1, 0, 0, 1, 1]
-model = DecisionTreeClassifier(random_state=0)
-model.fit(X, y)
-print(model.predict([[5, 5]]))
-from sklearn import tree
-import graphviz
-import pydotplus  
-dot_data = tree.export_graphviz(model, out_file=None, 
-                         class_names=[&#39;0&#39;, &#39;1&#39;] )
-graph2 = pydotplus.graph_from_dot_data(dot_data)  
-graph2.write_pdf(&quot;g1.pdf&quot;)
+<p>2.查询多列：现在运营同学想要用户的设备id对应的性别、年龄和学校的数据，请你取出相应数据。<br><img src="https://img-blog.csdnimg.cn/8bce9cc7d40941f7b45446a064000249.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select device_id,gender,age,university 
+from user_profile
 </code></pre>
-<p><img src="https://img-blog.csdnimg.cn/e111b018d49e4583ae753057dd2a6af6.png" alt="在这里插入图片描述"><br><strong>图形解说</strong>：X[0]表示数据的第1个特征；X[1]表示数据的第2个特征；<br>gini表示该节点的基尼系数，以根节点为例，它的基尼系数为1-（0.4²＋0.6²）＝0.48；samples表示该节点的样本数；value表示各分类的样本数，例如，根节点中的[2，3]表示分类为0的样本数为2，分类为1的样本数为3；class表示该区块被划分为的类别，它是由value中样本数较多的类别决定的，例如，根节点中分类为1的样本数（3）大于分类为0的样本数（2），所以该节点的分类为1，依此类推。</p>
-<h2 id="2-3-回归决策树模型"><a href="#2-3-回归决策树模型" class="headerlink" title="2.3 回归决策树模型"></a>2.3 回归决策树模型</h2><p>回归决策树模型的概念和分类决策树模型基本一致，最大的不同就是其划分标准不是基尼系数或信息熵，而是均方误差MSE，其计算公式如下。<br><img src="https://img-blog.csdnimg.cn/2530403a41724a00a4801511a1cc9a0d.png" alt="在这里插入图片描述"></p>
-<pre><code class="python">from sklearn.tree import DecisionTreeRegressor
-X = [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]
-y = [1, 2, 3, 4, 5]
-model1 = DecisionTreeRegressor(max_depth=2, random_state=0)
-model1.fit(X, y)
-print(model1.predict([[9, 9]]))
-dot_data = tree.export_graphviz(model1, out_file=None)
-graph2 = pydotplus.graph_from_dot_data(dot_data)  
-graph2.write_pdf(&quot;g2.pdf&quot;)
+<p>3.查询结果用distinct关键字去重：现在运营需要查看用户来自于哪些学校，请从用户信息表中取出学校的去重数据。</p>
+<pre><code class="sql">select distinct university 
+from user_profile
 </code></pre>
-<p><img src="https://img-blog.csdnimg.cn/e3d94b97d823447b936808a5dd70bdbc.png" alt="在这里插入图片描述"><br>value表示该节点的拟合值，在回归决策树中，节点的拟合值是节点中所有数据的均值，最终的叶子节点的拟合值就是最终的回归模型预测值。</p>
+<p>或者使用group by:</p>
+<pre><code class="sql">SELECT university 
+from user_profile 
+GROUP BY university
+</code></pre>
+<p>4.查询结果限制返回行数：现在运营只需要查看前2个用户明细设备ID数据，请你从用户信息表 user_profile 中取出相应结果。</p>
+<pre><code class="sql">select device_id 
+from user_profile 
+limit 2
+</code></pre>
+<p>5.查询后的列重新命名：现在你需要查看前2个用户明细设备ID数据，并将列名改为 ‘user_infos_example’，请你从用户信息表取出相应结果。</p>
+<pre><code class="sql">select device_id as user_infos_example 
+from user_profile 
+limit 2
+</code></pre>
+<p>6.查找学校是北大的学生信息：现在运营想要筛选出所有北京大学的学生进行用户调研，请你从用户信息表中取出满足条件的数据，结果返回设备id和学校。</p>
+<pre><code class="sql">select device_id,university 
+from user_profile 
+where university=&quot;北京大学&quot;
+</code></pre>
+<p>7.现在运营想要针对24岁以上的用户开展分析，请你取出满足条件的设备ID、性别、年龄、学校。</p>
+<pre><code class="sql">select device_id,gender,age,university 
+from user_profile 
+where age&gt;24
+</code></pre>
+<p>8.现在运营想要针对20岁及以上且23岁及以下的用户开展分析，请你取出满足条件的设备ID、性别、年龄。</p>
+<pre><code class="sql">select device_id,gender,age 
+from user_profile 
+where age between 20 and 23
+</code></pre>
+<p>9.现在运营想要查看除复旦大学以外的所有用户明细，请你取出相应数据.</p>
+<pre><code class="sql">select device_id,gender,age,university 
+from user_profile 
+where university !=&quot;复旦大学&quot;
+</code></pre>
+<p>或者使用关键字not in，not like<br>10.过滤空值：现在运营想要对用户的年龄分布开展分析，在分析时想要剔除没有获取到年龄的用户，请你取出所有年龄值不为空的用户的设备ID，性别，年龄，学校的信息。</p>
+<pre><code class="sql">select device_id,gender,age,university 
+from user_profile 
+where age != &quot;null&quot;
+</code></pre>
+<p>或者Where 列名 is not null<br>11.复合条件and：现在运营想要找到男性且GPA在3.5以上(不包括3.5)的用户进行调研，请你取出相关数据。</p>
+<pre><code class="sql">select device_id,gender,age,university,gpa 
+from user_profile 
+where  gpa &gt; 3.5 and gender = &#39;male&#39;;
+</code></pre>
+<p>12.题目：现在运营想要找到学校为北大或GPA在3.7以上(不包括3.7)的用户进行调研，请你取出相关数据（使用OR实现）</p>
+<pre><code class="sql">select device_id,gender,age,university,gpa 
+from user_profile 
+where university=&quot;北京大学&quot; or gpa&gt;3.7
+</code></pre>
+<p>13.题目：现在运营想要找到学校为北大、复旦和山大的同学进行调研，请你取出相关数据。</p>
+<pre><code class="sql">select device_id,gender,age,university,gpa 
+from user_profile 
+where university in (&quot;北京大学&quot;,&quot;复旦大学&quot;,&quot;山东大学&quot;)
+</code></pre>
+<p>14.操作符混合使用：现在运营想要找到gpa在3.5以上(不包括3.5)的山东大学用户 或 gpa在3.8以上(不包括3.8)的复旦大学同学进行用户调研，请你取出相应数据。<br><img src="https://img-blog.csdnimg.cn/358601ffb37040d795b9deaca37c6d4f.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select device_id,gender,age,university,gpa 
+from user_profile 
+where (gpa &gt; 3.5 and university=&quot;山东大学&quot;) 
+or (gpa&gt;3.8 and university=&quot;复旦大学&quot;)
+</code></pre>
+<p>15.题目：现在运营想查看所有大学中带有北京的用户的信息，请你取出相应数据。</p>
+<pre><code class="sql">select device_id,age,university 
+from user_profile 
+where university like &quot;%北京%&quot;
+</code></pre>
+<p>或者使用正则表达式：</p>
+<pre><code class="sql">SELECT device_id, age, university
+FROM user_profile
+WHERE university REGEXP &quot;北京&quot;
+</code></pre>
+<p>16.题目：运营想要知道复旦大学学生gpa最高值是多少，请你取出相应数据。<br>通过gpa倒叙取第一条：</p>
+<pre><code class="sql">select gpa from user_profile where university=&quot;复旦大学&quot; 
+order by gpa desc 
+limit 1
+</code></pre>
+<p>或者使用聚合函数取最大值：</p>
+<pre><code class="sql">select max(gpa)
+from user_profile
+where university = &#39;复旦大学&#39;
+</code></pre>
+<p>17.题目：现在运营想要看一下男性用户有多少人以及他们的平均gpa是多少，用以辅助设计相关活动，请你取出相应数据。</p>
+<pre><code class="sql">select count(gender) as male_num, 
+round(avg(gpa),1) as avg_gpa  
+from user_profile 
+where gender=&quot;male&quot;
+</code></pre>
+<p>18.分组计算练习题：现在运营想要对每个学校不同性别的用户活跃情况和发帖数量进行分析，请分别计算出每个学校每种性别的用户数、30天内平均活跃天数和平均发帖数量。<br>用户信息表user_profile：<br>30天内活跃天数字段（active_days_within_30）<br>发帖数量字段（question_cnt）<br>回答数量字段（answer_cnt）<br><img src="https://img-blog.csdnimg.cn/1d872817503743e6980541c4035d393b.png" alt="在这里插入图片描述"><br>查询返回结果需要对性别和学校分组，示例如下，结果保留1位小数，1位小数之后的四舍五入：<br><img src="https://img-blog.csdnimg.cn/1cee8d2057d6459c95a0b0d675e21470.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select gender,university,
+count(device_id) as user_num,
+round(avg(active_days_within_30),1) as avg_question_day,
+round(avg(question_cnt),1) as avg_question_cnt
+from user_profile
+group by gender,university
+</code></pre>
+<p>19.分组过滤练习题：现在运营想查看每个学校用户的平均发贴和回帖情况，寻找低活跃度学校进行重点运营，请取出平均发贴数低于5的学校或平均回帖数小于20的学校。<br>根据示例，你的查询应返回以下结果，请你保留3位小数(系统后台也会自动校正)，3位之后四舍五入：<br><img src="https://img-blog.csdnimg.cn/337d470db6c74808976457759c20cb4f.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select university,
+round(avg(question_cnt),3) as avg_question_cnt ,
+round(avg(answer_cnt),3) as avg_answer_cnt 
+from user_profile 
+group by university
+having avg_question_cnt&lt;5 or avg_answer_cnt&lt;20 
+</code></pre>
+<p>聚合函数结果作为筛选条件时，不能用where，而是用having语法。<br>20.分组排序题：现在运营想要查看不同大学的用户平均发帖情况，并期望结果按照平均发帖情况进行升序排列，请你取出相应数据。<br><img src="https://img-blog.csdnimg.cn/efc45cc0b98349eaa70324cb1f1a1b15.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select university,
+round(avg(question_cnt),4) as avg_question_cnt 
+from user_profile 
+group by university 
+order by avg_question_cnt 
+</code></pre>
+<p>21.题目：现在运营想要查看所有来自浙江大学的用户题目回答明细情况，请你取出相应数据.<br><img src="https://img-blog.csdnimg.cn/91ea9d89a0b34de981d082fdc23fbf95.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/f2a93beaeb6d4dafb2afbdf39cb2ab0f.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/a03217055f784dd0b1ad2b7d6834120a.png" alt="在这里插入图片描述"><br>内连接查询：</p>
+<pre><code class="sql">select qpd.device_id,qpd.question_id,qpd.result 
+from question_practice_detail as qpd 
+inner join  user_profile as up 
+on qpd.device_id=up.device_id and up.university=&quot;浙江大学&quot;
+</code></pre>
+<p>或者子查询：</p>
+<pre><code class="sql">select device_id,question_id,result 
+from question_practice_detail
+where device_id =(SELECT device_id from user_profile where university=&quot;浙江大学&quot;)
+</code></pre>
+<p>22.统计每个学校的答过题的用户的平均答题数：<br><img src="https://img-blog.csdnimg.cn/b15d49b89ab940e9b1218c4b7574648f.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/03d7dfb30c824c0d9434830ac4dc995e.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/83ae9a66909242bfb189048192e58fca.png" alt="在这里插入图片描述"><br>平均答题数=总答题数count(question_id)/答过题的用户数count(device_id)</p>
+<pre><code class="sql">select university,
+round(count(question_id)/count(distinct qpd.device_id),4) as avg_answer_cnt
+from question_practice_detail as qpd
+inner join user_profile as up 
+on qpd.device_id=up.device_id
+group by university
+</code></pre>
+<p>23.题目：运营想要计算一些参加了答题的不同学校、不同难度的用户平均答题量，请你写SQL取出相应数据。<br><img src="https://img-blog.csdnimg.cn/7c05ba0e43564db4b5b0d96575d661b5.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/d72f5b6e6484435d8fbad26dc8a8afe7.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/a99870c743674d36801f88621170a6a7.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/3d67b7e47ff64176a01895225a5da189.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">SELECT 
+    t1.university,
+    t3.difficult_level,
+    COUNT(t2.question_id)/COUNT(distinct(t2.device_id)) as avg_answer_cnt
+FROM 
+    user_profile t1,
+    question_practice_detail t2,
+    question_detail t3
+WHERE
+    t1.device_id = t2.device_id
+    and 
+    t2.question_id = t3.question_id
+GROUP BY t1.university,t3.difficult_level;
+</code></pre>
+<p>24.题目：运营想要查看参加了答题的山东大学的用户在不同难度下的平均答题题目数，请取出相应数据。</p>
+<pre><code class="sql">select up.university,qd.difficult_level,
+round(count(qpd.question_id)/count(distinct qpd.device_id),4) as avg_answer_cnt
+from question_practice_detail as qpd 
+left join user_profile as up
+on qpd.device_id=up.device_id
+left join question_detail as qd
+on qpd.question_id=qd.question_id
+group by university,difficult_level
+having university=&quot;山东大学&quot;
+</code></pre>
+<p>25.题目：现在运营想要分别查看学校为山东大学或者性别为男性的用户的device_id、gender、age和gpa数据，请取出相应结果，结果不去重。<br>使用union all关键字可以不去重：</p>
+<pre><code class="sql">select device_id,gender,age,gpa 
+from user_profile 
+where university=&quot;山东大学&quot; 
+union all
+select device_id,gender,age,gpa 
+from user_profile 
+where gender=&quot;male&quot; 
+</code></pre>
+<p>26.题目：现在运营想要将用户划分为25岁以下和25岁及以上两个年龄段，分别查看这两个年龄段用户数量。<br><img src="https://img-blog.csdnimg.cn/536a3d4966864c1e86b457b4bef4e155.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select case when age&lt;25 or age is null then &quot;25岁以下&quot;
+            when age&gt;= 25 then &quot;25岁及以上&quot;
+            end as age_cut,count(*)number
+from user_profile
+group by age_cut
+</code></pre>
+<p>27.题目：现在运营想要将用户划分为20岁以下，20-24岁，25岁及以上三个年龄段，分别查看不同年龄段用户的明细情况，请取出相应数据。（注：若年龄为空请返回其他。）<br><img src="https://img-blog.csdnimg.cn/6c015c9bbc40456a8010ef11f62cd826.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select device_id,gender,
+case when age&gt;=25 then &quot;25岁及以上&quot;
+when age&gt;=20 then &quot;20-24岁&quot;
+when age&lt;20 then &quot;20岁以下&quot;
+else &quot;其他&quot;
+end as age_cut
+from user_profile
+</code></pre>
+<p>28.题目：现在运营想要计算出2021年8月每天用户练习题目的数量，请取出相应数据。<br><img src="https://img-blog.csdnimg.cn/affe0780262c4ae4bc4e687397970ade.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/692a56e992294424a91fe62f6b59c5ef.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">select day(date) as day,
+count(question_id) as question_cnt
+from question_practice_detail
+where month(date)=8 and year(date)=2021
+group by date
+</code></pre>
+<p>29.题目：现在运营想要查看用户在某天刷题后第二天还会再来刷题的平均概率。请你取出相应数据。</p>
+<p><img src="https://img-blog.csdnimg.cn/1d0dbffbbbd24a599e2ccc029582641e.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2e9d9bd0968c4f1b97cf3106cfa847e0.png" alt="在这里插入图片描述"></p>
+<p>解法：所谓次日留存，指的是同一用户（在本题中则为同一设备，即device_id）在当天和第二天都进行刷题。注意，在这题我们不关心同一用户（设备）在这天答了什么题、答题结果如何，只关心他是否答题，因此对于这题来说存在重复的数据（如下图红框所示），需要使用 DISTINCT 去重。<br><img src="https://img-blog.csdnimg.cn/475e37efe3cb462f80d8e0f7e004b01b.png" alt="在这里插入图片描述"><br>具体而言，使用两个子查询，查询出两个去重的数据表，并使用条件（q2.date应该是q1.date的后一天）进行筛选。<br>因为使用的是q1左级联q2，所以q1的所有信息是显示的；而q2中只显示留存的信息，否则为null。<br>最后，分别统计q1.device_id 和 q2.device_id 作去重后的所有条目数和去重后的次日留存条目数，即可算出次日留存率。</p>
+<pre><code class="sql">SELECT 
+    COUNT(q2.device_id) / COUNT(q1.device_id) AS avg_ret 
+FROM 
+    (SELECT DISTINCT device_id, date FROM question_practice_detail)as q1
+LEFT JOIN
+    (SELECT DISTINCT device_id, date FROM question_practice_detail) AS q2
+ON q1.device_id = q2.device_id AND q2.date = DATE_ADD(q1.date, interval 1 day)
+</code></pre>
+<p>注意，MySQL中 COUNT在对列进行计数时不统计值为 null的条目。<br>30.题目：现在运营举办了一场比赛，收到了一些参赛申请，表数据记录形式如下所示，现在运营想要统计每个性别的用户分别有多少参赛者，请取出相应结果。<br><img src="https://img-blog.csdnimg.cn/d9dfe33bcdac4399b435c0d0bd1636b9.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/51f07747637144468d938306e226a317.png" alt="在这里插入图片描述"></p>
+<pre><code class="sql">SELECT SUBSTRING_INDEX(profile,&quot;,&quot;,-1) gender,COUNT(*) number
+FROM user_submit 
+GROUP BY gender;
+</code></pre>
+<p>SUBSTRING_INDEX(str  ,substr  ,n)：返回字符substr在str中第n次出现位置之前的字符串;<br>31.题目：现在运营想要统计每个年龄的用户分别有多少参赛者，请取出相应结果。</p>
+<pre><code class="sql">select substring_index(substring_index(profile,&quot;,&quot;,3),&quot;,&quot;,-1) as age,
+count(device_id) as number 
+from user_submit 
+group by age
+</code></pre>
+<p>32.右连接：现在运营想要找到每个学校gpa最低的同学来做调研，请你取出每个学校的最低gpa。<br><img src="https://img-blog.csdnimg.cn/89c8892e72714e7197fac7ba5fd7e100.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20ee9e269e81491e8dd5ea06778fcbaf.png" alt="在这里插入图片描述"><br>使用right join右连接保留右表内容：</p>
+<pre><code class="sql">select a.device_id,a.university,a.gpa 
+from user_profile a
+right join (
+    select university,min(gpa) as gpa 
+    from user_profile 
+    group by university) as b
+on a.university=b.university and a.gpa=b.gpa
+order by a.university
+</code></pre>
 
       
 
@@ -273,10 +482,6 @@ graph2.write_pdf(&quot;g2.pdf&quot;)
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		
 		</ul>
@@ -332,7 +537,7 @@ graph2.write_pdf(&quot;g2.pdf&quot;)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,18 +551,9 @@ graph2.write_pdf(&quot;g2.pdf&quot;)
   
 <nav id="article-nav">
   
-    <a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          牛客网SQL练习题入门篇（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">电信客户流失数据分析（一）</div>
+    <a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">决策树</div>
       <i class="icon-circle-right"></i>
     </a>
   
