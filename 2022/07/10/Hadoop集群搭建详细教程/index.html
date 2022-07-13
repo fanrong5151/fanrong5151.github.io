@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | FanRong&#39;s Blog</title>
+  <title>Hadoop集群搭建详细教程 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="主要介绍了手动Hadoop集群搭建以及相关文件配置，命令使用等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop集群搭建详细教程">
+<meta property="og:url" content="http://example.com/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="主要介绍了手动Hadoop集群搭建以及相关文件配置，命令使用等等。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2bb6894208f7442f9a61057cf0d00b3a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c3dd996d4b4b4fd581d5d55194657390.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/37d10d041c0c49ecb63a16e3309c538d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1fbb9258f5f241969cc29fca3058bc5b.png">
+<meta property="article:published_time" content="2022-07-10T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-07-13T06:50:40.584Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2bb6894208f7442f9a61057cf0d00b3a.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -152,112 +162,265 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Hadoop集群搭建详细教程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2022-07-12T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</a>
+    <h1 class="article-title" itemprop="name">
+      Hadoop集群搭建详细教程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-07-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">Hive学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
+        
+        <a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
   	<time datetime="2022-07-10T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Hadoop集群搭建详细教程</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要介绍了手动Hadoop集群搭建以及相关文件配置，命令使用等等。</p>
+<span id="more"></span>
+<h1 id="1-Hadoop介绍"><a href="#1-Hadoop介绍" class="headerlink" title="1.Hadoop介绍"></a>1.Hadoop介绍</h1><p>1） 狭义上Hadoop指的是Apache软件基金会的一款开源软件。用java语言实现，开源<br>允许用户使用简单的编程模型实现跨机器集群对海量数据进行分布式计算处理。<br>2）Hadoop核心组件：</p>
+<blockquote>
+<p>Hadoop HDFS（分布式文件存储系统）：解决海量数据存储<br>Hadoop YARN（集群资源管理和任务调度框架）：解决资源任务调度<br>Hadoop MapReduce（分布式计算框架）：解决海量数据计算</p>
+</blockquote>
+<h1 id="2-Hadoop集群搭建"><a href="#2-Hadoop集群搭建" class="headerlink" title="2.Hadoop集群搭建"></a>2.Hadoop集群搭建</h1><blockquote>
+<p>Hadoop集群包括两个集群：HDFS集群、YARN集群<br>两个集群逻辑上分离、通常物理上在一起<br>两个集群都是标准的主从架构集群</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2bb6894208f7442f9a61057cf0d00b3a.png" alt="在这里插入图片描述"><br>1）HDFS集群</p>
+<blockquote>
+<p>主角色：NameNode<br>从角色：DataNode<br>主角色辅助角色：SecondaryNameNode</p>
+</blockquote>
+<p>2）YARN集群</p>
+<blockquote>
+<p>主角色：ResourceManager<br>从角色：NodeManager</p>
+</blockquote>
+<h2 id="2-1-手动搭建Hadoop集群"><a href="#2-1-手动搭建Hadoop集群" class="headerlink" title="2.1 手动搭建Hadoop集群"></a>2.1 手动搭建Hadoop集群</h2><p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/hadoop/common/hadoop-3.3.0/">安装包、源码包下载地址</a></p>
+<blockquote>
+<p>重新编译Hadoop源码：匹配不同操作系统本地库环境，Hadoop某些操作比如压缩、IO需要调用系统本地库（*.so|*.dll）修改源码、重构源码<br>编译Hadoop：源码包根目录下文件：BUILDING.txt</p>
+</blockquote>
+<p>或者使用已经编译好的Hadoop安装包：hadoop-3.3.0-Centos7-64-with-snappy.tar.gz<br>1）集群角色合理规划<br><img src="https://img-blog.csdnimg.cn/c3dd996d4b4b4fd581d5d55194657390.png" alt="在这里插入图片描述"><br>2）Hosts映射（3台机器）</p>
+<blockquote>
+<p>vim /etc/hosts</p>
+</blockquote>
+<p>3） 防火墙关闭（3台机器）</p>
+<blockquote>
+<p>systemctl stop firewalld.service #关闭防火墙<br>systemctl disable firewalld.service #禁止防火墙开启自启</p>
+</blockquote>
+<p>4）ssh免密登录（node1执行-&gt;node1|node2|node3）</p>
+<blockquote>
+<p>ssh-keygen #4个回车 生成公钥、私钥 ssh-copy-id node1、ssh-copy-id<br>node2、ssh-copy-id node3 #</p>
+</blockquote>
+<p>5） 集群时间同步（3台机器）</p>
+<blockquote>
+<p>yum -y install ntpdate<br>ntpdate ntp4.aliyun.com</p>
+</blockquote>
+<p>6）创建统一工作目录（3台机器）</p>
+<blockquote>
+<p>mkdir -p /export/server/ #软件安装路径<br>mkdir -p /export/data/ #数据存储路径<br> mkdir -p /export/software/ #安装包存放路径</p>
+</blockquote>
+<p>7）JDK 1.8安装（3台机器）</p>
+<blockquote>
+<p>配置环境变量<br>在第一台机器node1上安装，发送给其他机器<br>远程发送命令：scp -r 文件目录 root@node2:目标目录<br>拷贝环境变量，重新加载之后验证</p>
+</blockquote>
+<p>8）上传、解压Hadoop安装包（node1）</p>
+<blockquote>
+<p>cd /export/server<br>tar zxvf hadoop-3.3.0-Centos7-64-with-snappy.tar.gz</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/37d10d041c0c49ecb63a16e3309c538d.png" alt="Hadoop安装包目录结构"><br>配置文件概述：</p>
+<blockquote>
+<p> 官网文档：<a target="_blank" rel="noopener" href="https://hadoop.apache.org/docs/r3.3.0/">https://hadoop.apache.org/docs/r3.3.0/</a><br> 第一类1个：hadoop-env.sh<br>第二类4个：xxxx-site.xml ,site表示的是用户定义的配置，会覆盖default中的默认配置。<br>core-site.xml 核心模块配置<br>hdfs-site.xml hdfs文件系统模块配置<br>mapred-site.xml MapReduce模块配置<br>yarn-site.xml yarn模块配置<br> 第三类1个：workers<br>所有的配置文件目录：/export/server/hadoop-3.3.0/etc/hadoop</p>
+</blockquote>
+<p>9）编辑hadoop-env.sh</p>
+<blockquote>
+<p>export JAVA_HOME=/export/server/jdk1.8.0_241<br>#文件最后添加<br>export HDFS_NAMENODE_USER=root<br>export HDFS_DATANODE_USER=root<br>export HDFS_SECONDARYNAMENODE_USER=root<br>export YARN_RESOURCEMANAGER_USER=root<br>export YARN_NODEMANAGER_USER=root </p>
+</blockquote>
+<p>10）编辑core-site.xml</p>
+<pre><code class="xml">&lt;!-- 设置默认使用的文件系统 Hadoop支持file、HDFS、GFS、ali|Amazon云等文件系统 --&gt;
+&lt;property&gt;
+&lt;name&gt;fs.defaultFS&lt;/name&gt;
+&lt;value&gt;hdfs://node1:8020&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 设置Hadoop本地保存数据路径 --&gt;
+&lt;property&gt;
+&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+&lt;value&gt;/export/data/hadoop-3.3.0&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 设置HDFS web UI用户身份 --&gt;
+&lt;property&gt;
+&lt;name&gt;hadoop.http.staticuser.user&lt;/name&gt;
+&lt;value&gt;root&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 整合hive 用户代理设置 --&gt;
+&lt;property&gt;
+&lt;name&gt;hadoop.proxyuser.root.hosts&lt;/name&gt;
+&lt;value&gt;*&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;hadoop.proxyuser.root.groups&lt;/name&gt;
+&lt;value&gt;*&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 垃圾桶文件保存时间 --&gt;
+&lt;property&gt;
+&lt;name&gt;fs.trash.interval&lt;/name&gt;
+&lt;value&gt;1440&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>11）配置hdfs-site.xml</p>
+<pre><code class="xml">&lt;!-- 设置SNN进程运行机器位置信息 --&gt;
+&lt;property&gt;
+&lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
+&lt;value&gt;node2:9868&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>12）配置mapred-site.xml</p>
+<pre><code class="xml">&lt;!-- 设置MR程序默认运行模式： yarn集群模式 local本地模式 --&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+&lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- MR程序历史服务器端地址 --&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+&lt;value&gt;node1:10020&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 历史服务器web端地址 --&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+&lt;value&gt;node1:19888&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;
+&lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.map.env&lt;/name&gt;
+&lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.reduce.env&lt;/name&gt;
+&lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>13）配置yarn-site.xm</p>
+<pre><code class="xml">&lt;!-- 设置YARN集群主角色运行机器位置 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+&lt;value&gt;node1&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+&lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 是否将对容器实施物理内存限制 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.nodemanager.pmem-check-enabled&lt;/name&gt;
+&lt;value&gt;false&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 是否将对容器实施虚拟内存限制。 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;
+&lt;value&gt;false&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 开启日志聚集 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;
+&lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 设置yarn历史服务器地址 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.log.server.url&lt;/name&gt;
+&lt;value&gt;http://node1:19888/jobhistory/logs&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 保存的时间7天 --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;
+&lt;value&gt;604800&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<p>14）配置workers</p>
+<blockquote>
+<p>node1.itcast.cn<br>node2.itcast.cn<br>node3.itcast.cn</p>
+</blockquote>
+<p>15）在node1机器上将Hadoop安装包scp同步到其他机器</p>
+<pre><code class="xml">cd /export/server
+scp -r hadoop-3.3.0 root@node2:$PWD
+scp -r hadoop-3.3.0 root@node3:$PWD
+</code></pre>
+<p>16）Hadoop环境变量配置<br>在node1上配置Hadoop环境变量</p>
+<pre><code class="xml">vim /etc/profile
+export HADOOP_HOME=/export/server/hadoop-3.3.0
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+</code></pre>
+<p>将修改后的环境变量同步其他机器</p>
+<pre><code class="xml">scp /etc/profile root@node2:/etc/
+scp /etc/profile root@node3:/etc/
+</code></pre>
+<p>重新加载环境变量 验证是否生效（3台机器）</p>
+<pre><code class="xml">source /etc/profile
+hadoop #验证环境变量是否生效
+</code></pre>
+<p>17）首次次启动HDFS时，必须对其进行格式化操作。只能一次<br> format本质上是初始化工作，进行HDFS清理和准备工作</p>
+<blockquote>
+<p>命令：hdfs namenode -format</p>
+</blockquote>
+<h1 id="3-hadoop集群启停"><a href="#3-hadoop集群启停" class="headerlink" title="3.hadoop集群启停"></a>3.hadoop集群启停</h1><p>前提：配置好机器之间的SSH免密登录和workers文件。<br>在node1上，使用软件自带的shell脚本一键启动。</p>
+<pre><code class="xml">start-all.sh
+stop-all.sh 
+</code></pre>
+<p> 启动完毕之后可以使用<strong>jps</strong>命令查看进程是否启动成功<br>Hadoop启动日志路径：/export/server/hadoop-3.3.0/logs/<br>1）hdfs集群<br>地址：<a target="_blank" rel="noopener" href="http://namenode_host:9870/">http://namenode_host:9870</a><br>其中namenode_host是namenode运行所在机器的主机名或者ip<br>如果使用主机名访问，别忘了在Windows配置hosts<br><img src="https://img-blog.csdnimg.cn/1fbb9258f5f241969cc29fca3058bc5b.png" alt="在这里插入图片描述"><br>2）yarn集群<br>地址：<a target="_blank" rel="noopener" href="http://resourcemanager_host:8088/">http://resourcemanager_host:8088</a><br>其中resourcemanager_host是resourcemanager运行所在机器的主机名或者ip<br>如果使用主机名访问，别忘了在Windows配置hosts</p>
+<h2 id="3-1-hadoop初体验命令操作"><a href="#3-1-hadoop初体验命令操作" class="headerlink" title="3.1 hadoop初体验命令操作"></a>3.1 hadoop初体验命令操作</h2><p>shell命令操作：</p>
+<pre><code class="xml">hadoop fs -mkdir /itcast
+hadoop fs -put zookeeper.out /itcast
+hadoop fs -ls /
+</code></pre>
+<p>执行Hadoop官方自带的MapReduce案例，评估圆周率π的值：</p>
+<pre><code class="xml">cd /export/server/hadoop-3.3.0/share/hadoop/mapreduce/
+hadoop jar hadoop-mapreduce-examples-3.3.0.jar pi 2 4
+</code></pre>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -269,292 +432,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/09/HDFS/" class="archive-article-date">
-  	<time datetime="2022-07-09T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hive学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/09/HDFS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">带你了解HDFS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/09/HDFS/">带你了解HDFS</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">牛客网SQL练习题入门篇（一）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">统计学相关基础知识（来源《深入浅出统计学》）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">分群思维《数据分析之道》阅读笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">Python实战：基于RFM模型及K-Means算法实现用户分群</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/">相关与因果以及相关系数实战</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/">读书笔记《Python大数据分析与机器学习》之决策树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +563,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

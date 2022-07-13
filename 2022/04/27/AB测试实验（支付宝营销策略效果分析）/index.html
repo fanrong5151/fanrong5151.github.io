@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | FanRong&#39;s Blog</title>
+  <title>A/B测试实验(支付宝营销策略效果分析) | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="A&#x2F;B测试涉及的统计学原理以及实战~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A&#x2F;B测试实验(支付宝营销策略效果分析)">
+<meta property="og:url" content="http://example.com/2022/04/27/AB%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="A&#x2F;B测试涉及的统计学原理以及实战~">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/048e106ddd5246d99b5433bbd8d5fbb3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6c5613db16b2442cb3f97371655fe2bd.jpeg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/eaeb2ee5d89142c3afcd6f7e2d2517c9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f6fc9eb05c904b5690e88dff31add30a.jpeg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/afb2a88cc201445eb11ceb3fb6123390.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4c6a2193ca914e7784797fb8f54e78e8.png">
+<meta property="article:published_time" content="2022-04-27T14:29:34.000Z">
+<meta property="article:modified_time" content="2022-06-09T10:44:11.325Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/048e106ddd5246d99b5433bbd8d5fbb3.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -152,36 +164,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-AB测试实验（支付宝营销策略效果分析）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      A/B测试实验(支付宝营销策略效果分析)
+    </h1>
+  
+
+        
+        <a href="/2022/04/27/AB%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-04-27T14:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A/B测试涉及的统计学原理以及实战~</p>
+<span id="more"></span>
+<h1 id="1-A-B测试实验背后涉及的统计学原理"><a href="#1-A-B测试实验背后涉及的统计学原理" class="headerlink" title="1.A/B测试实验背后涉及的统计学原理"></a>1.A/B测试实验背后涉及的统计学原理</h1><p>A/B实验本质是假设检验的过程，基于对照组和实验组提出某种假设，然后收集试验组和对照组的数据，通过假设检验验证两组数据是否在统计学上存在差异。</p>
+<h2 id="1-1-抽样"><a href="#1-1-抽样" class="headerlink" title="1.1 抽样"></a>1.1 抽样</h2><p>从全量用户中抽取一部分用户作为代表进行研究。</p>
+<h2 id="1-2-样本代表总体"><a href="#1-2-样本代表总体" class="headerlink" title="1.2 样本代表总体"></a>1.2 样本代表总体</h2><ul>
+<li>大数定律，描述多次重复实验结果的定律。随机事件的均值具有长期稳定性，事件发生的频率可以代替事件发生的概率；样本均值可以近似代替总体均值。</li>
+<li>中心极限定理，对抽样分布的描述。从总体抽取样本容量为n的随机样本，当样本容量足够大（30或以上）时，样本均值分布近似为正态分布。</li>
+<li>3σ准则<h2 id="1-3-A-B实验常比较的两类指标"><a href="#1-3-A-B实验常比较的两类指标" class="headerlink" title="1.3 A/B实验常比较的两类指标"></a>1.3 A/B实验常比较的两类指标</h2></li>
+<li>均值类型，如平均在线时长，平均付费金额。无论总体分布是否是正态分布，只要样本容量大于或等于30，其抽样分布为正态分布。</li>
+<li>率值类型，如转化率，付费率，留存率等指标。比率类型指标其抽样分布为二项分布，当样本容量n足够大，且n和样本比率p满足np&gt;=5和n(1-p)&gt;=5时，比率的抽样分布可以用正态分布近似。<h2 id="1-4-通过假设检验判断A，B两组样本是否存在差异"><a href="#1-4-通过假设检验判断A，B两组样本是否存在差异" class="headerlink" title="1.4 通过假设检验判断A，B两组样本是否存在差异"></a>1.4 通过假设检验判断A，B两组样本是否存在差异</h2>本质利用小概率原理的反证法，小概率事件即在一次实验中实际上不可能发生。对于均值类型实验来说，其估计量为μa-μb,实验组与对照组之间的样本均值是否存在差异；原假设：μa-μb=0;备择假设μa-μb≠0；根据统计学原理判定接受原假设还是拒绝原假设。<br><img src="https://img-blog.csdnimg.cn/048e106ddd5246d99b5433bbd8d5fbb3.png" alt="A/B实验可能出现的四种情况"><h2 id="1-5-通过样本估计总体"><a href="#1-5-通过样本估计总体" class="headerlink" title="1.5 通过样本估计总体"></a>1.5 通过样本估计总体</h2><img src="https://img-blog.csdnimg.cn/6c5613db16b2442cb3f97371655fe2bd.jpeg" alt="在这里插入图片描述"><h2 id="1-6-确定足够的样本量以达到所希望的边际误差"><a href="#1-6-确定足够的样本量以达到所希望的边际误差" class="headerlink" title="1.6 确定足够的样本量以达到所希望的边际误差"></a>1.6 确定足够的样本量以达到所希望的边际误差</h2><img src="https://img-blog.csdnimg.cn/eaeb2ee5d89142c3afcd6f7e2d2517c9.png" alt="在这里插入图片描述"><br>两样本均值检验公式如下：<br><img src="https://img-blog.csdnimg.cn/f6fc9eb05c904b5690e88dff31add30a.jpeg" alt="在这里插入图片描述"><h2 id="1-7-衡量实验效果"><a href="#1-7-衡量实验效果" class="headerlink" title="1.7 衡量实验效果"></a>1.7 衡量实验效果</h2></li>
+<li>显著性水平（1-α），将犯Ⅰ类错误概率控制在一定水平以下。</li>
+<li>P值，犯Ⅰ类错误而产生的差异。</li>
+<li>效应量，衡量对照组实验组之间的差异大小。</li>
+<li>最小检测效应（MDE），也称检测灵敏度</li>
+</ul>
+<h1 id="2-实战"><a href="#2-实战" class="headerlink" title="2.实战"></a>2.实战</h1><p>本项目背景：以支付宝营销活动为例，通过广告点击率指标比较两组营销策略的广告投放效果。</p>
+<h2 id="2-1-数据集"><a href="#2-1-数据集" class="headerlink" title="2.1 数据集"></a>2.1 数据集</h2><p>数据集来源于阿里云天池：数据集-阿里云天池<a target="_blank" rel="noopener" href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=50893&lang=zh-cn">https://tianchi.aliyun.com/dataset/dataDetail?dataId=50893&amp;lang=zh-cn</a><br>数据集包含三张表：</p>
+<ul>
+<li>emb_tb_2.csv: 用户特征数据集</li>
+<li>effect_tb.csv: 广告点击情况数据集</li>
+<li>seed_cand_tb.csv: 用户类型数据集<br>主要使用广告点击情况数据，字段如下：</li>
+<li>dump_id：营销策略编号（1：对照组，2：营销策略一，3：营销策略二）</li>
+<li>user_id：支付宝用户ID</li>
+<li>label：用户当天是否点击活动广告（0：未点击，1：点击）<h2 id="2-2-数据处理"><a href="#2-2-数据处理" class="headerlink" title="2.2 数据处理"></a>2.2 数据处理</h2>1）导入包</li>
+</ul>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+</code></pre>
+<p>2）去除问题列，给列名赋值</p>
+<pre><code class="python">data=pd.read_csv(&quot;D:\浏览器下载文件\\audience_expansion\effect_tb.csv&quot;,header=None)
+data.columns=[&#39;dt&#39;,&#39;user_id&#39;,&#39;label&#39;,&#39;dump_id&#39;]
+data=data.drop(columns=&#39;dt&#39;)
+data.head()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/afb2a88cc201445eb11ceb3fb6123390.png" alt="在这里插入图片描述"><br>3)去除重复值</p>
+<pre><code class="python">data.drop_duplicates(inplace=True)
+data.shape
+</code></pre>
+<p>4）检查缺失值</p>
+<pre><code class="python">data.isnull().sum()
+</code></pre>
+<p>5）处理重复用户</p>
+<pre><code class="python">data = data.drop_duplicates(subset=[&#39;user_id&#39;])
+</code></pre>
+<p>6）计算所有组广告点击率</p>
+<pre><code class="python">print(&quot;对照组的点击率为：&quot;,data[data[&#39;dump_id&#39;]==1][&quot;label&quot;].mean())
+print(&quot;策略组一的点击率为：&quot;,data[data[&#39;dump_id&#39;]==2][&#39;label&#39;].mean())
+print(&quot;策略组二的点击率为：&quot;,data[data[&#39;dump_id&#39;]==3][&#39;label&#39;].mean())
+</code></pre>
+<p>对照组的点击率为： 0.012341294690700636<br>策略组一的点击率为： 0.017317935069670443<br>策略组二的点击率为： 0.030453622333904223</p>
+<p>7）样本容量检验<br>在进行A/B测试前，需检查样本容量是否满足试验所需最小值。设置策略提升最小要求为1%。这里借助Evan Miller的样本量计算工具：Sample Size Calculator (Evan’s Awesome A/B Tools)<br><a target="_blank" rel="noopener" href="https://www.evanmiller.org/ab-testing/sample-size.html">https://www.evanmiller.org/ab-testing/sample-size.html</a></p>
+<pre><code class="python">data.dump_id.value_counts()
+</code></pre>
+<p>输出：<br>1    1903528<br>2     293453<br>3     213702<br>Name: dump_id, dtype: int64<br>根据以上对比样本量是否符合要求。</p>
+<h1 id="3-假设检验"><a href="#3-假设检验" class="headerlink" title="3.假设检验"></a>3.假设检验</h1><pre><code class="python">data.groupby([&#39;dump_id&#39;])[&#39;label&#39;].mean().plot(kind=&#39;bar&#39;)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/4c6a2193ca914e7784797fb8f54e78e8.png" alt="在这里插入图片描述"></p>
+<h2 id="3-1-确定零假设和备择假设"><a href="#3-1-确定零假设和备择假设" class="headerlink" title="3.1 确定零假设和备择假设"></a>3.1 确定零假设和备择假设</h2><p>记对照组点击率为p1，策略二点击率为p2，则：</p>
+<ul>
+<li>零假设 H0： p1 ≥ p2</li>
+<li>备择假设 H1： p1 ＜ p2<h2 id="3-2-分布类型，检验类型和显著性水平确定"><a href="#3-2-分布类型，检验类型和显著性水平确定" class="headerlink" title="3.2 分布类型，检验类型和显著性水平确定"></a>3.2 分布类型，检验类型和显著性水平确定</h2></li>
+<li>样本服从二项分布，独立双样本，样本大小n＞30，总体均值和标准差未知，根据中心极限定理，样本量足够大时，总体方差可以看成样本方差值，所以可采用Z检验。显著性水平α取0.05<pre><code class="python">n_old = len(data[data.dump_id == 1]) 
+n_new = len(data[data.dump_id == 3])
+c_old = len(data[data.dump_id ==1][data.label == 1])
+c_new = len(data[data.dump_id ==3][data.label == 1])
+r_old = c_old / n_old
+r_new = c_new / n_new
+r = (c_old + c_new) / (n_old + n_new)
+print(&quot;总和点击率：&quot;, r)
+z = (r_old - r_new) / np.sqrt(r * (1 - r)*(1/n_old + 1/n_new))
+print(&quot;检验统计量z：&quot;, z)
+</code></pre>
+输出：检验统计量z： -67.17326095928775 ，p值： 0.0<br>查α=0.05对应的z分位数：<pre><code class="python">from scipy.stats import norm
+z_α = norm.ppf(0.05)
+</code></pre>
+输出z_α为-1.6448536269514729。</li>
+</ul>
+<blockquote>
+<p>分析：z_α = -1.64， 检验统计量z = -67.17，该检验为左侧单尾检验，拒绝域为{z＜z_α}。我们可以得出结论：原假设不成立，策略二点击率的提升在统计上是显著的</p>
+</blockquote>
+<h2 id="3-3-检查策略一点击率是否提升"><a href="#3-3-检查策略一点击率是否提升" class="headerlink" title="3.3 检查策略一点击率是否提升"></a>3.3 检查策略一点击率是否提升</h2><pre><code class="python">c_new2=len(data[data.dump_id ==2][data.label == 1])
+n_new2=len(data[data.dump_id == 2])
+ 
+z_score, p = sp.proportions_ztest([c_old,c_new2] ,[n_old,n_new2 ], alternative = &quot;smaller&quot;)
+print(&quot;检验统计量z：&quot;,z_score,&quot;，p值：&quot;, p)
+</code></pre>
+<p>输出：检验统计量z： -22.14840215877028 ，p值： 5.404240472790111e-109<br>结论：p&lt;α</p>
+<h2 id="3-4-最终结论"><a href="#3-4-最终结论" class="headerlink" title="3.4 最终结论"></a>3.4 最终结论</h2><p>两种营销策略中，策略二对广告点击率有显著提升效果，且相较于对照组点击率提升了近一倍，因而在两组营销策略中应选择第二组进行推广。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2022-07-12T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,368 +323,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/27/AB%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-07-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据分析相关知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库原理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">Hive学习笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2022-07-10T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Hadoop集群搭建详细教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/09/HDFS/" class="archive-article-date">
-  	<time datetime="2022-07-09T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/09/HDFS/">带你了解HDFS</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">牛客网SQL练习题入门篇（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">统计学相关基础知识（来源《深入浅出统计学》）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">分群思维《数据分析之道》阅读笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">Python实战：基于RFM模型及K-Means算法实现用户分群</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/">相关与因果以及相关系数实战</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/">读书笔记《Python大数据分析与机器学习》之决策树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +454,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

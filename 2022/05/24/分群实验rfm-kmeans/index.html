@@ -6,15 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | FanRong&#39;s Blog</title>
+  <title>Python实战：基于RFM模型及K-Means算法实现用户分群 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="《数据分析之道》阅读笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实战：基于RFM模型及K-Means算法实现用户分群">
+<meta property="og:url" content="http://example.com/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="《数据分析之道》阅读笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/17b9e4845e214d9ba076d794848d052a.jpeg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1ad5ca520e7a447498c607bdf52a45a3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/164feba9c20343e6b29d5e3e8dd9c597.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ef496fd78d624175890d4064ead21310.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1fa0e75df227491d8731b632fdfbe2ed.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/899f48050f614b7e968d8d2b00713db1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9905d21eeb6c40f6b688b332a161305d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1c2356ceb9b14753a6449838b441babc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/132eefcf316e498997eb1422f7ce947e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/50f180644f2c47999164728984814550.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/183afccd6c3c4cd3800d84e84d0cee01.png">
+<meta property="article:published_time" content="2022-05-24T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-06-11T10:19:46.115Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/17b9e4845e214d9ba076d794848d052a.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -152,36 +169,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-分群实验rfm-kmeans" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python实战：基于RFM模型及K-Means算法实现用户分群
+    </h1>
+  
+
+        
+        <a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
+  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>《数据分析之道》阅读笔记</p>
+<span id="more"></span>
+<h1 id="1-RFM模型"><a href="#1-RFM模型" class="headerlink" title="1.RFM模型"></a>1.RFM模型</h1><p><img src="https://img-blog.csdnimg.cn/17b9e4845e214d9ba076d794848d052a.jpeg" alt="在这里插入图片描述"><br>R，F，M三个指标分别代表了用户忠诚度，活跃度及付费情况。</p>
+<h1 id="2-K-Means算法"><a href="#2-K-Means算法" class="headerlink" title="2.K-Means算法"></a>2.K-Means算法</h1><p>K-Means算法是一种迭代求解的算法，该算法需要事先选定K个聚类中心，依次计算每个样本与各个聚类中心的距离，并将样本分配到距其最近的聚类中心，不断迭代直到聚类中心不再发生变化。<br>K的大小一般使用3个指标确定：<br>1）卡林斯基-哈拉巴斯指数是簇间离散程度与簇内离散程度之比，通过评估簇间方差与簇内方差来计算得分。该值越大越好。<br>2）轮廓系数，衡量聚类效果的指标。<br>3）簇内平方和，越小聚类效果越好。</p>
+<h1 id="3-RFM模型实现用户分群"><a href="#3-RFM模型实现用户分群" class="headerlink" title="3.RFM模型实现用户分群"></a>3.RFM模型实现用户分群</h1><p>1）数据来源：来自加州大学欧文分校的机器学习数据库的线上零售数据集；<br>2）导入数据：</p>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import datetime as dt
+data= pd.read_excel(&#39;Online_Retail.xlsx&#39;)
+data.head()
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/1ad5ca520e7a447498c607bdf52a45a3.png" alt="在这里插入图片描述"><br>数据集包含了订单编号，邮编，商品信息，数量，下单时间，商品价格，用户编号及国家八个字段。<br>3）剔除异常数据，将购物金额和数量为负的数值剔除</p>
+<pre><code class="python">data=data.loc[data[&#39;Quantity&#39;]&gt;=0]
+data=data.loc[data[&#39;UnitPrice&#39;]&gt;=0]
+</code></pre>
+<p>4）对时间数据进行处理，仅保留年月日数据</p>
+<pre><code class="python">data[&#39;InvoiceDate&#39;] = pd.to_datetime(data[&#39;InvoiceDate&#39;].apply(lambda x:x.date()))
+data.head()
+</code></pre>
+<p>5）相关指标计算<br>计算用户每一次的消费金额：</p>
+<pre><code class="python">data[&#39;TotalAmount&#39;] = data[&#39;Quantity&#39;] * data[&#39;UnitPrice&#39;]
+</code></pre>
+<p>计算消费间隔之前需要选定一个参照日期，参照日期选择为（最大日期+1），将参照日期赋值给变量，创建计算用户消费时间的间隔函数：</p>
+<pre><code class="python">cal_date = max(data.InvoiceDate) + dt.timedelta(days=1)
+def cal_recency(date):
+    return (cal_date-date.max()).days
+</code></pre>
+<p>通过groupby语法对每一个用户进行分组聚合,并且字段重命名：</p>
+<pre><code class="python">rfm = data.groupby([&#39;CustomerID&#39;]).agg(&#123;
+    &#39;InvoiceDate&#39;: cal_recency,
+    &#39;InvoiceNo&#39;: &#39;count&#39;,
+    &#39;TotalAmount&#39;: &#39;sum&#39;
+&#125;).sort_index(ascending=True)
+rfm.rename(columns = &#123;&#39;InvoiceDate&#39;: &#39;Recency&#39;,
+                           &#39;InvoiceNo&#39;: &#39;Frequency&#39;,
+                           &#39;TotalAmount&#39;: &#39;Monetary&#39;&#125;, inplace=True) 
+</code></pre>
+<p>rfm前几行数据如下：<br><img src="https://img-blog.csdnimg.cn/164feba9c20343e6b29d5e3e8dd9c597.png" alt="在这里插入图片描述"></p>
+<p>6）查看数据分布情况：</p>
+<pre><code class="python">import matplotlib.pyplot as plt
+import seaborn as sns
+def data_distribution(keyvalue,data):
+    plt.figure(figsize = (18,4),dpi=600) 
+    j=1
+    for i in keyvalue:  
+        plt.subplot(1,3,j)
+        sns.distplot(data[i])
+        plt.title(i,fontsize = 15)
+        j+=1
+keyvalue=[&#39;Recency&#39;, &#39;Frequency&#39;, &#39;Monetary&#39;]        
+data_distribution(keyvalue,rfm)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/ef496fd78d624175890d4064ead21310.png" alt="在这里插入图片描述"><br>7）数据分箱，创建三个新的Column, 分别表示R,F,M的quntitle值，按照各个数值的1/4,1/2,3/4中位数进行数据分类。pd.qcut(x, q, labels, duplicates)，其中q代表分位数的数量，q=4代表按四分位数进行切割，即在25%、50%、75%处切割。Rquartiles使用labels_reverse表示间隔越近得分越高。</p>
+<pre><code class="python">labels= list(range(1,5))
+labels_reverse = list(range(4,0,-1))
+
+Rquartiles = pd.qcut(rfm[&#39;Recency&#39;],4,labels=labels_reverse)
+rfm = rfm.assign(R = Rquartiles.values)
+ 
+Fquartiles = pd.qcut(rfm[&#39;Frequency&#39;],4,labels=labels)
+rfm = rfm.assign(F = Fquartiles.values)
+ 
+Mquartiles = pd.qcut(rfm[&#39;Monetary&#39;],4,labels=labels) 
+rfm = rfm.assign(M = Mquartiles.values)
+</code></pre>
+<p>8）按分数排名给用户打标签：</p>
+<pre><code class="python">rfm[&#39;RFM_Score&#39;] = rfm[[&#39;R&#39;,&#39;F&#39;,&#39;M&#39;]].sum(axis=1)
+labels=[&#39;general&#39;, &#39;sliver&#39;, &#39;gold&#39;, &#39;diamond&#39;]
+RFM_Score=pd.qcut(rfm[&#39;RFM_Score&#39;],4,labels=labels)
+rfm = rfm.assign(Category =RFM_Score.values).sort_index(ascending=True)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/1fa0e75df227491d8731b632fdfbe2ed.png" alt="在这里插入图片描述"><br>9）计算各类用户的数量：</p>
+<pre><code class="python">rfm[&#39;Category&#39;].value_counts().sort_index(ascending=True)
+</code></pre>
+<p>输出：general    1287<br>sliver      917<br>gold       1300<br>diamond     835<br>Name: Category, dtype: int64</p>
+<h1 id="4-K-Means算法实现用户分群"><a href="#4-K-Means算法实现用户分群" class="headerlink" title="4.K-Means算法实现用户分群"></a>4.K-Means算法实现用户分群</h1><p>1）数据归一化处理：</p>
+<pre><code class="python">from sklearn import preprocessing
+from sklearn.cluster import KMeans
+from sklearn import metrics
+from mpl_toolkits.mplot3d import Axes3D
+data_kmeans=rfm[[&#39;Recency&#39;,&#39;Frequency&#39;,&#39;Monetary&#39;]]
+</code></pre>
+<p>在正式处理数据之前保留一份原始数据，以便之后使用：</p>
+<pre><code class="python">original=data_kmeans.copy()
+</code></pre>
+<p>先通过log变化对数据进行处理：</p>
+<pre><code class="python">data_kmeans= np.log(data_kmeans+1)
+</code></pre>
+<p>z-score标准化：</p>
+<pre><code class="python">Model = preprocessing.StandardScaler()
+data_kmeans[[&#39;Recency&#39;,&#39;Frequency&#39;,&#39;Monetary&#39;]] = Model.fit_transform(data_kmeans[[&#39;Recency&#39;,&#39;Frequency&#39;,&#39;Monetary&#39;]])
+</code></pre>
+<p>写一个循环查看数据分布：</p>
+<pre><code class="python">keyvalue=[&#39;Recency&#39;, &#39;Frequency&#39;, &#39;Monetary&#39;]
+data_distribution(keyvalue,data_kmeans)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/899f48050f614b7e968d8d2b00713db1.png" alt="在这里插入图片描述"><br>2）确定k值</p>
+<pre><code class="python">inertia = []
+ch_score = []
+ss_score = []
+x = np.array(data_kmeans[[&#39;Recency&#39;, &#39;Frequency&#39;, &#39;Monetary&#39;]])
+for k in range(2,11):
+    model = KMeans(n_clusters = k, init = &#39;k-means++&#39;,max_iter = 1000,random_state=123).fit(x)
+    pre = model.predict(x)
+    ch = metrics.calinski_harabaz_score(x,pre) 
+    ss = metrics.silhouette_score(x,pre)
+    inertia.append(model.inertia_)
+    ch_score.append(ch)
+    ss_score.append(ss)
+score = pd.Series([ch_score,ss_score,inertia],index = [&#39;ch_score&#39;,&#39;ss_score&#39;,&#39;inertia&#39;])
+key = score.index.tolist()
+plt.figure(figsize = (15,6),dpi=600)
+j = 1
+for i in key:
+    plt.subplot(1,3,j)
+    plt.plot(list(range(2,11)),score[i])
+    plt.xlabel(&#39;n_cluster&#39;,fontsize = 13)
+    plt.ylabel(f&#39;&#123;i&#125;&#39;,fontsize = 13)
+    plt.title(f&#39;&#123;i&#125;&#39;,fontsize = 15)
+    j+=1
+plt.subplots_adjust(wspace = 0.3)
+</code></pre>
+<p>三种确定K值的方法，一起确定聚类K值，如下图，选择K=4合适，当k=4时指标有较为明显的变化趋势；<br><img src="https://img-blog.csdnimg.cn/9905d21eeb6c40f6b688b332a161305d.png" alt="在这里插入图片描述"></p>
+<pre><code class="python">model = KMeans(n_clusters=4,max_iter=1000,random_state=123).fit(x)
+labels=pd.DataFrame(model.labels_,columns = [&#39;Category&#39;])
+kmeans_result = pd.concat([pd.DataFrame(model.cluster_centers_),labels[&#39;Category&#39;].value_counts().sort_index()],axis = 1)
+kmeans_result.columns = [&#39;Recency&#39;, &#39;Frequency&#39;, &#39;Monetary&#39;,&#39;Category&#39;]
+kmeans_result
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/1c2356ceb9b14753a6449838b441babc.png" alt="在这里插入图片描述"><br>3）评估聚类效果<br>将原始数据与便签进行关联：</p>
+<pre><code class="python">data_kmeans[&#39;Category&#39;] = model.labels_
+df=data_kmeans
+</code></pre>
+<p>聚类结果三维展示：</p>
+<pre><code class="python">plt.figure(figsize=(15,6))
+ax = plt.subplot(121, projection=&#39;3d&#39;)
+df_label0 = df.loc[df.Category==0,]
+df_label1 = df.loc[df.Category==1,]
+df_label2 = df.loc[df.Category==2,]
+df_label3 = df.loc[df.Category==3,]
+ax.scatter(df_label0[[&#39;Recency&#39;]], df_label0[[&#39;Frequency&#39;]], df_label0[[&#39;Monetary&#39;]], c=&#39;y&#39;) 
+ax.scatter(df_label1[[&#39;Recency&#39;]], df_label1[[&#39;Frequency&#39;]], df_label1[[&#39;Monetary&#39;]], c=&#39;r&#39;)
+ax.scatter(df_label2[[&#39;Recency&#39;]], df_label2[[&#39;Frequency&#39;]], df_label2[[&#39;Monetary&#39;]], c=&#39;g&#39;)
+ax.scatter(df_label3[[&#39;Recency&#39;]], df_label3[[&#39;Frequency&#39;]], df_label3[[&#39;Monetary&#39;]], c=&#39;b&#39;)
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/132eefcf316e498997eb1422f7ce947e.png" alt="在这里插入图片描述"><br>4）聚类含义解释<br>将用户的K-Means分类标签映射到未归一化的数据，计算R，F，M每个特征的中位数：</p>
+<pre><code class="python">original_final=original.groupby(&quot;Category&quot;).agg(&#123;
+                                  &#39;Recency&#39;:&#39;median&#39;,
+                                   &#39;Frequency&#39;:&#39;median&#39;,
+                                   &#39;Monetary&#39;:&#39;median&#39;&#125;)
+original_final = pd.concat([original_final,original[&#39;Category&#39;].value_counts().sort_index()],axis = 1)
+original_final
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/50f180644f2c47999164728984814550.png" alt="在这里插入图片描述"><br>从上图可以看出，组别为0的用户可能是付费能力较低的用户，组别为1的付费能力强且活跃，忠诚度极高的用户，组别为2的用户是略次于组别1的金牌用户，组别为3的用户是付费能力略强于组别0的银牌用户。<br>统计用户在R，F，M三个特征下的数据分布<br>对于消费金额，其值较为多样化，统一分箱处理。<br>消费金额大小不等，以100为间距对对消费金额进行分箱处理。</p>
+<pre><code class="python">original_reset=original.reset_index()
+print(&#39;Min  = &#123;&#125;, Max  = &#123;&#125;&#39;.format(min(original_reset.Monetary    ), max(original_reset.Monetary)))
+x=range(100,280400,100)
+Monetary_1 = pd.cut(original_reset[&#39;Monetary&#39;],len(x),labels=x)
+original_reset= original_reset.assign(M1 = Monetary_1.values)
+</code></pre>
+<p>使用groupby()对各类特征求分布:</p>
+<pre><code class="python">data_r=original_reset.groupby([&quot;Recency&quot;,&quot;Category&quot;]).agg(&#123;
+                                  &#39;CustomerID&#39;:&#39;count&#39;
+                                  &#125;).reset_index()
+data_r.rename(columns = &#123;&#39;Recency&#39;: &#39;R&#39;,
+                         &#39;Category&#39;:&#39;Category&#39;,
+                           &#39;CustomerID&#39;: &#39;Count&#39;&#125;, inplace=True) 
+
+data_f=original_reset.groupby([&quot;Frequency&quot;,&quot;Category&quot;]).agg(&#123;
+                                  &#39;CustomerID&#39;:&#39;count&#39;
+                                  &#125;).reset_index()
+data_f.rename(columns = &#123;&#39;Frequency&#39;: &#39;F&#39;,
+                         &#39;Category&#39;:&#39;Category&#39;,
+                           &#39;CustomerID&#39;: &#39;Count&#39;&#125;, inplace=True) 
+
+data_m=original_reset.groupby([&quot;M1&quot;,&quot;Category&quot;]).agg(&#123;
+                                  &#39;CustomerID&#39;:&#39;count&#39;
+                                  &#125;).reset_index()
+data_m.rename(columns = &#123;&#39;M1&#39;: &#39;M&#39;,
+                         &#39;Category&#39;:&#39;Category&#39;,
+                           &#39;CustomerID&#39;: &#39;Count&#39;&#125;, inplace=True) 
+</code></pre>
+<p>可视化四个类型的用户在各个特征下的数据分布：<br><img src="https://img-blog.csdnimg.cn/183afccd6c3c4cd3800d84e84d0cee01.png" alt="在这里插入图片描述"><br>5）结论<br>可以看出，0组的用户消费频率低，消费间隔长，消费金额低的用户，因此认为该类用户群体的价值较低，是较为普通的用户；1组用户消费频率高，消费间隔短，消费金额高的用户，认为该类用户群体是价值最高的钻石用户；2组消费频率，消费金额略高于0组，消费间隔低于0组，因此认为是银牌用户；3组总体水平介于1组和2组之间。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2022-07-12T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,368 +422,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-07-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          分群思维《数据分析之道》阅读笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">相关与因果以及相关系数实战</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">Hive学习笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2022-07-10T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Hadoop集群搭建详细教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/09/HDFS/" class="archive-article-date">
-  	<time datetime="2022-07-09T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/09/HDFS/">带你了解HDFS</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">牛客网SQL练习题入门篇（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">统计学相关基础知识（来源《深入浅出统计学》）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">分群思维《数据分析之道》阅读笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">Python实战：基于RFM模型及K-Means算法实现用户分群</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/">相关与因果以及相关系数实战</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/">读书笔记《Python大数据分析与机器学习》之决策树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +553,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

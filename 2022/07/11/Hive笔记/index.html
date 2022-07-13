@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | FanRong&#39;s Blog</title>
+  <title>Hive学习笔记 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="介绍Hive以及它的流程，启动部署，SQL编写~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hive学习笔记">
+<meta property="og:url" content="http://example.com/2022/07/11/Hive%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="介绍Hive以及它的流程，启动部署，SQL编写~">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7239551e9512414395050a8d1fed0e57.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0371c9ddb5494d7fbd8f3c7fcfcad6f3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b2a97e64d94a48beb11bbd9a8b7f839d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cc24263de5154a02a6e55d112507078e.png">
+<meta property="article:published_time" content="2022-07-11T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-07-13T06:56:06.427Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/7239551e9512414395050a8d1fed0e57.png">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
   
@@ -152,74 +162,220 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Hive笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2022-07-12T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</a>
+    <h1 class="article-title" itemprop="name">
+      Hive学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        
+        <a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2022-07-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">Hive学习笔记</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>介绍Hive以及它的流程，启动部署，SQL编写~</p>
+<span id="more"></span>
+<h1 id="1-什么是Hive"><a href="#1-什么是Hive" class="headerlink" title="1.什么是Hive"></a>1.什么是Hive</h1><p>1）Apache Hive是一款建立在Hadoop之上的开源数据仓库系统，可以将存储在Hadoop文件中的结构化、半结构化数据文件映射为一张数据库表，基于表提供了一种类似SQL的查询模型，称为Hive查询语言（HQL），用于访问和分析存储在Hadoop文件中的大型数据集。<br>2）Hive核心是将HQL转换为MapReduce程序，然后将程序提交到Hadoop群集执行。<br>3） Hive由Facebook实现并开源。<br>5）Hive利用HDFS存储数据，利用MapReduce查询分析数据。<br>6）Hive的最大的魅力在于用户专注于编写HQL，Hive帮您转换成为MapReduce程序完成对数据的分析。</p>
+<h1 id="2-Hive流程"><a href="#2-Hive流程" class="headerlink" title="2.Hive流程"></a>2.Hive流程</h1><p>1）元数据存储在mysql中；<br>2）Hive本身并不直接处理数据文件。而是通过执行引擎处理。当下Hive支持MapReduce、Tez、Spark3种执行引擎。<br><img src="https://img-blog.csdnimg.cn/7239551e9512414395050a8d1fed0e57.png" alt="在这里插入图片描述"></p>
+<h1 id="3-元数据"><a href="#3-元数据" class="headerlink" title="3.元数据"></a>3.元数据</h1><p>概念：元数据（Metadata），又称中介数据、中继数据，为描述数据的数据（data about data），主要是描述数据属性（property）的信息，用来支持如指示存储位置、历史数据、资源查找、文件记录等功能。</p>
+<h1 id="4-元数据服务Metastore"><a href="#4-元数据服务Metastore" class="headerlink" title="4.元数据服务Metastore"></a>4.元数据服务Metastore</h1><p>1）Metastore即元数据服务。Metastore服务的作用是管理metadata元数据，对外暴露服务地址，让各种客户端通过连接metastore服务，由metastore再去连接MySQL数据库来存取元数据。<br>2）有了metastore服务，就可以有多个客户端同时连接，而且这些客户端不需要知道MySQL数据库的用户名和密码，只需要连接metastore 服务即可。某种程度上也保证了hive元数据的安全。<br>3）metastore服务配置有3种模式：内嵌模式、本地模式、远程模式。</p>
+<h1 id="5-Hive部署"><a href="#5-Hive部署" class="headerlink" title="5.Hive部署"></a>5.Hive部署</h1><p>1）服务器基础环境：集群时间同步、防火墙关闭、主机Host映射、免密登录、JDK安装；<br>2）启动Hive之前必须先启动Hadoop集群。特别要注意，需等待HDFS安全模式关闭之后再启动运行Hive；<br>3）Hadoop与Hive整合：修改Hadoop中core-site.xml，并且Hadoop集群同步配置文件，重启生效。<br>4）注意MySQL只需要在一台机器安装并且需要授权远程访问。<br>5）metastore服务启动方式：后台启动，输出日志信息在/root目录下nohup.out：</p>
+<blockquote>
+<p>nohup /export/server/apache-hive-3.1.2-bin/bin/hive –service metastore &amp;<br>#后台挂起启动 结束进程，使用jps查看进程 使用kill -9 杀死进程，#nohup 命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下</p>
+</blockquote>
+<h1 id="6-Hive客户端使用"><a href="#6-Hive客户端使用" class="headerlink" title="6.Hive客户端使用"></a>6.Hive客户端使用</h1><p><img src="https://img-blog.csdnimg.cn/0371c9ddb5494d7fbd8f3c7fcfcad6f3.png" alt="在这里插入图片描述"><br>Hive发展至今，总共历经了两代客户端工具。</p>
+<blockquote>
+<p>1） 第一代客户端（deprecated不推荐使用）：$HIVE_HOME/bin/hive, 是一个shellUtil。主要功能：一是可用于以交互或批处理模式运行Hive查询；二是用于Hive相关服务的启动，比如metastore服务。</p>
+<p>2） 第二代客户端（recommended 推荐使用）：$HIVE_HOME/bin/beeline，是一个JDBC客户端，是官方强烈推荐使用的Hive命令行工具，和第一代客户端相比，性能加强安全性提高。</p>
+</blockquote>
+<h2 id="6-1-使用步骤"><a href="#6-1-使用步骤" class="headerlink" title="6.1 使用步骤"></a>6.1 使用步骤</h2><blockquote>
+<p>HiveServer2通过Metastore服务读写元数据。所以在远程模式下，启动HiveServer2之前必须先首先启动metastore服务。</p>
+</blockquote>
+<p>1）在第一台node1上：</p>
+<pre><code class="xml">#先启动metastore服务 然后启动hiveserver2服务
+nohup /export/server/apache-hive-3.1.2-bin/bin/hive --service metastore &amp;
+nohup /export/server/apache-hive-3.1.2-bin/bin/hive --service hiveserver2 &amp;
+</code></pre>
+<p>2）在客户端node3上：<br>第一代：/export/server/apache-hive-3.1.2-bin/bin/hive<br>第二代：/export/server/apache-hive-3.1.2-bin/bin/beeline，然后手动输入地址：! connect jdbc:hive2://node1:10000，用户名：root，密码直接回车。<br>成功后出现：0:jdbc:hive2://node1:10000&gt;</p>
+<pre><code class="xml">beeline&gt; ! connect jdbc:hive2://node1:10000
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/b2a97e64d94a48beb11bbd9a8b7f839d.png" alt="在这里插入图片描述"><br>3）使用DataGrip可视化客户端<br> 注意更换为hive3的驱动；</p>
+<h1 id="7-Hive数据模型总览"><a href="#7-Hive数据模型总览" class="headerlink" title="7.Hive数据模型总览"></a>7.Hive数据模型总览</h1><p><img src="https://img-blog.csdnimg.cn/cc24263de5154a02a6e55d112507078e.png" alt="在这里插入图片描述"></p>
+<h1 id="8-建表示例"><a href="#8-建表示例" class="headerlink" title="8.建表示例"></a>8.建表示例</h1><pre><code class="xml">--创建数据库并切换使用
+create database if not exists itheima;
+use itheima;
+--ddl create table
+create table t_archer(
+id int comment &quot;ID&quot;,
+name string comment &quot;英雄名称&quot;,
+hp_max int comment &quot;最大生命&quot;,
+mp_max int comment &quot;最大法力&quot;,
+attack_max int comment &quot;最高物攻&quot;,
+defense_max int comment &quot;最大物防&quot;,
+attack_range string comment &quot;攻击范围&quot;,
+role_main string comment &quot;主要定位&quot;,
+role_assist string comment &quot;次要定位&quot;
+) comment &quot;王者荣耀射手信息&quot;
+row format delimited
+fields terminated by &quot;\t&quot;;
+</code></pre>
+<blockquote>
+<p>#在node机器上进行操作<br>cd ~<br>mkdir hivedata<br>cd hivedata/<br>#把文件从课程资料中首先上传到node1 linux系统上<br>#执行命令把文件上传到HDFS表所对应的目录下<br>hadoop fs -put archer.txt /user/hive/warehouse/itheima.db/t_archer</p>
+</blockquote>
+<h1 id="9-Hive语法"><a href="#9-Hive语法" class="headerlink" title="9.Hive语法"></a>9.Hive语法</h1><p>1）常用show语句：</p>
+<pre><code class="xml">--1、显示所有数据库 SCHEMAS和DATABASES的用法 功能一样
+show databases;
+show schemas;
+--2、显示当前数据库所有表
+show tables;
+SHOW TABLES [IN database_name]; --指定某个数据库
+--3、查询显示一张表的元数据信息
+desc formatted t_team_ace_player;
+</code></pre>
+<h1 id="10-load加载数据"><a href="#10-load加载数据" class="headerlink" title="10.load加载数据"></a>10.load加载数据</h1><ul>
+<li> 在Hive中建表成功之后，就会在HDFS上创建一个与之对应的文件夹，且文件夹名字就是表名；</li>
+<li>文件夹父路径是由参数hive.metastore.warehouse.dir控制，默认值是/user/hive/warehouse；</li>
+<li>所谓加载是指：将数据文件移动到与Hive表对应的位置，移动时是纯复制、移动操作。</li>
+</ul>
+<p>纯复制：</p>
+<blockquote>
+<p>从本地（node1加载）：<br>–建议使用beeline客户端 可以显示出加载过程日志信息<br>–step2:加载数据<br>– 从本地加载数据 数据位于HS2（node1）本地文件系统 本质是hadoop fs -put上传操作<br>LOAD DATA LOCAL INPATH ‘/root/hivedata/students.txt’ INTO TABLE student_local;</p>
+</blockquote>
+<p>纯移动：</p>
+<blockquote>
+<p>–从HDFS加载数据 数据位于HDFS文件系统根目录下 本质是hadoop fs -mv 移动操作<br>–先把数据上传到HDFS上 hadoop fs -put /root/hivedata/students.txt /<br>LOAD DATA INPATH ‘/students.txt’ INTO TABLE student_HDFS;</p>
+</blockquote>
+<h1 id="11-Hive-SQL"><a href="#11-Hive-SQL" class="headerlink" title="11. Hive SQL"></a>11. Hive SQL</h1><p>1）insert+select表示：将后面查询返回的结果作为内容插入到指定表中。</p>
+<ol>
+<li>需要保证查询结果列的数目和需要插入数据表格的列数目一致。</li>
+<li>如果查询出来的数据类型和插入表格对应的列数据类型不一致，将会进行转换，但是不能保证转换一定成功，转换失败的数据将会为NULL。</li>
+</ol>
+<pre><code class="xml">INSERT INTO TABLE tablename select_statement1 FROM from_statement;
+</code></pre>
+<p>示例：</p>
+<pre><code class="xml">--step1:创建一张源表student
+drop table if exists student;
+create table student(num int,name string,sex string,age int,dept string)
+row format delimited
+fields terminated by &#39;,&#39;;
+--加载数据
+load data local inpath &#39;/root/hivedata/students.txt&#39; into table student;
+--step2：创建一张目标表 只有两个字段
+create table student_from_insert(sno int,sname string);
+--使用insert+select插入数据到新表中
+insert into table student_from_insert select num,name from student;
+select * from student_insert1;
+</code></pre>
+<p>2）查询语句<br> 类似mysql；</p>
+<h1 id="12-Hive内置函数"><a href="#12-Hive内置函数" class="headerlink" title="12.Hive内置函数"></a>12.Hive内置函数</h1><blockquote>
+<p> 根据函数输入输出的行数：<br>UDF（User-Defined-Function）普通函数，一进一出<br>UDAF（User-Defined Aggregation Function）聚合函数，多进一出<br>UDTF（User-Defined Table-Generating Functions）表生成函数，一进多出</p>
+</blockquote>
+<p>（1）String Functions 字符串函数</p>
+<pre><code class="xml">------------String Functions 字符串函数------------
+select length(&quot;itcast&quot;);
+select reverse(&quot;itcast&quot;);
+select concat(&quot;angela&quot;,&quot;baby&quot;);
+--带分隔符字符串连接函数：concat_ws(separator, [string | array(string)]+)
+select concat_ws(&#39;.&#39;, &#39;www&#39;, array(&#39;itcast&#39;, &#39;cn&#39;));
+--字符串截取函数：substr(str, pos[, len]) 或者 substring(str, pos[, len])
+select substr(&quot;angelababy&quot;,-2); --pos是从1开始的索引，如果为负数则倒着数
+select substr(&quot;angelababy&quot;,2,2);
+--分割字符串函数: split(str, regex)
+select split(&#39;apache hive&#39;, &#39; &#39;);
+</code></pre>
+<p>（2）Date Functions 日期函数</p>
+<pre><code class="xml">----------- Date Functions 日期函数 -----------------
+--获取当前日期: current_date
+select current_date();
+--获取当前UNIX时间戳函数: unix_timestamp
+select unix_timestamp();
+--日期转UNIX时间戳函数: unix_timestamp
+select unix_timestamp(&quot;2011-12-07 13:01:03&quot;);
+--指定格式日期转UNIX时间戳函数: unix_timestamp
+select unix_timestamp(&#39;20111207 13:01:03&#39;,&#39;yyyyMMdd HH:mm:ss&#39;);
+--UNIX时间戳转日期函数: from_unixtime
+select from_unixtime(1618238391);
+select from_unixtime(0, &#39;yyyy-MM-dd HH:mm:ss&#39;);
+--日期比较函数: datediff 日期格式要求&#39;yyyy-MM-dd HH:mm:ss&#39; or &#39;yyyy-MM-dd&#39;
+select datediff(&#39;2012-12-08&#39;,&#39;2012-05-09&#39;);
+--日期增加函数: date_add
+select date_add(&#39;2012-02-28&#39;,10);
+--日期减少函数: date_sub
+select date_sub(&#39;2012-01-1&#39;,10);
+</code></pre>
+<p>（3）Mathematical Functions 数学函数</p>
+<pre><code class="xml">----Mathematical Functions 数学函数-------------
+--取整函数: round 返回double类型的整数值部分 （遵循四舍五入）
+select round(3.1415926);
+--指定精度取整函数: round(double a, int d) 返回指定精度d的double类型
+select round(3.1415926,4);
+--取随机数函数: rand 每次执行都不一样 返回一个0到1范围内的随机数
+select rand();
+--指定种子取随机数函数: rand(int seed) 得到一个稳定的随机数序列
+select rand(3);
+</code></pre>
+<p>（4）Conditional Functions 条件函数</p>
+<pre><code class="xml">-----Conditional Functions 条件函数------------------
+--使用之前课程创建好的student表数据
+select * from student limit 3;
+--if条件判断: if(boolean testCondition, T valueTrue, T valueFalseOrNull)
+select if(1=2,100,200);
+select if(sex =&#39;男&#39;,&#39;M&#39;,&#39;W&#39;) from student limit 3;
+--空值转换函数: nvl(T value, T default_value)
+select nvl(&quot;allen&quot;,&quot;itcast&quot;);
+select nvl(null,&quot;itcast&quot;);
+--条件转换函数: CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END
+select case 100 when 50 then &#39;tom&#39; when 100 then &#39;mary&#39; else &#39;tim&#39; end;
+select case sex when &#39;男&#39; then &#39;male&#39; else &#39;female&#39; end from student limit 3;
+</code></pre>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -231,330 +387,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2022-07-10T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hadoop集群搭建详细教程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Hadoop集群搭建详细教程</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/09/HDFS/" class="archive-article-date">
-  	<time datetime="2022-07-09T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/09/HDFS/">带你了解HDFS</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">牛客网SQL练习题入门篇（一）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">统计学相关基础知识（来源《深入浅出统计学》）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">分群思维《数据分析之道》阅读笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">Python实战：基于RFM模型及K-Means算法实现用户分群</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/24/%E7%9B%B8%E5%85%B3%E4%B8%8E%E5%9B%A0%E6%9E%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%AE%9E%E6%88%98/">相关与因果以及相关系数实战</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/">读书笔记《Python大数据分析与机器学习》之决策树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +518,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
