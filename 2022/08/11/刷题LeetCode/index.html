@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | FanRong&#39;s Blog</title>
+  <title>牛客刷题基础篇之链表，字符串，数组 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/2022/page/2/index.html">
+  <meta name="description" content="链表，字符串，数组常见基础编程题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客刷题基础篇之链表，字符串，数组">
+<meta property="og:url" content="http://example.com/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="链表，字符串，数组常见基础编程题">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-11T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-08-24T07:01:46.206Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
@@ -152,78 +157,305 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-刷题LeetCode" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      牛客刷题基础篇之链表，字符串，数组
+    </h1>
+  
+
+        
+        <a href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/" class="archive-article-date">
+  	<time datetime="2022-08-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>链表，字符串，数组常见基础编程题</p>
+<span id="more"></span>
+<h1 id="1-链表"><a href="#1-链表" class="headerlink" title="1. 链表"></a>1. 链表</h1><h2 id="1-1-反转链表"><a href="#1-1-反转链表" class="headerlink" title="1.1 反转链表"></a>1.1 反转链表</h2><p>思路：先用数组添加每个节点的值，再遍历每个节点使用头插法建立新表</p>
+<pre><code class="python">class Solution:
+    def ReverseList(self , head: ListNode) -&gt; ListNode:
+        # write code here
+        list_1 = []
+        while head:
+            list_1.append(head.val)
+            head = head.next        
+        for i in list_1:
+            node = ListNode(i)
+            node.next = head
+            head = node
+        return head
+</code></pre>
+<h2 id="1-2-合并链表"><a href="#1-2-合并链表" class="headerlink" title="1.2 合并链表"></a>1.2 合并链表</h2><p>思路：先判断两个链表是否为空，都不为空则建立新的头节点，赋值给当前指针cur，比较两个节点值大小，移动cur，把最后不为空的链表直接连上cur</p>
+<pre><code class="python">class Solution:
+    def Merge(self , pHead1: ListNode, pHead2: ListNode) -&gt; ListNode:
+        # write code here
+        if not pHead1:
+            return pHead2
+        if not pHead2:
+            return pHead1
+        head = ListNode(-1)
+        cur = head
+        while pHead1 and pHead2:
+            if pHead1.val &lt;= pHead2.val:
+                cur.next = pHead1
+                pHead1 = pHead1.next
+            else:
+                cur.next = pHead2
+                pHead2 = pHead2.next
+            cur = cur.next
+        if pHead1:
+            cur.next = pHead1
+        else:
+            cur.next = pHead2        
+        return head.next
+</code></pre>
+<h2 id="1-3-判断链表是否有环"><a href="#1-3-判断链表是否有环" class="headerlink" title="1.3 判断链表是否有环"></a>1.3 判断链表是否有环</h2><p>思路：使用集合，遍历所有节点，若遇到环（重复节点），集合中已存在，则返回true</p>
+<pre><code class="python">class Solution:
+    def hasCycle(self , head: ListNode) -&gt; bool:
+        dic = set()
+        while head:
+            if head in dic:
+                return True
+            dic.add(head)
+            head = head.next
+        return False
+</code></pre>
+<h2 id="1-4-链表相加"><a href="#1-4-链表相加" class="headerlink" title="1.4 链表相加"></a>1.4 链表相加</h2><p>思路：先转成数字相加，再转成链表，运行超时</p>
+<pre><code class="python">class Solution:
+    def addInList(self , head1: ListNode, head2: ListNode) -&gt; ListNode:
+        # write code here print(&#39;,&#39;.join(str(n) for n in L)) 
+        list1 = []
+        while head1:
+            list1.append(head1.val)
+            head1 = head1.next
+        num1 = int(&quot;&quot;.join(str(n) for n in list1))
+        list2 = []
+        while head2:
+            list2.append(head2.val)
+            head2 = head2.next
+        num2 = int(&quot;&quot;.join(str(n) for n in list2))
+        num = num1+num2
+        new = ListNode(-1)
+        cur = new
+        for i in str(num):
+            cur.next = ListNode(int(i)) 
+            cur = cur.next                
+        return new.next
+</code></pre>
+<h2 id="1-5-单链表排序"><a href="#1-5-单链表排序" class="headerlink" title="1.5 单链表排序"></a>1.5 单链表排序</h2><pre><code class="python">class Solution:
+    def sortInList(self , head: ListNode) -&gt; ListNode:
+        # write code here
+        tmp = []
+        while head:
+            tmp.append(head.val)
+            head = head.next
+        tmp.sort()
+        result = ListNode(-1)
+        cur = result
+        for i in tmp:
+            cur.next = ListNode(i)
+            cur = cur.next
+        return result.next
+</code></pre>
+<h2 id="1-6-判断链表是否是回文结构"><a href="#1-6-判断链表是否是回文结构" class="headerlink" title="1.6 判断链表是否是回文结构"></a>1.6 判断链表是否是回文结构</h2><p>思路：先将链表转成列表，再用左右指针往中间走</p>
+<pre><code class="python">class Solution:
+    def isPail(self , head: ListNode) -&gt; bool:
+        # write code here
+        list_num = []
+        while head:
+            list_num.append(head.val)
+            head = head.next
+        left = 0
+        right = len(list_num)-1
+        while(left&lt;=right):
+            if(list_num[left] ==list_num[right]):
+                left = left+1
+                right = right-1
+                continue
+            else:
+                return False
+        return True
+</code></pre>
+<h2 id="1-7-删除链表中的重复元素（使所有元素只出现一次）"><a href="#1-7-删除链表中的重复元素（使所有元素只出现一次）" class="headerlink" title="1.7 删除链表中的重复元素（使所有元素只出现一次）"></a>1.7 删除链表中的重复元素（使所有元素只出现一次）</h2><p>思路：从头往后，同时遍历当前指针和下一个指针的值</p>
+<pre><code class="python">class Solution:
+    def deleteDuplicates(self , head: ListNode) -&gt; ListNode:
+        # write code here
+        if head == None:
+            return None
+        cur = head
+        while cur and cur.next:
+            if(cur.val == cur.next.val):
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+        return head
+</code></pre>
+<h1 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2.字符串"></a>2.字符串</h1><h2 id="2-1-字符串变形（字母大写转小写，单词逆序）"><a href="#2-1-字符串变形（字母大写转小写，单词逆序）" class="headerlink" title="2.1 字符串变形（字母大写转小写，单词逆序）"></a>2.1 字符串变形（字母大写转小写，单词逆序）</h2><p>思路：将字符串根据空格切开添加到列表1，使用栈弹出列表每个元素，对每个元素的字符判断大小写，合并生成新的字符串到新列表中。</p>
+<pre><code class="python">class Solution:
+    def trans(self , s: str, n: int) -&gt; str:
+        # write code here
+        list1 = s.split(&quot; &quot;)
+        list2 = []
+        while(list1):
+            a_str = list1.pop()
+            trans_str = &quot;&quot;
+            for c in a_str:
+                if(c.isupper()):
+                    c = c.lower()
+                elif(c.islower()):
+                    c = c.upper()
+                trans_str = trans_str + c
+                
+            list2.append(trans_str)
+        return &quot; &quot;.join(list2)
+</code></pre>
+<h2 id="2-2-最长公共前缀"><a href="#2-2-最长公共前缀" class="headerlink" title="2.2 最长公共前缀"></a>2.2 最长公共前缀</h2><p>思路：遍历长度为二维字符串数组中最小字符串的长度</p>
+<pre><code class="python">class Solution:
+    def longestCommonPrefix(self , strs: List[str]) -&gt; str:
+        # write code here
+        if not strs:
+            return &quot;&quot;
+        res = &quot;&quot;
+        min_len = min([len(i) for i in strs])
+        for i in range(min_len):
+            now_s = strs[0][i]
+            if all(s[i]==now_s for s in strs):
+                res += now_s
+            else:
+                return res
+        return res
+</code></pre>
+<h2 id="2-3-验证IP地址"><a href="#2-3-验证IP地址" class="headerlink" title="2.3 验证IP地址"></a>2.3 验证IP地址</h2><p>思路：IPv4：先分割，然后验证每一个元素是否是0开头，是否是数字，当遍历到最后一项没问题时才能输出“IPv4”；IPv6：先分割，然后验证每一个元素长度，是否是数字，验证每一个元素中字符是否是数字或大小写A-F(a-f)，遍历到最后一项没问题再输出。</p>
+<pre><code class="python">class Solution:
+    def isIP4(self,IP: str):
+        listip4 = IP.split(&quot;.&quot;)
+        for id,i in enumerate(listip4):
+            if(str(i)[0]==&quot;0&quot; or str(i)==&quot;&quot;):return &quot;Neither&quot;
+            elif(str(i).isdigit()):
+                if(int(i)&gt;=0 and int(i)&lt;=255):
+                    if(id == len(listip4)-1):return &quot;IPv4&quot;
+                    continue
+                else: return &quot;Neither&quot;
+            else:
+                return &quot;Neither&quot;            
+        return &quot;Neither&quot;
+    
+    def isIP6(self,IP: str):
+        listip6 = IP.split(&quot;:&quot;)
+        for i in listip6:
+            if(len(str(i)) &gt; 4 or len(str(i)) == 0):return &quot;Neither&quot;
+            for j in i:
+                if(j.isdigit() or j in [&quot;a&quot;,&quot;A&quot;,&quot;b&quot;,&quot;B&quot;,&quot;c&quot;,&quot;C&quot;,&quot;d&quot;,&quot;D&quot;,&quot;e&quot;,&quot;E&quot;,&quot;f&quot;,&quot;F&quot;]):
+                    if(i == listip6[len(listip6)-1]):return &quot;IPv6&quot;
+                else:
+                    return &quot;Neither&quot;                  
+        return &quot;Neither&quot;
+               
+    def solve(self , IP: str) -&gt; str:
+        # write code here
+        if len(IP.split(&quot;.&quot;))==4:
+            return self.isIP4(IP)
+        if len(IP.split(&quot;:&quot;))==8:
+            return self.isIP6(IP)
+        return &quot;Neither&quot;
+</code></pre>
+<h1 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h1><h2 id="3-1-两数之和"><a href="#3-1-两数之和" class="headerlink" title="3.1 两数之和"></a>3.1 两数之和</h2><p>思路：定义哈希字典存储下标，key为数值，value为下标，遍历若得到target-当前数值在字典中出现过，则找到了。</p>
+<pre><code class="python">class Solution:
+    def twoSum(self , numbers: List[int], target: int) -&gt; List[int]:
+        # write code here
+        res = []
+        dic = &#123;&#125;
+        for id, n in enumerate(numbers):
+            if target - n not in dic:
+                dic[n] = id
+            else:
+                res.append(dic[target - n] + 1)
+                res.append(id+1)
+                break
+        return res
+</code></pre>
+<h2 id="3-2-数组中出现次数超过一半的数字"><a href="#3-2-数组中出现次数超过一半的数字" class="headerlink" title="3.2 数组中出现次数超过一半的数字"></a>3.2 数组中出现次数超过一半的数字</h2><p>题目：给一个长度为 n 的数组，数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。<br>思路：先排序，中间下标的是这个数字</p>
+<pre><code class="python">class Solution:
+    def MoreThanHalfNum_Solution(self , numbers: List[int]) -&gt; int:
+        # write code here
+        numbers.sort()
+        return numbers[len(numbers)//2]
+</code></pre>
+<h2 id="3-3-数组中只出现一次的两个数字"><a href="#3-3-数组中只出现一次的两个数字" class="headerlink" title="3.3 数组中只出现一次的两个数字"></a>3.3 数组中只出现一次的两个数字</h2><p>思路：使用集合添加元素，若遇到集合中已经存在的，则删除集合原有的，最后将集合转化成列表返回。</p>
+<pre><code class="python">class Solution:
+    def FindNumsAppearOnce(self , array: List[int]) -&gt; List[int]:
+        # write code here
+        s = set()
+        for i in array:
+            if i not in s:
+                s.add(i)
+            else:
+                s.remove(i)
+        return list(s)
+</code></pre>
+<h2 id="3-4-缺失的第一个正整数"><a href="#3-4-缺失的第一个正整数" class="headerlink" title="3.4 缺失的第一个正整数"></a>3.4 缺失的第一个正整数</h2><pre><code class="python">class Solution:
+    def minNumberDisappeared(self , nums: List[int]) -&gt; int:
+        n = len(nums)
+        mp = dict()
+        #哈希表记录数组中出现的每个数字
+        for i in range(n): 
+            if nums[i] in mp:
+                mp[nums[i]] += 1
+            else:
+                mp[nums[i]] = 1
+        res = 1
+        #从1开始找到哈希表中第一个没有出现的正整数
+        while res in mp: 
+            res += 1
+        return res
+</code></pre>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%86%B3%E7%AD%96%E6%A0%91/">读书笔记《Python大数据分析与机器学习》之决策树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%EF%BC%89/">电信客户流失数据分析（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -235,296 +467,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E9%A2%84%E6%B5%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-23T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E7%94%B5%E4%BF%A1%E5%AE%A2%E6%88%B7%E6%B5%81%E5%A4%B1%E9%A2%84%E6%B5%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">电信客户流失数据分析（二）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2022-05-23T13:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/Pandas+Pyecharts%20_%20%E5%8C%97%E4%BA%AC%E6%9F%90%E5%B9%B3%E5%8F%B0%E4%BA%8C%E6%89%8B%E6%88%BF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E5%8F%AF%E8%A7%86%E5%8C%96/">Pandas+Pyecharts _ 北京某平台二手房数据分析+可视化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Pyecharts</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/05/23/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/" class="archive-article-date">
-  	<time datetime="2022-05-23T13:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/05/23/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BUER-py/">教你如何快速上手腾讯开源的预训练模型工具UER-py</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-04-27T14:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">数据分析相关知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/27/AB%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-04-27T14:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/27/AB%E6%B5%8B%E8%AF%95%E5%AE%9E%E9%AA%8C%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E8%90%A5%E9%94%80%E7%AD%96%E7%95%A5%E6%95%88%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89/">A/B测试实验(支付宝营销策略效果分析)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2022-04-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/">数据库原理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/22/python%20selenium%20PIL%E7%A0%B4%E8%A7%A3360%E7%99%BE%E7%A7%91%E6%BB%91%E5%8A%A8%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2022-04-22T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/22/python%20selenium%20PIL%E7%A0%B4%E8%A7%A3360%E7%99%BE%E7%A7%91%E6%BB%91%E5%8A%A8%E9%AA%8C%E8%AF%81%E7%A0%81/">python selenium PIL破解360百科滑动验证码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -548,8 +589,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
