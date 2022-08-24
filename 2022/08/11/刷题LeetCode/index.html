@@ -16,7 +16,7 @@
 <meta property="og:description" content="链表，字符串，数组常见基础编程题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-11T14:45:56.000Z">
-<meta property="article:modified_time" content="2022-08-24T07:01:46.206Z">
+<meta property="article:modified_time" content="2022-08-24T07:35:25.105Z">
 <meta property="article:author" content="FanRong">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -179,7 +179,10 @@
       
         <p>链表，字符串，数组常见基础编程题</p>
 <span id="more"></span>
-<h1 id="1-链表"><a href="#1-链表" class="headerlink" title="1. 链表"></a>1. 链表</h1><h2 id="1-1-反转链表"><a href="#1-1-反转链表" class="headerlink" title="1.1 反转链表"></a>1.1 反转链表</h2><p>思路：先用数组添加每个节点的值，再遍历每个节点使用头插法建立新表</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>1.链表<br><a href="#1.1">1.1 反转链表</a><br><a href="#1.2">1.2 合并链表</a><br><a href="#1.3">1.3 判断链表是否有环</a><br><a href="#1.4">1.4 链表相加</a><br><a href="#1.5">1.5 单链表排序</a><br><a href="#1.6">1.6 判断单链表是否是回文结构</a><br><a href="#1.7">1.7 删除链表中的重复元素(所有元素只出现一次)</a><br>2.字符串<br><a href="#2.1">2.1 字符串变形</a><br><a href="#2.2">2.2 最长公共前缀</a><br><a href="#2.3">2.3 验证IP地址</a><br>3.数组<br><a href="#3.1">3.1 两数之和</a><br><a href="#3.2">3.2 数组中出现次数超过一半的数字</a><br><a href="#3.3">3.3 数组中只出现一次的两个数字</a><br><a href="#3.4">3.4 缺失的第一个正整数</a></p>
+<h1 id="1-链表"><a href="#1-链表" class="headerlink" title="1. 链表"></a>1. 链表</h1><h2 id = "1.1">1.1 反转链表</h2>
+思路：先用数组添加每个节点的值，再遍历每个节点使用头插法建立新表
+
 <pre><code class="python">class Solution:
     def ReverseList(self , head: ListNode) -&gt; ListNode:
         # write code here
@@ -193,7 +196,9 @@
             head = node
         return head
 </code></pre>
-<h2 id="1-2-合并链表"><a href="#1-2-合并链表" class="headerlink" title="1.2 合并链表"></a>1.2 合并链表</h2><p>思路：先判断两个链表是否为空，都不为空则建立新的头节点，赋值给当前指针cur，比较两个节点值大小，移动cur，把最后不为空的链表直接连上cur</p>
+<h2 id = "1.2">1.2 合并链表</h2>
+思路：先判断两个链表是否为空，都不为空则建立新的头节点，赋值给当前指针cur，比较两个节点值大小，移动cur，把最后不为空的链表直接连上cur
+
 <pre><code class="python">class Solution:
     def Merge(self , pHead1: ListNode, pHead2: ListNode) -&gt; ListNode:
         # write code here
@@ -217,7 +222,9 @@
             cur.next = pHead2        
         return head.next
 </code></pre>
-<h2 id="1-3-判断链表是否有环"><a href="#1-3-判断链表是否有环" class="headerlink" title="1.3 判断链表是否有环"></a>1.3 判断链表是否有环</h2><p>思路：使用集合，遍历所有节点，若遇到环（重复节点），集合中已存在，则返回true</p>
+ <h2 id = "1.3">1.3 判断链表是否有环</h2>
+思路：使用集合，遍历所有节点，若遇到环（重复节点），集合中已存在，则返回true
+
 <pre><code class="python">class Solution:
     def hasCycle(self , head: ListNode) -&gt; bool:
         dic = set()
@@ -228,7 +235,9 @@
             head = head.next
         return False
 </code></pre>
-<h2 id="1-4-链表相加"><a href="#1-4-链表相加" class="headerlink" title="1.4 链表相加"></a>1.4 链表相加</h2><p>思路：先转成数字相加，再转成链表，运行超时</p>
+ <h2 id = "1.4">1.4 链表相加</h2>
+思路：先转成数字相加，再转成链表，运行超时
+
 <pre><code class="python">class Solution:
     def addInList(self , head1: ListNode, head2: ListNode) -&gt; ListNode:
         # write code here print(&#39;,&#39;.join(str(n) for n in L)) 
@@ -250,7 +259,10 @@
             cur = cur.next                
         return new.next
 </code></pre>
-<h2 id="1-5-单链表排序"><a href="#1-5-单链表排序" class="headerlink" title="1.5 单链表排序"></a>1.5 单链表排序</h2><pre><code class="python">class Solution:
+<h2 id = "1.5">1.5 单链表排序 </h2>
+
+
+<pre><code class="python">class Solution:
     def sortInList(self , head: ListNode) -&gt; ListNode:
         # write code here
         tmp = []
@@ -265,7 +277,9 @@
             cur = cur.next
         return result.next
 </code></pre>
-<h2 id="1-6-判断链表是否是回文结构"><a href="#1-6-判断链表是否是回文结构" class="headerlink" title="1.6 判断链表是否是回文结构"></a>1.6 判断链表是否是回文结构</h2><p>思路：先将链表转成列表，再用左右指针往中间走</p>
+<h2 id = "1.6">1.6 判断链表是否是回文结构 </h2>
+思路：先将链表转成列表，再用左右指针往中间走
+
 <pre><code class="python">class Solution:
     def isPail(self , head: ListNode) -&gt; bool:
         # write code here
@@ -284,7 +298,9 @@
                 return False
         return True
 </code></pre>
-<h2 id="1-7-删除链表中的重复元素（使所有元素只出现一次）"><a href="#1-7-删除链表中的重复元素（使所有元素只出现一次）" class="headerlink" title="1.7 删除链表中的重复元素（使所有元素只出现一次）"></a>1.7 删除链表中的重复元素（使所有元素只出现一次）</h2><p>思路：从头往后，同时遍历当前指针和下一个指针的值</p>
+ <h2 id = "1.7">1.7 删除链表中的重复元素（使所有元素只出现一次）</h2>
+思路：从头往后，同时遍历当前指针和下一个指针的值
+
 <pre><code class="python">class Solution:
     def deleteDuplicates(self , head: ListNode) -&gt; ListNode:
         # write code here
@@ -298,7 +314,9 @@
                 cur = cur.next
         return head
 </code></pre>
-<h1 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2.字符串"></a>2.字符串</h1><h2 id="2-1-字符串变形（字母大写转小写，单词逆序）"><a href="#2-1-字符串变形（字母大写转小写，单词逆序）" class="headerlink" title="2.1 字符串变形（字母大写转小写，单词逆序）"></a>2.1 字符串变形（字母大写转小写，单词逆序）</h2><p>思路：将字符串根据空格切开添加到列表1，使用栈弹出列表每个元素，对每个元素的字符判断大小写，合并生成新的字符串到新列表中。</p>
+<h1 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2.字符串"></a>2.字符串</h1><h2 id = "2.1"> 2.1 字符串变形（字母大写转小写，单词逆序</h2>
+思路：将字符串根据空格切开添加到列表1，使用栈弹出列表每个元素，对每个元素的字符判断大小写，合并生成新的字符串到新列表中。
+
 <pre><code class="python">class Solution:
     def trans(self , s: str, n: int) -&gt; str:
         # write code here
@@ -317,7 +335,9 @@
             list2.append(trans_str)
         return &quot; &quot;.join(list2)
 </code></pre>
-<h2 id="2-2-最长公共前缀"><a href="#2-2-最长公共前缀" class="headerlink" title="2.2 最长公共前缀"></a>2.2 最长公共前缀</h2><p>思路：遍历长度为二维字符串数组中最小字符串的长度</p>
+ <h2 id = "2.2"> 2.2 最长公共前缀</h2>
+思路：遍历长度为二维字符串数组中最小字符串的长度
+
 <pre><code class="python">class Solution:
     def longestCommonPrefix(self , strs: List[str]) -&gt; str:
         # write code here
@@ -333,7 +353,12 @@
                 return res
         return res
 </code></pre>
-<h2 id="2-3-验证IP地址"><a href="#2-3-验证IP地址" class="headerlink" title="2.3 验证IP地址"></a>2.3 验证IP地址</h2><p>思路：IPv4：先分割，然后验证每一个元素是否是0开头，是否是数字，当遍历到最后一项没问题时才能输出“IPv4”；IPv6：先分割，然后验证每一个元素长度，是否是数字，验证每一个元素中字符是否是数字或大小写A-F(a-f)，遍历到最后一项没问题再输出。</p>
+<h2 id = "2.3">  2.3 验证IP地址</h2>
+思路：IPv4：先分割，然后验证每一个元素是否是0开头，是否是数字，当遍历到最后一项没问题时才能输出“IPv4”；IPv6：先分割，然后验证每一个元素长度，是否是数字，验证每一个元素中字符是否是数字或大小写A-F(a-f)，遍历到最后一项没问题再输出。
+
+
+
+
 <pre><code class="python">class Solution:
     def isIP4(self,IP: str):
         listip4 = IP.split(&quot;.&quot;)
@@ -367,7 +392,10 @@
             return self.isIP6(IP)
         return &quot;Neither&quot;
 </code></pre>
-<h1 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h1><h2 id="3-1-两数之和"><a href="#3-1-两数之和" class="headerlink" title="3.1 两数之和"></a>3.1 两数之和</h2><p>思路：定义哈希字典存储下标，key为数值，value为下标，遍历若得到target-当前数值在字典中出现过，则找到了。</p>
+<h1 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h1><h2 id = "3.1">  3.1 两数之和</h2>
+思路：定义哈希字典存储下标，key为数值，value为下标，遍历若得到target-当前数值在字典中出现过，则找到了。
+
+
 <pre><code class="python">class Solution:
     def twoSum(self , numbers: List[int], target: int) -&gt; List[int]:
         # write code here
@@ -382,14 +410,20 @@
                 break
         return res
 </code></pre>
-<h2 id="3-2-数组中出现次数超过一半的数字"><a href="#3-2-数组中出现次数超过一半的数字" class="headerlink" title="3.2 数组中出现次数超过一半的数字"></a>3.2 数组中出现次数超过一半的数字</h2><p>题目：给一个长度为 n 的数组，数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。<br>思路：先排序，中间下标的是这个数字</p>
+<h2 id = "3.1">  3.2 数组中出现次数超过一半的数字</h2>
+题目：给一个长度为 n 的数组，数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+思路：先排序，中间下标的是这个数字
+
+
 <pre><code class="python">class Solution:
     def MoreThanHalfNum_Solution(self , numbers: List[int]) -&gt; int:
         # write code here
         numbers.sort()
         return numbers[len(numbers)//2]
 </code></pre>
-<h2 id="3-3-数组中只出现一次的两个数字"><a href="#3-3-数组中只出现一次的两个数字" class="headerlink" title="3.3 数组中只出现一次的两个数字"></a>3.3 数组中只出现一次的两个数字</h2><p>思路：使用集合添加元素，若遇到集合中已经存在的，则删除集合原有的，最后将集合转化成列表返回。</p>
+<h2 id = "3.3">  3.3 数组中只出现一次的两个数字</h2>
+思路：使用集合添加元素，若遇到集合中已经存在的，则删除集合原有的，最后将集合转化成列表返回。
+
 <pre><code class="python">class Solution:
     def FindNumsAppearOnce(self , array: List[int]) -&gt; List[int]:
         # write code here
@@ -401,7 +435,9 @@
                 s.remove(i)
         return list(s)
 </code></pre>
-<h2 id="3-4-缺失的第一个正整数"><a href="#3-4-缺失的第一个正整数" class="headerlink" title="3.4 缺失的第一个正整数"></a>3.4 缺失的第一个正整数</h2><pre><code class="python">class Solution:
+<h2 id = "3.4">  3.4 缺失的第一个正整数</h2>
+
+<pre><code class="python">class Solution:
     def minNumberDisappeared(self , nums: List[int]) -&gt; int:
         n = len(nums)
         mp = dict()
