@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>FanRong&#39;s Blog</title>
+  <title>牛客刷题基础篇之查找，二叉树，栈和队列 | FanRong&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FanRong&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="查找，二叉树，栈和队列常见基础编程题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客刷题基础篇之查找，二叉树，栈和队列">
+<meta property="og:url" content="http://example.com/2022/08/11/%E5%88%B7%E9%A2%98LeetCode%E6%9F%A5%E6%89%BE%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="FanRong&#39;s Blog">
+<meta property="og:description" content="查找，二叉树，栈和队列常见基础编程题">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-11T14:45:56.000Z">
+<meta property="article:modified_time" content="2022-08-25T08:13:18.915Z">
 <meta property="article:author" content="FanRong">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="FanRong&#39;s Blog" type="application/atom+xml">
@@ -152,92 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-刷题LeetCode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-刷题LeetCode查找，二叉树，栈，队列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/">牛客刷题基础篇之链表，字符串，数组</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/" class="archive-article-date">
-  	<time datetime="2022-08-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>链表，字符串，数组常见基础编程题</p>
-        
-          <a class="article-more-a" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-刷题LeetCode查找，二叉树，栈，队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode%E6%9F%A5%E6%89%BE%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97/">牛客刷题基础篇之查找，二叉树，栈和队列</a>
+    <h1 class="article-title" itemprop="name">
+      牛客刷题基础篇之查找，二叉树，栈和队列
     </h1>
   
 
@@ -251,11 +178,385 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>查找，二叉树，栈和队列常见基础编程题</p>
+<span id="more"></span>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>1.查找<br><a href="#1.1">1.1 数组二分查找（给定目标值）</a><br><a href="#1.2">1.2 二维数组中的查找（左到右递增，上到下递增）</a><br><a href="#1.3">1.3 寻找峰值（大于左右相邻元素）</a><br>2.二叉树<br><a href="#2.1">2.1 前序遍历</a><br><a href="#2.2">2.2 中序遍历</a><br><a href="#2.3">2.3 后序遍历</a><br><a href="#2.4">2.4 层次遍历</a><br><a href="#2.5">2.5 二叉树最大深度</a><br>3.栈，队列<br><a href="#3.1">3.1 用两个栈实现队列</a><br><a href="#3.2">3.2 有效括号序列</a><br><a href="#3.3">3.3 滑动窗口最大值</a><br><a href="#3.4">3.4 表达式求值</a></p>
+<h1 id="1-查找"><a href="#1-查找" class="headerlink" title="1. 查找"></a>1. 查找</h1><h2 id = "1.1">1.1 数组二分查找（给定目标值）</h2>
+
+<pre><code class="python">class Solution:
+    def search(self , nums: List[int], target: int) -&gt; int:
+        # write code here
+        l = 0
+        r = len(nums) - 1
+        while l &lt;= r:
+            m = int((l+r)/2)
+            if nums[m] == target:
+                return m
+            if nums[m] &gt; target:
+                r = m-1
+            else:
+                l = m+1
+        return -1
+</code></pre>
+<h2 id = "1.2">1.2 二维数组中的查找（左到右递增，上到下递增</h2>
+思路：从右下角王左上角遍历，当前值比target大，行递减；当前值比target小列递增。
+
+<pre><code class="python">class Solution:
+    def Find(self , target: int, array: List[List[int]]) -&gt; bool:
+        # write code here
+        row = len(array)-1
+        col = len(array[0])-1
+        i = row
+        j = 0
+        while i&gt;=0 and j&lt;=col:
+            if array[i][j]==target:
+                return True
+            elif array[i][j]&gt;target:
+                i = i-1
+            else:
+                j = j+1
         
-          <a class="article-more-a" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode%E6%9F%A5%E6%89%BE%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97/#more">more >></a>
-        
+        return False
+                
+</code></pre>
+ <h2 id = "1.3">1.3 寻找峰值（大于左右相邻元素）</h2>
+
+
+<pre><code class="python">class Solution:
+    def findPeakElement(self , nums: List[int]) -&gt; int:
+        # write code here
+        left = 0 
+        right = len(nums) - 1
+        while left &lt; right:
+            mid = int((left+right)/2)
+            if nums[mid] &gt; nums[mid+1]:
+                right = mid
+            else:
+                left = mid + 1
+        return right
+</code></pre>
+<h1 id="2-二叉树"><a href="#2-二叉树" class="headerlink" title="2.二叉树"></a>2.二叉树</h1> <h2 id = "2.1">2.1 前序遍历</h2>
+ 
+
+<pre><code class="python">class Solution:    
+    def preorderTraversal(self , root: TreeNode) -&gt; List[int]:
+        # write code here
+        if not root: return []
+        res = []
+        res.append(root.val)
+        if root.left:
+            l = self.preorderTraversal(root.left)
+            res.extend(l)
+        if root.right:
+            r = self.preorderTraversal(root.right)
+            res.extend(r)
+        return res     
+</code></pre>
+<h2 id = "2.2">2.2 中序遍历</h2>
+思路：python中有最大递归数的限制，因此需要加上限制条件sys.setrecursionlimit(1500)
+
+
+<pre><code class="python">import sys
+class Solution:
+    def inorderTraversal(self , root: TreeNode) -&gt; List[int]:
+        # write code here
+        if not root: return []
+        res = []
+        sys.setrecursionlimit(1500)
+        if root.left:
+            l = self.inorderTraversal(root.left)
+            res.extend(l)
+        res.append(root.val)
+        if root.right:
+            r = self.inorderTraversal(root.right)
+            res.extend(r)
+        return res
+</code></pre>
+<h2 id = "2.3">2.3 后序遍历</h2>
+思路：python中有最大递归数的限制，因此需要加上限制条件sys.setrecursionlimit(1500)
+
+<pre><code class="python">import sys
+class Solution:
+    def postorderTraversal(self , root: TreeNode) -&gt; List[int]:
+        # write code here
+        if not root: return []
+        res = []
+        sys.setrecursionlimit(1500)
+        if root.left:
+            l = self.postorderTraversal(root.left)
+            res.extend(l)
+        if root.right:
+            r = self.postorderTraversal(root.right)
+            res.extend(r)
+        res.append(root.val)
+        return res
+</code></pre>
+<h2 id = "2.4">2.4 层次遍历</h2>
+思路：使用python内置的包queue
+
+<pre><code class="python">import queue
+class Solution:
+    def levelOrder(self , root: TreeNode) -&gt; List[List[int]]:
+        # write code here
+        res = []
+        if not root:
+            return res
+        q = queue.Queue()
+        q.put(root)
+        cur = None
+        while not q.empty():
+            row = []
+            n = q.qsize()
+            for i in range(n):
+                cur = q.get()
+                row.append(cur.val)
+                if cur.left:
+                    q.put(cur.left)
+                if cur.right:
+                    q.put(cur.right)
+            res.append(row)
+        return res
+</code></pre>
+<h2 id = "2.5">2.5 二叉树最大深度</h2>
+
+<pre><code class="python">class Solution:
+    def maxDepth(self , root: TreeNode) -&gt; int:
+        # write code here
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
+</code></pre>
+<h2 id = "2.6">2.6 二叉树的镜像</h2>
+思路：递归交换左右子树
+
+<pre><code class="python">class Solution:
+    def Mirror(self , pRoot: TreeNode) -&gt; TreeNode:
+        # write code here
+        if not pRoot:
+            return None
+        left = self.Mirror(pRoot.left)
+        right = self.Mirror(pRoot.right)
+        pRoot.left = right
+        pRoot.right = left
+        return pRoot
+</code></pre>
+<h2 id = "2.7">2.7 合并二叉树</h2>
+思路：左节点值+右节点值
+
+<pre><code class="python">class Solution:
+    def mergeTrees(self , t1: TreeNode, t2: TreeNode) -&gt; TreeNode:
+        # write code here
+        if not t1:
+            return t2
+        if not t2:
+            return t1
+        head = TreeNode(t1.val + t2.val)
+        head.left = self.mergeTrees(t1.left,t2.left)
+        head.right = self.mergeTrees(t1.right,t2.right)
+        return head
+</code></pre>
+<h2 id = "2.8">2.8 判断对称二叉树</h2>
+
+<pre><code class="python">class Solution:
+    def recursion(self, root1: TreeNode, root2: TreeNode):
+        # 可以两个都为空
+        if not root1 and not root2: 
+            return True
+        # 只有一个为空或者节点值不同，必定不对称
+        if not root1 or not root2 or root1.val != root2.val:
+            return False
+        # 每层对应的节点进入递归
+        return self.recursion(root1.left, root2.right) and self.recursion(root1.right, root2.left)
+
+    def isSymmetrical(self , pRoot: TreeNode) -&gt; bool:
+        return self.recursion(pRoot, pRoot)
+</code></pre>
+<h1 id="3-栈，队列"><a href="#3-栈，队列" class="headerlink" title="3. 栈，队列"></a>3. 栈，队列</h1><h2 id = "3.1">3.1用两个栈实现队列</h2>
+
+
+<pre><code class="python"># -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+    def push(self, node):
+        # write code here
+        self.stack1.append(node)
+    def pop(self):
+        # return xx
+        if self.stack2==[]:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2.pop()
+</code></pre>
+<h2 id = "3.2">3.2 有效括号序列</h2>
+思路：使用辅助栈列表st，遍历字符串，左括号都入栈，当遇到右括号时，看栈顶元素是否匹配，匹配则弹出栈顶元素，不匹配返回False，遍历完成之后查看辅助栈是否为空，为空则返回True。
+
+<pre><code class="python">class Solution:
+    def isValid(self , s: str) -&gt; bool:
+        # write code here
+        st = []
+        for id,i in enumerate(s):
+            if i ==&quot;[&quot;:
+                st.append(i)
+            if i == &quot;(&quot;:
+                st.append(i)
+            if i == &quot;&#123;&quot;:
+                st.append(i)
+            if i == &quot;&#125;&quot;:
+                if st and st[-1] == &quot;&#123;&quot;:
+                    st.pop()
+                else:
+                    return False
+            if i == &quot;)&quot;:
+                if st and st[-1] == &quot;(&quot;:
+                    st.pop()
+                else:
+                    return False
+            if i == &quot;]&quot;:
+                if st and st[-1] == &quot;[&quot;:
+                    st.pop()
+                else:
+                    return False
+        if st:
+            return False
+        else:
+            return True
+                
+</code></pre>
+<h2 id = "3.3">3.3 滑动窗口的最大值</h2>
+思路：暴力解法从头到尾遍历，获取最大值加入列表。
+
+<pre><code class="python">class Solution:
+    def maxInWindows(self, num, size):
+        # write code here
+        result = []
+        length = len(num)-size +1
+        for i in range(length):
+            max_val = max(num[i:size+i])
+            result.append(max_val)
+        return result
+</code></pre>
+<h2 id = "3.4">3.4 表达式求值</h2>
+
+<pre><code class="python">class Solution:
+    def solve(self , s: str) -&gt; int:
+        # 对符号和数字进行分离
+        arr = []
+        for i in s:
+            if len(arr) &gt;= 1 and arr[-1][0] in &quot;0123456789&quot; and &#39;0&#39; &lt;= i &lt;= &#39;9&#39;:
+                temp = arr.pop()
+                arr.append(temp+i)
+            else:
+                arr.append(i)
+        # 维持两个栈，一个保存符号，一个保存数字
+        stack1,stack2 = [],[]
+        i = 0
+        while i &lt; len(arr):
+            # 左括号直接入符号栈( 3 + ( 33 * 2 + 3 ) ) - 2 / 1 * 2
+            if arr[i] == &#39;(&#39;:
+                stack1.append(arr[i])
+            # 遇到运算符
+            elif  arr[i] in [&#39;+&#39;,&#39;-&#39;,&#39;*&#39;,&#39;/&#39;]:
+                if not stack1:
+                    stack1.append(arr[i])
+                else:
+                    temp = stack1[-1]
+                    # 若没有大于或等于的符号，则加入
+                    if temp not in [&#39;+&#39;,&#39;-&#39;,&#39;*&#39;,&#39;/&#39;]:
+                        stack1.append(arr[i])
+                    # 若有，则判断优先级大小
+                    else:
+                        # 乘除计算
+                        if temp in [&#39;*&#39;,&#39;/&#39;]:
+                            b = stack2.pop()
+                            a = stack2.pop()
+                            temp = stack1.pop()
+                            stack1.append(arr[i])
+                            if temp == &#39;*&#39;: stack2.append(int(a)*int(b))
+                            else: stack2.append(int(a)/int(b))
+                        # 加减
+                        if temp in [&#39;+&#39;,&#39;-&#39;]:
+                            if arr[i] in [&#39;*&#39;,&#39;/&#39;]:
+                                stack1.append(arr[i])
+                            else:
+                                b = stack2.pop()
+                                a = stack2.pop()
+                                temp = stack1.pop()
+                                stack1.append(arr[i])
+                                if temp == &#39;+&#39;: stack2.append(int(a) + int(b))
+                                else: stack2.append(int(a) - int(b))
+            # 右括号
+            elif arr[i] == &#39;)&#39;:
+                # stack1弹出到（为止
+                while True :
+                    op = stack1.pop()
+                    if op == &#39;(&#39;: break
+                    else:
+                        b = stack2.pop()
+                        a = stack2.pop()
+                        # 加减乘除
+                        if op == &#39;+&#39;:
+                            stack2.append(int(a) + int(b))
+                        elif op == &#39;-&#39;:
+                            stack2.append(int(a) - int(b))
+                        elif op == &#39;*&#39;:
+                            stack2.append(int(a) * int(b))
+                        else:
+                            stack2.append(int(a) / int(b))
+            # 数字
+            else:
+                stack2.append(int(arr[i]))
+            i += 1
+        # 判断stack1是否还有元素
+        while stack1:
+            op = stack1.pop()
+            b = stack2.pop()
+            a = stack2.pop()
+            # 加减乘除
+            if op == &#39;+&#39;:
+                stack2.append(int(a) + int(b))
+            elif op == &#39;-&#39;:
+                stack2.append(int(a) - int(b))
+            elif op == &#39;*&#39;:
+                stack2.append(int(a) * int(b))
+            else:
+                stack2.append(int(a) / int(b))               
+        return stack2.pop()
+</code></pre>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>听我说谢谢你！因为有你<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -275,16 +576,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode%E6%9F%A5%E6%89%BE%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/11/%E5%88%B7%E9%A2%98LeetCode%E6%9F%A5%E6%89%BE%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%8C%E6%A0%88%EF%BC%8C%E9%98%9F%E5%88%97/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/08/11/%E5%88%B7%E9%A2%98LeetCode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          牛客刷题基础篇之链表，字符串，数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -304,620 +673,14 @@
 
 
 
-
-  
-    <article id="post-基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">基于Hadoop和Hive实现聊天数据统计分析以及使用FineBI构建聊天数据分析报表</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2022-07-12T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>陌陌聊天数据分析并使用FineBI搭建可视化报表~</p>
-        
-          <a class="article-more-a" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/12/%E5%9F%BA%E4%BA%8EHadoop%E5%92%8CHive%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8FineBI%E6%9E%84%E5%BB%BA%E8%81%8A%E5%A4%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%8A%A5%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hive笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">Hive学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-07-11T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>介绍Hive以及它的流程，启动部署，SQL编写~</p>
-        
-          <a class="article-more-a" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/11/Hive%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hadoop集群搭建详细教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Hadoop集群搭建详细教程</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2022-07-10T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要介绍了手动Hadoop集群搭建以及相关文件配置，命令使用等等。</p>
-        
-          <a class="article-more-a" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/10/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HDFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/09/HDFS/">带你了解HDFS</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/09/HDFS/" class="archive-article-date">
-  	<time datetime="2022-07-09T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要介绍了Hadoop分布式文件系统以及集群角色，读数据流程。</p>
-        
-          <a class="article-more-a" href="/2022/07/09/HDFS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/09/HDFS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-牛客网SQL练习题入门篇（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">牛客网SQL练习题入门篇（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-05-25T09:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>牛客网SQL入门练习题一共30多道，使用语言MySQL，原题链接如下：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/profile/723804747/codeBooks">https://www.nowcoder.com/profile/723804747/codeBooks</a></p>
-        
-          <a class="article-more-a" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/25/%E7%89%9B%E5%AE%A2%E7%BD%91SQL%E7%BB%83%E4%B9%A0%E9%A2%98%E5%85%A5%E9%97%A8%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-统计学相关基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">统计学相关基础知识（来源《深入浅出统计学》）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>阅读《深入浅出统计学》的一些笔记~</p>
-        
-          <a class="article-more-a" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/24/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-用户分群_分群思维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">分群思维《数据分析之道》阅读笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要介绍了结构化分群和同期分群的原理~</p>
-        
-          <a class="article-more-a" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/24/%E7%94%A8%E6%88%B7%E5%88%86%E7%BE%A4_%E5%88%86%E7%BE%A4%E6%80%9D%E7%BB%B4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-分群实验rfm-kmeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">Python实战：基于RFM模型及K-Means算法实现用户分群</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/" class="archive-article-date">
-  	<time datetime="2022-05-24T14:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《数据分析之道》阅读笔记</p>
-        
-          <a class="article-more-a" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/24/%E5%88%86%E7%BE%A4%E5%AE%9E%E9%AA%8Crfm-kmeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -940,8 +703,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
